@@ -3137,28 +3137,44 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 
   @font-face {
-  font-family: "Open Sans Condensed";
-  font-weight: 300;
+  font-family: "Open Sans";
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
-  src: url("https://fonts.shopifycdn.com/open_sans_condensed/opensanscondensed_n3.21acf631f24692841105ddde3fdc951102b8f235.woff2?&hmac=2f332fa3ad05aa65c48801b79b64837b70431e4b806bcd4fbe2a6e71de04f9c5") format("woff2"),
-       url("https://fonts.shopifycdn.com/open_sans_condensed/opensanscondensed_n3.5c88722f47f23c603ca4abec4670fb3b0868fdc8.woff?&hmac=dfbe2a1cae60ef0a89a57f41c76b8c6ae29d75b35bd6b47047972a5915ea6199") format("woff");
+  src: url("https://fonts.shopifycdn.com/open_sans/opensans_n6.63a74f6cbbfef729fb07955b2d5b4cc83273862e.woff2?&hmac=e19d9186b73bc1f237d56ac7e5bbc5a59f891ae4cb81099537a314d966e0be6c") format("woff2"),
+       url("https://fonts.shopifycdn.com/open_sans/opensans_n6.1c4dde7af5554df3b20e440ca17dc8a316a9e1d0.woff?&hmac=cd10c0367e951ec8a8d653ad481ca95699a905fbe85c8e4c977a8af919bd8da5") format("woff");
 }
 
-
-  
 
   @font-face {
-  font-family: "Open Sans Condensed";
-  font-weight: 300;
-  font-style: italic;
+  font-family: "Open Sans";
+  font-weight: 800;
+  font-style: normal;
   font-display: swap;
-  src: url("https://fonts.shopifycdn.com/open_sans_condensed/opensanscondensed_i3.85f081eaf09fdbb99b5d250ad2a170a172c57a63.woff2?&hmac=c0749b2240d88c0ebcc05760a4f6d9c8855fcf7d636c83da3ff8f7ecb2ca126c") format("woff2"),
-       url("https://fonts.shopifycdn.com/open_sans_condensed/opensanscondensed_i3.1f3cec26db09f6a50d5aeed0a3028837d690cc5c.woff?&hmac=b43e6a1aa8596e8a45426c3ec3f6cba87170bbe21d17dfa3f689a45b0e1f0570") format("woff");
+  src: url("https://fonts.shopifycdn.com/open_sans/opensans_n8.1a6578d1602b9445554d723b8c42e0908f4d82f0.woff2?&hmac=bcd513e459a5c8115eb10f65f0d79454b0e2acab3daeadea934e70c05044f607") format("woff2"),
+       url("https://fonts.shopifycdn.com/open_sans/opensans_n8.5bba25de3685e6a02f32b4a9e97462d3380a62e3.woff?&hmac=35620b66bb4b48948b02ec3f8eee99a02122d328db83d611a0687b44b31f4518") format("woff");
 }
 
 
-  
+  @font-face {
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+  src: url("https://fonts.shopifycdn.com/open_sans/opensans_i6.3c2f244fa87a8349d8ae0b5a10085e371e7fee16.woff2?&hmac=5dd6a306f5ac7f45be535b7fce94b644eb53433090be2c03fe87f3200b37620f") format("woff2"),
+       url("https://fonts.shopifycdn.com/open_sans/opensans_i6.1e8aab012f9b827eab6b16d8f48ab8f1a34375b4.woff?&hmac=88c741b37bf4d319224ab793bf9c75fac55811a916a23fbfa681c09b612719a4") format("woff");
+}
+
+
+  @font-face {
+  font-family: "Open Sans";
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+  src: url("https://fonts.shopifycdn.com/open_sans/opensans_i8.8b08aad33296d7a8054c4b5e66e8dcf089f97539.woff2?&hmac=a1ec81fadc70e8c02762affb64f0c4466de1df20a1b6aab3014b392c1d627fde") format("woff2"),
+       url("https://fonts.shopifycdn.com/open_sans/opensans_i8.766c70b14859f6f2957cc52f60de314524ef9940.woff?&hmac=4e6853a1e3aef62ecad845f695a1ad80e71b16d636b2ad67398f4b2072d50a82") format("woff");
+}
+
 
   @font-face {
   font-family: "Open Sans";
@@ -3221,6 +3237,46 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 
   @font-face {
+  font-family: "Open Sans";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://fonts.shopifycdn.com/open_sans/opensans_n7.8bfd11295a1edbb769a778900a2afc48b16848e7.woff2?&hmac=6fd0b3b828075f51374c021e8f38341cf66d4e68359d7692420952bde31d1e05") format("woff2"),
+       url("https://fonts.shopifycdn.com/open_sans/opensans_n7.4e2eb03bfa5cdc209fbd1b7b5ee863b8032f4b36.woff?&hmac=6d2ddfe15273a496f607fbd504f5f5a5ce77ca3608504b568a91bc4e6e9dd899") format("woff");
+}
+
+
+  @font-face {
+  font-family: "Open Sans";
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://fonts.shopifycdn.com/open_sans/opensans_n8.1a6578d1602b9445554d723b8c42e0908f4d82f0.woff2?&hmac=bcd513e459a5c8115eb10f65f0d79454b0e2acab3daeadea934e70c05044f607") format("woff2"),
+       url("https://fonts.shopifycdn.com/open_sans/opensans_n8.5bba25de3685e6a02f32b4a9e97462d3380a62e3.woff?&hmac=35620b66bb4b48948b02ec3f8eee99a02122d328db83d611a0687b44b31f4518") format("woff");
+}
+
+
+  @font-face {
+  font-family: "Open Sans";
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("https://fonts.shopifycdn.com/open_sans/opensans_i7.f2dd6989e403681b1042ba33de0a0ae8062b7ecb.woff2?&hmac=022fd1d21b36b5200b309bb1c90261fbbdc4f0a8b95a0e8d24b327add8e6d997") format("woff2"),
+       url("https://fonts.shopifycdn.com/open_sans/opensans_i7.2b1150c87b2f7e0338af40875cb176d5ab2ddad7.woff?&hmac=326e2f56a6202eedd14e7b3a78f5f8e1a2dc76d793d3d15b43699a97d0aaccf1") format("woff");
+}
+
+
+  @font-face {
+  font-family: "Open Sans";
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+  src: url("https://fonts.shopifycdn.com/open_sans/opensans_i8.8b08aad33296d7a8054c4b5e66e8dcf089f97539.woff2?&hmac=a1ec81fadc70e8c02762affb64f0c4466de1df20a1b6aab3014b392c1d627fde") format("woff2"),
+       url("https://fonts.shopifycdn.com/open_sans/opensans_i8.766c70b14859f6f2957cc52f60de314524ef9940.woff?&hmac=4e6853a1e3aef62ecad845f695a1ad80e71b16d636b2ad67398f4b2072d50a82") format("woff");
+}
+
+
+  @font-face {
   font-family: "Open Sans Condensed";
   font-weight: 300;
   font-style: normal;
@@ -3241,22 +3297,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
        url("https://fonts.shopifycdn.com/open_sans_condensed/opensanscondensed_i3.1f3cec26db09f6a50d5aeed0a3028837d690cc5c.woff?&hmac=b43e6a1aa8596e8a45426c3ec3f6cba87170bbe21d17dfa3f689a45b0e1f0570") format("woff");
 }
 
-
-  
-
-  @font-face {
-  font-family: "Open Sans Condensed";
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-  src: url("https://fonts.shopifycdn.com/open_sans_condensed/opensanscondensed_n7.4affb7f68a527b5e8ba3583f0c8be9404f7cdd8f.woff2?&hmac=7e94252bfecf5963796c7b4a3c3d0df2489d42a74b13366124c6299d777708a7") format("woff2"),
-       url("https://fonts.shopifycdn.com/open_sans_condensed/opensanscondensed_n7.8faad0d8c3abca6fda8625364794e267fb4d378e.woff?&hmac=34016c7e4c731dfdc1d808d2a00bc115d8f200ccf90c23406f6afcd29d336da5") format("woff");
-}
-
-
-  
-
-  
 
   
 
@@ -3361,8 +3401,8 @@ img[data-sizes="100vw"] {
 
 /*  Headings  */
 h1 {
-  font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
   font-style: normal;
   text-transform: uppercase;
   line-height: 1.5;
@@ -3370,10 +3410,10 @@ h1 {
   display: block;
   letter-spacing: 2px;
   text-rendering: optimizeLegibility;
-  font-size: 24px;
+  font-size: 26px;
   margin: 0 auto 15px;
   clear: both;
-  font-weight: 300;
+  font-weight: 600;
   padding-top: 4px;
 }
 h1 a:link, h1 a:visited {
@@ -3391,8 +3431,8 @@ h1.collection_title_tags {
 h2,
 .h2,
 h2.title {
-  font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
   font-style: normal;
   text-transform: uppercase;
   line-height: 1.5;
@@ -3400,7 +3440,7 @@ h2.title {
   display: block;
   letter-spacing: 2px;
   text-rendering: optimizeLegibility;
-  font-size: 21px;
+  font-size: 23px;
   margin-bottom: 0.75em;
 }
 h2 a,
@@ -3426,8 +3466,8 @@ h2.title.product_name a {
 
 h3,
 .h3 {
-  font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
   font-style: normal;
   text-transform: uppercase;
   line-height: 1.5;
@@ -3435,7 +3475,7 @@ h3,
   display: block;
   letter-spacing: 2px;
   text-rendering: optimizeLegibility;
-  font-size: 19px;
+  font-size: 20px;
   margin: 0 auto 15px 0;
 }
 h3 a,
@@ -3470,8 +3510,8 @@ h3.sub_title a,
 
 h4,
 .h4 {
-  font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
   font-style: normal;
   text-transform: uppercase;
   line-height: 1.5;
@@ -3479,7 +3519,7 @@ h4,
   display: block;
   letter-spacing: 2px;
   text-rendering: optimizeLegibility;
-  font-size: 16px;
+  font-size: 18px;
   margin: 0 0 0.5em 0;
   padding: 7px 0;
 }
@@ -3496,8 +3536,8 @@ h4.title a,
 
 h5,
 .h5 {
-  font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
   font-style: normal;
   text-transform: uppercase;
   line-height: 1.5;
@@ -3505,7 +3545,7 @@ h5,
   display: block;
   letter-spacing: 2px;
   text-rendering: optimizeLegibility;
-  font-size: 15px;
+  font-size: 16px;
   margin: 0 0 0.5em 0;
   padding: 7px 0;
 }
@@ -3525,8 +3565,8 @@ h5.sub_title a,
 
 h6,
 .h6 {
-  font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
   font-style: normal;
   text-transform: uppercase;
   line-height: 1.5;
@@ -3534,7 +3574,7 @@ h6,
   display: block;
   letter-spacing: 2px;
   text-rendering: optimizeLegibility;
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: 1px;
   margin: 0 0 0.5em 0;
   padding: 7px 0;
@@ -3555,8 +3595,8 @@ h6.title,
 }
 
 .collection_title {
-  font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
   font-style: normal;
   text-transform: uppercase;
   line-height: 1.5;
@@ -3564,7 +3604,7 @@ h6.title,
   display: block;
   letter-spacing: 2px;
   text-rendering: optimizeLegibility;
-  font-size: 24px;
+  font-size: 26px;
   margin: 0 auto 15px;
   clear: both;
   padding-top: 4px;
@@ -3579,7 +3619,7 @@ h6.title,
 
 div.collection_title {
   margin-bottom: 0;
-  line-height: 24px;
+  line-height: 26px;
   display: inline;
 }
 div.collection_title_tags {
@@ -3591,8 +3631,8 @@ div.collection_title_tags {
 .empty_cart,
 .promo-banner,
 .title {
-  font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
   font-style: normal;
   text-transform: uppercase;
   line-height: 1.5;
@@ -3600,7 +3640,7 @@ div.collection_title_tags {
   display: block;
   letter-spacing: 2px;
   text-rendering: optimizeLegibility;
-  font-size: 24px;
+  font-size: 26px;
 }
 
 .title.center.blog a {
@@ -4266,7 +4306,7 @@ p.cart-message a {
   padding: 0 20px;
 }
 .sticky_nav ul.menu {
-  font-size: 14px;
+  font-size: 16px;
   padding-bottom: 0 !important;
   /* Override non-sticky menu padding */
 }
@@ -4462,7 +4502,7 @@ select.currencies,
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 14px;
+  font-size: 16px;
   text-transform: uppercase;
   color: #d9d9d9;
   padding-top: 12px;
@@ -5164,7 +5204,7 @@ input[type=button].guest_button {
 .dropdown_content p,
 .mobile-mega-menu p {
   font-family: "Open Sans", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   color: #d9d9d9;
   padding-top: 12px;
@@ -5710,7 +5750,7 @@ ul.toggle_list li ul.active {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 14px;
+  font-size: 16px;
   text-transform: uppercase;
   width: auto;
   margin-bottom: 0;
@@ -9106,7 +9146,7 @@ div.is-absolute {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 14px;
+  font-size: 16px;
   text-transform: uppercase;
 }
 .search__results li a:hover, .search__results li a:focus,
@@ -9117,7 +9157,7 @@ div.is-absolute {
 .search__results .search-title {
   text-transform: none;
   text-align: left;
-  font-size: 14px;
+  font-size: 16px;
 }
 .search__results .search-title span {
   color: #03a196;
@@ -9844,7 +9884,7 @@ input.secondary_button {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 14px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #03a196;
@@ -13946,7 +13986,7 @@ div.collection_title_tags {
 .menu a:hover,
 .nav a:active,
 .nav a:focus {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .menu a,
@@ -13954,7 +13994,7 @@ div.collection_title_tags {
 .menu a:hover,
 .menu a:active,
 .menu a:focus {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .menu li,
@@ -14049,7 +14089,7 @@ div.collection_title_tags {
   }
 
   .featured_links a span {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .or {
@@ -15744,9 +15784,9 @@ footer .social_icons a:hover {
 .caption .pretext {
   color: #ffffff;
   font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 700;
+  font-weight: 300;
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 1px;
   margin-bottom: 10px;
 }@media only screen and (max-width: 480px) {
@@ -15756,23 +15796,23 @@ footer .social_icons a:hover {
 }
 @media only screen and (max-width: 798px) {
   .caption .pretext {
-    font-size: 12.0px;
+    font-size: 10.666666666666666px;
   }
 }
 @media only screen and (min-width: 799px) {
   .caption .pretext {
-    font-size: 15.0px;
+    font-size: 13.333333333333334px;
   }
 }
 @media only screen and (min-width: 799px) {
   .caption .pretext {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 .caption .headline {
   color: #ffffff;
-  font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
   font-style: normal;
   text-transform: uppercase;
   font-size: 47px;
@@ -15804,10 +15844,10 @@ footer .social_icons a:hover {
 .caption .subtitle {
   color: #ffffff;
   font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 700;
+  font-weight: 300;
   text-transform: uppercase;
   font-style: uppercase;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 1px;
   position: relative;
 }@media only screen and (max-width: 480px) {
@@ -15817,17 +15857,17 @@ footer .social_icons a:hover {
 }
 @media only screen and (max-width: 798px) {
   .caption .subtitle {
-    font-size: 12.0px;
+    font-size: 10.666666666666666px;
   }
 }
 @media only screen and (min-width: 799px) {
   .caption .subtitle {
-    font-size: 15.0px;
+    font-size: 13.333333333333334px;
   }
 }
 @media only screen and (min-width: 1025px) {
   .caption .subtitle {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 .caption .pretext:empty,
@@ -16069,8 +16109,8 @@ footer .social_icons a:hover {
   margin-bottom: 10%;
 }
 .shopify-section--text-columns-with-images .large_text {
-  font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
   font-style: normal;
   text-transform: uppercase;
   line-height: 1.5;
@@ -16078,7 +16118,7 @@ footer .social_icons a:hover {
   display: block;
   letter-spacing: 2px;
   text-rendering: optimizeLegibility;
-  font-size: 31.2px;
+  font-size: 33.8px;
 }
 .shopify-section--text-columns-with-images .text-column {
   margin-bottom: 25px;
@@ -16899,7 +16939,7 @@ footer .social_icons a:hover {
 .price-ui-badge__sticker {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -17006,8 +17046,8 @@ footer .social_icons a:hover {
 
 .surface-pick-up__modal-title {
   margin: 0;
-  font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
   font-style: normal;
   text-transform: uppercase;
   line-height: 1.5;
@@ -17015,7 +17055,7 @@ footer .social_icons a:hover {
   display: block;
   letter-spacing: 2px;
   text-rendering: optimizeLegibility;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 600;
   text-transform: none;
   letter-spacing: normal;

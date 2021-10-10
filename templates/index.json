@@ -44,7 +44,7 @@
           "type": "image",
           "settings": {
             "link": "",
-            "title": "FALL",
+            "title": "Fall",
             "text": "<p>Promotion description details.<\/p>",
             "button_label": ""
           }
@@ -53,7 +53,7 @@
           "type": "image",
           "settings": {
             "link": "",
-            "title": "HATS",
+            "title": "Hats",
             "text": "<p>From dad hats to classic baseball caps, we've got your head covered.<\/p>",
             "button_label": ""
           }
@@ -62,7 +62,7 @@
           "type": "image",
           "settings": {
             "link": "",
-            "title": "Feature",
+            "title": "Accessories",
             "text": "<p>Promotion description details.<\/p>",
             "button_label": ""
           }
@@ -287,6 +287,7 @@
     },
     "testimonials-1": {
       "type": "testimonial",
+      "disabled": true,
       "blocks": {
         "block-1": {
           "type": "image",
