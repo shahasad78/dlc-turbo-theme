@@ -457,8 +457,8 @@
         "newsletter_title": "Subscribe to the cross-wire Newsletter",
         "newsletter_text": "<p>Stay up-to-date on sales, new releases, workout tips and more …<\/p>",
         "newsletter_section_text_align": "center",
-        "css_class": "dlc-newsletter",
-        "custom_css": ".dlc-newsletter { \nbackground-color: #ffd700; \n}"
+        "css_class": "",
+        "custom_css": ".newsletter-section { \nbackground-color: #ffd700; \n}"
       }
     },
     "blog-posts-1": {
