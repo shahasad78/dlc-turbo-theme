@@ -44,7 +44,7 @@
           "type": "image",
           "settings": {
             "link": "",
-            "title": "Feature",
+            "title": "FALL",
             "text": "<p>Promotion description details.<\/p>",
             "button_label": ""
           }
@@ -53,8 +53,8 @@
           "type": "image",
           "settings": {
             "link": "",
-            "title": "Feature",
-            "text": "<p>Promotion description details.<\/p>",
+            "title": "HATS",
+            "text": "<p>From dad hats to classic baseball caps, we've got your head covered.<\/p>",
             "button_label": ""
           }
         },
