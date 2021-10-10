@@ -3073,44 +3073,28 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 /* #Fonts
 ================================================== */@font-face {
-  font-family: "Open Sans";
-  font-weight: 400;
+  font-family: "Open Sans Condensed";
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
-  src: url("https://fonts.shopifycdn.com/open_sans/opensans_n4.5460e0463a398b1075386f51084d8aa756bafb17.woff2?&hmac=b6802c8274c3cd18da36cfd2c72f894815128651c45261ab566956ebfb89900b") format("woff2"),
-       url("https://fonts.shopifycdn.com/open_sans/opensans_n4.8512334118d0e9cf94c4626d298dba1c9f12a294.woff?&hmac=0491ad48cbcdd4bad3dd718c7ee0163d865d552bdd2420b93b0e844f84f80b7e") format("woff");
+  src: url("https://fonts.shopifycdn.com/open_sans_condensed/opensanscondensed_n3.21acf631f24692841105ddde3fdc951102b8f235.woff2?&hmac=2f332fa3ad05aa65c48801b79b64837b70431e4b806bcd4fbe2a6e71de04f9c5") format("woff2"),
+       url("https://fonts.shopifycdn.com/open_sans_condensed/opensanscondensed_n3.5c88722f47f23c603ca4abec4670fb3b0868fdc8.woff?&hmac=dfbe2a1cae60ef0a89a57f41c76b8c6ae29d75b35bd6b47047972a5915ea6199") format("woff");
 }
 
 
-  @font-face {
-  font-family: "Open Sans";
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-  src: url("https://fonts.shopifycdn.com/open_sans/opensans_n7.8bfd11295a1edbb769a778900a2afc48b16848e7.woff2?&hmac=6fd0b3b828075f51374c021e8f38341cf66d4e68359d7692420952bde31d1e05") format("woff2"),
-       url("https://fonts.shopifycdn.com/open_sans/opensans_n7.4e2eb03bfa5cdc209fbd1b7b5ee863b8032f4b36.woff?&hmac=6d2ddfe15273a496f607fbd504f5f5a5ce77ca3608504b568a91bc4e6e9dd899") format("woff");
-}
-
+  
 
   @font-face {
-  font-family: "Open Sans";
-  font-weight: 400;
+  font-family: "Open Sans Condensed";
+  font-weight: 300;
   font-style: italic;
   font-display: swap;
-  src: url("https://fonts.shopifycdn.com/open_sans/opensans_i4.3854a246d5acf17aab4c771d3d4542818d3a46a8.woff2?&hmac=3eb928b24ca63324828fb28550f19344d8520c3a52fa767d49bc86b528263fa4") format("woff2"),
-       url("https://fonts.shopifycdn.com/open_sans/opensans_i4.1cb364a3d4a7a0305132a25a76ac8fa7d381d3c6.woff?&hmac=941f22af5acd69fc0b6792bae1f53549fe2f66aa04e47861e0b11e07b22d6baa") format("woff");
+  src: url("https://fonts.shopifycdn.com/open_sans_condensed/opensanscondensed_i3.85f081eaf09fdbb99b5d250ad2a170a172c57a63.woff2?&hmac=c0749b2240d88c0ebcc05760a4f6d9c8855fcf7d636c83da3ff8f7ecb2ca126c") format("woff2"),
+       url("https://fonts.shopifycdn.com/open_sans_condensed/opensanscondensed_i3.1f3cec26db09f6a50d5aeed0a3028837d690cc5c.woff?&hmac=b43e6a1aa8596e8a45426c3ec3f6cba87170bbe21d17dfa3f689a45b0e1f0570") format("woff");
 }
 
 
-  @font-face {
-  font-family: "Open Sans";
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-  src: url("https://fonts.shopifycdn.com/open_sans/opensans_i7.f2dd6989e403681b1042ba33de0a0ae8062b7ecb.woff2?&hmac=022fd1d21b36b5200b309bb1c90261fbbdc4f0a8b95a0e8d24b327add8e6d997") format("woff2"),
-       url("https://fonts.shopifycdn.com/open_sans/opensans_i7.2b1150c87b2f7e0338af40875cb176d5ab2ddad7.woff?&hmac=326e2f56a6202eedd14e7b3a78f5f8e1a2dc76d793d3d15b43699a97d0aaccf1") format("woff");
-}
-
+  
 
   @font-face {
   font-family: "Open Sans";
@@ -3303,8 +3287,8 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 /* #Basic Styles
 ================================================== */
 body {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 300;
   font-style: normal;
   font-size: 14px;
   text-transform: none;
@@ -4844,8 +4828,8 @@ html.touchevents .cart .cart-container {
   position: absolute;
   z-index: 2000;
   background-color: #ffffff;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 300;
   font-style: normal;
   text-transform: none;
   color: #333333;
@@ -6569,7 +6553,7 @@ button.shopify-payment-button__more-options {
   top: 100%;
   left: 50%;
   font-weight: normal;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   font-style: normal;
   transform: translateX(-50%);
 }
@@ -6896,7 +6880,7 @@ button {
   height: auto;
   line-height: inherit;
   font-weight: bold;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   font-style: normal;
   box-shadow: none;
   border-radius: 0px;
@@ -7194,9 +7178,9 @@ div.container.contact-form-container {
 }
 .contact-form ul li label,
 .custom-contact-form ul li label {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   text-transform: none;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .contact-form__heading {
@@ -10963,8 +10947,8 @@ img.footer-logo {
   background-color: white;
   color: #333333;
   font-size: 14px;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 300;
   font-style: normal;
   text-transform: uppercase;
   padding: 10px;
@@ -10985,8 +10969,8 @@ img.footer-logo {
 .footer-menu__disclosure button.disclosure__button {
   color: #333333;
   font-size: 14px;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 300;
   font-style: normal;
   text-transform: uppercase;
 }
