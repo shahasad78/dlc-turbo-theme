@@ -3073,42 +3073,42 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 /* #Fonts
 ================================================== */@font-face {
-  font-family: Roboto;
+  font-family: "Open Sans";
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("https://fonts.shopifycdn.com/roboto/roboto_n4.da808834c2315f31dd3910e2ae6b1a895d7f73f5.woff2?&hmac=fc93048d67b5919b29c4e947343d0a9599adb89fe18272b77057db493cffc489") format("woff2"),
-       url("https://fonts.shopifycdn.com/roboto/roboto_n4.a512c7b68cd7f12c72e1a5fd58e7f7315c552e93.woff?&hmac=be64ada5dc9e0332d117b70bf19b9fefd0340f9022a8349b78d28787f6783825") format("woff");
+  src: url("https://fonts.shopifycdn.com/open_sans/opensans_n4.5460e0463a398b1075386f51084d8aa756bafb17.woff2?&hmac=b6802c8274c3cd18da36cfd2c72f894815128651c45261ab566956ebfb89900b") format("woff2"),
+       url("https://fonts.shopifycdn.com/open_sans/opensans_n4.8512334118d0e9cf94c4626d298dba1c9f12a294.woff?&hmac=0491ad48cbcdd4bad3dd718c7ee0163d865d552bdd2420b93b0e844f84f80b7e") format("woff");
 }
 
 
   @font-face {
-  font-family: Roboto;
+  font-family: "Open Sans";
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url("https://fonts.shopifycdn.com/roboto/roboto_n7.51ede27d5b58491d9cf07ad184108da52fef80b4.woff2?&hmac=8bb259a3f49ea88d41c462dcb44f2cec856d8661f982e17fbec39180f6186d44") format("woff2"),
-       url("https://fonts.shopifycdn.com/roboto/roboto_n7.1babbb6a27f91b14216bafa40bf222e08f6999f4.woff?&hmac=2dc8169e45bac2afac11d0d3aaf8d06b4454742dfab2d1c2987406d80e19ec4f") format("woff");
+  src: url("https://fonts.shopifycdn.com/open_sans/opensans_n7.8bfd11295a1edbb769a778900a2afc48b16848e7.woff2?&hmac=6fd0b3b828075f51374c021e8f38341cf66d4e68359d7692420952bde31d1e05") format("woff2"),
+       url("https://fonts.shopifycdn.com/open_sans/opensans_n7.4e2eb03bfa5cdc209fbd1b7b5ee863b8032f4b36.woff?&hmac=6d2ddfe15273a496f607fbd504f5f5a5ce77ca3608504b568a91bc4e6e9dd899") format("woff");
 }
 
 
   @font-face {
-  font-family: Roboto;
+  font-family: "Open Sans";
   font-weight: 400;
   font-style: italic;
   font-display: swap;
-  src: url("https://fonts.shopifycdn.com/roboto/roboto_i4.f98951b4b9b6e1096fc799cd05debd098bd422ac.woff2?&hmac=1aa9c43fd61251fcdf83b82e8f5043a3e3d55898fd9d8eb09ee03cebc337c012") format("woff2"),
-       url("https://fonts.shopifycdn.com/roboto/roboto_i4.688a26691d45bc4053b6ae24a196cabdeedbc25c.woff?&hmac=e1dbd434c5744f0edcd5592ba2a75585f210b69e34be7a9f6322eb8ad1fabc60") format("woff");
+  src: url("https://fonts.shopifycdn.com/open_sans/opensans_i4.3854a246d5acf17aab4c771d3d4542818d3a46a8.woff2?&hmac=3eb928b24ca63324828fb28550f19344d8520c3a52fa767d49bc86b528263fa4") format("woff2"),
+       url("https://fonts.shopifycdn.com/open_sans/opensans_i4.1cb364a3d4a7a0305132a25a76ac8fa7d381d3c6.woff?&hmac=941f22af5acd69fc0b6792bae1f53549fe2f66aa04e47861e0b11e07b22d6baa") format("woff");
 }
 
 
   @font-face {
-  font-family: Roboto;
+  font-family: "Open Sans";
   font-weight: 700;
   font-style: italic;
   font-display: swap;
-  src: url("https://fonts.shopifycdn.com/roboto/roboto_i7.9c922c35bb84952cfb17e8c1d42e440e75aa8ccf.woff2?&hmac=2296c2d51e7aa2388655ee9b2f9ae6bca9a27d7203f147def895e600c965e48d") format("woff2"),
-       url("https://fonts.shopifycdn.com/roboto/roboto_i7.c50b5683f5731edb8040ff2110a54947108434de.woff?&hmac=b2ac5182195fbae3d14433e409ef69ddbc692155f1d68bb5fc2b51457d48acf8") format("woff");
+  src: url("https://fonts.shopifycdn.com/open_sans/opensans_i7.f2dd6989e403681b1042ba33de0a0ae8062b7ecb.woff2?&hmac=022fd1d21b36b5200b309bb1c90261fbbdc4f0a8b95a0e8d24b327add8e6d997") format("woff2"),
+       url("https://fonts.shopifycdn.com/open_sans/opensans_i7.2b1150c87b2f7e0338af40875cb176d5ab2ddad7.woff?&hmac=326e2f56a6202eedd14e7b3a78f5f8e1a2dc76d793d3d15b43699a97d0aaccf1") format("woff");
 }
 
 
@@ -3303,7 +3303,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 /* #Basic Styles
 ================================================== */
 body {
-  font-family: Roboto, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 14px;
@@ -4844,7 +4844,7 @@ html.touchevents .cart .cart-container {
   position: absolute;
   z-index: 2000;
   background-color: #ffffff;
-  font-family: Roboto, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
   text-transform: none;
@@ -6569,7 +6569,7 @@ button.shopify-payment-button__more-options {
   top: 100%;
   left: 50%;
   font-weight: normal;
-  font-family: Roboto, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-style: normal;
   transform: translateX(-50%);
 }
@@ -6896,7 +6896,7 @@ button {
   height: auto;
   line-height: inherit;
   font-weight: bold;
-  font-family: Roboto, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-style: normal;
   box-shadow: none;
   border-radius: 0px;
@@ -7194,7 +7194,7 @@ div.container.contact-form-container {
 }
 .contact-form ul li label,
 .custom-contact-form ul li label {
-  font-family: Roboto, sans-serif;
+  font-family: "Open Sans", sans-serif;
   text-transform: none;
   font-weight: 400;
 }
@@ -10963,7 +10963,7 @@ img.footer-logo {
   background-color: white;
   color: #333333;
   font-size: 14px;
-  font-family: Roboto, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
   text-transform: uppercase;
@@ -10985,7 +10985,7 @@ img.footer-logo {
 .footer-menu__disclosure button.disclosure__button {
   color: #333333;
   font-size: 14px;
-  font-family: Roboto, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
   text-transform: uppercase;
