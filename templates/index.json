@@ -112,6 +112,7 @@
         "block-1": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Featured_Maura.jpg",
             "pretext": "",
             "title": "Turbo Shopify Theme",
             "subtitle": "",
@@ -130,6 +131,7 @@
         "block-2": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/gio-nyc-brooklyin-bridge-small.jpg",
             "pretext": "<p>Short text that precedes the headline<\/p>",
             "title": "Your headline here",
             "subtitle": "<p>This is a short subheading for your slideshow image<\/p>",
