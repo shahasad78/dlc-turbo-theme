@@ -1,0 +1,28 @@
+{% comment %}
+  @param item {Object}
+    Required to display unit prices, 'item' or 'line_item'
+  @param variant {Object}
+    Required to display unit prices, variant, item.variant, line_item.variant
+  @param product {Object}
+    Required to display unit prices, product, item.product, line_item.product
+  @param class {String}
+    CSS class names to add to unit price elements
+{% endcomment %}
+
+{%- capture total_quantity -%}
+  <span class="{{ class | append: '-total-quantity' }}" data-total-quantity>{{ item.unit_price_measurement.quantity_value }}{{ item.unit_price_measurement.quantity_unit }}</span>
+{%- endcapture -%}
+
+{%- capture unit_price -%}
+  <span class="{{ class | append: '-amount money' }}" data-unit-price-amount>{{ item.unit_price | money }}</span>
+{%- endcapture -%}
+
+{%- capture unit_measure -%}
+  <span class="{{ class | append: '-measure' }}" data-unit-price-measure>{%- if item.unit_price_measurement.reference_value != 1 -%}{{ item.unit_price_measurement.reference_value }}{%- endif -%}{{ item.unit_price_measurement.reference_unit }}</span>
+{%- endcapture -%}
+
+{%- if product.available or settings.display_price -%}
+  {%- if variant.price > 0 and item.unit_price_measurement -%}
+    <p class="{{ class }}">{{ 'products.item.price.price_per_unit_html' | t: total_quantity: total_quantity, unit_price: unit_price, unit_measure: unit_measure | strip_newlines }}</p>
+  {%- endif -%}
+{%- endif -%}

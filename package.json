@@ -1,0 +1,26 @@
+{
+  "name": "turbo",
+  "scripts": {
+    "build": " node build_tools/compileCss.js source/styles/gift-card.css assets/gift-card.css.liquid && node build_tools/compileCss.js source/styles/styles.css assets/styles.css.liquid "
+  },
+  "dependencies": {
+    "autoprefixer": "^9.8.6",
+    "postcss": "7.0.35",
+    "postcss-scss": "3.0.4",
+    "postcss-easy-import": "3.0.0",
+    "postcss-fail-on-warn": "0.1.0",
+    "@csstools/postcss-sass": "4.0.0",
+    "postcss-strip-inline-comments": "0.1.5"
+  },
+  "browserslist": [
+    "IE 11",
+    "last 2 Android major versions",
+    "last 2 Safari major versions",
+    "last 2 Edge major versions",
+    "last 2 iOS major versions",
+    "last 3 Chrome major versions",
+    "last 3 Firefox major versions",
+    "last 3 ChromeAndroid major versions",
+    "last 3 Samsung major versions"
+  ]
+}

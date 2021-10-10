@@ -1,0 +1,85 @@
+{% comment %}
+** FAQ - dynamic **
+- Draggable section
+- Uses blocks
+{% endcomment %}
+
+{%- assign id = section.id -%}
+{%- assign title = section.settings.title -%}
+{% comment %} Layout {% endcomment %}
+{%- assign width = section.settings.width -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for block in section.blocks %}
+      {% unless block.type == 'heading' %}
+        {
+          "@type": "Question",
+          "name": "{{ block.settings.title | escape }}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{{ block.settings.subtitle | strip_html | escape }}"
+          }
+        }{% unless forloop.last %},{% endunless %}
+      {% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+
+<section class="section">
+  <a name="pagecontent" id="pagecontent"></a>
+  <div class="container main content has-background has-gutter-enabled">
+    <div class="one-whole column page">
+      <h2 class="title">{{ title }}</h2>
+    </div>
+
+    {% if section.blocks.size > 0 %}
+      {% for block in section.blocks %}
+        {% if block.type == 'image' %}
+          {%- assign image = true -%}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    <div class="{% if image == true %}one-half{% else %}one-whole{% endif %} medium-down--one-whole column faq faq__column-1">
+      {% if section.blocks.size > 0 %}
+        <dl class="faqAccordion">
+          {% for block in section.blocks %}
+            {% if block.type == "heading" %}
+              {% if block.settings.faq_title != blank %}
+                <h2 class="title faq--heading">{{ block.settings.faq_title }}</h2>
+              {% endif %}
+            {% endif %}
+            {% if block.settings.title != blank %}
+              <dt><button type="button" aria-controls="panel-01" aria-expanded="true">{{ block.settings.title }}</button></dt>
+              <dd id="panel-01" aria-hidden="false">
+                {{ block.settings.answer }}
+              </dd>
+            {% endif %}
+          {% endfor %}
+        </dl>
+      {% endif %}
+    </div>
+
+    {% if section.blocks.size > 0 %}
+      {% for block in section.blocks %}
+        {% if block.type == 'image' %}
+          <div class="one-half medium-down--one-whole column faq faq--image faq__column-2">
+            {% if block.settings.image != blank %}
+                {% render 'image-element',
+                        image: block.settings.image,
+                        alt: block.settings.image.alt
+                %}
+            {% else %}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+</section>

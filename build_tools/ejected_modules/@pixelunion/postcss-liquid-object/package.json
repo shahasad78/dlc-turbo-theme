@@ -1,0 +1,41 @@
+{
+  "name": "@pixelunion/postcss-liquid-object",
+  "version": "1.1.1",
+  "description": "PostCSS plugin for injecting Shopify Liquid values into CSS",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "liquid"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Pixel Union",
+  "license": "UNLICENSED",
+  "repository": "github:pixelunion/postcss-liquid",
+  "dependencies": {
+    "postcss": "^7.0.18"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "babel-eslint": "10.1.0",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-jest": "^22.19.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+
+,"_resolved": "https://npm.pkg.github.com/download/@pixelunion/postcss-liquid-object/1.1.1/cd952f94eeb649bda128f9b816d76573c5143ed615edc684d090738d0b70d988"
+,"_integrity": "sha512-6w+hXUAxjXH+UVrUnqMlQNCKMrhfvl2rJEStYRMzq0JE9Ylnk1REtOH4WPt/MUIL0aSh7hOEJo21SOggjlAJuw=="
+,"_from": "@pixelunion/postcss-liquid-object@1.1.1"
+}

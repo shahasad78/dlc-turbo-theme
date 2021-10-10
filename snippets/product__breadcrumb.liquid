@@ -1,0 +1,57 @@
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "{{ shop.url }}",
+          "name": "{{ 'general.breadcrumbs.home' | t }}"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          {% if collection %}
+            "@id": "{{ collection.url }}",
+            "name": "{{ collection.title }}"
+          {% else %}
+            "@id": "{{ routes.all_products_collection_url }}",
+            "name": "{{ collections.all.title }}"
+          {% endif %}
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "{{ product.url }}",
+          "name": "{{ product.title | escape }}"
+        }
+      }
+    ]
+  }
+</script>
+
+<div class="breadcrumb_text">
+  <a href="{{ routes.root_url }}" title="{{ shop.name | escape }}" class="breadcrumb_link">
+    <span>{{ 'general.breadcrumbs.home' | t }}</span>
+  </a>
+  <span class="breadcrumb-divider">/</span>
+  {% if collection %}
+    <a href="{{ collection.url }}" title="{{ collection.title | escape }}" class="breadcrumb_link">
+      <span>{{ collection.title }}</span>
+      </a>
+  {% else %}
+    <a href="{{ routes.all_products_collection_url }}" title="{{ collections.all.title }}" class="breadcrumb_link">
+      <span>{{ collections.all.title }}</span>
+      </a>
+  {% endif %}
+  <span class="breadcrumb-divider">/</span>
+  <a href="{{ product.url }}" class="breadcrumb_link">
+    <span>{{ product.title }}</span>
+  </a>
+</div>

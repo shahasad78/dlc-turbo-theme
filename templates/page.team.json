@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-team-template",
+      "blocks": {
+        "block-1": {
+          "type": "employee"
+        },
+        "block-2": {
+          "type": "employee"
+        },
+        "block-3": {
+          "type": "employee"
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2",
+        "block-3"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,12 @@
+<div class="mobile-search is-hidden-large" data-autocomplete-{{ settings.enable_autocomplete }}>
+  <form class="search-form search-popup__form" action="{{ routes.search_url }}">
+    <div class="search__fields">
+      <input type="hidden" name="type" value="{{ settings.search_option }}" />
+      <label for="q" class="visuallyhidden">{{ 'general.search.title' | t: shop_name: shop.name }}</label>
+        <input class="input" id="q" type="text" name="q" placeholder="{{ 'general.search.title' | t: shop_name: shop.name }}" value="{{ search.terms }}" x-webkit-speech autocapitalize="off" autocomplete="off" autocorrect="off" />
+        <span class="icon-search submit-search"></span>
+        <span class="icon-cross close-search"></span>
+      <input type="submit" name="search" class="visuallyhidden" value="" />
+    </div>
+  </form>
+</div>

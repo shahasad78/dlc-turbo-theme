@@ -1,0 +1,54 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-gallery-template",
+      "blocks": {
+        "block-1": {
+          "type": "image"
+        },
+        "block-2": {
+          "type": "image"
+        },
+        "block-3": {
+          "type": "image"
+        },
+        "block-4": {
+          "type": "image"
+        },
+        "block-5": {
+          "type": "image"
+        },
+        "block-6": {
+          "type": "image"
+        },
+        "block-7": {
+          "type": "image"
+        },
+        "block-8": {
+          "type": "image"
+        },
+        "block-9": {
+          "type": "image"
+        },
+        "block-10": {
+          "type": "image"
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2",
+        "block-3",
+        "block-4",
+        "block-5",
+        "block-6",
+        "block-7",
+        "block-8",
+        "block-9",
+        "block-10"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

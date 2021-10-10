@@ -1,0 +1,16 @@
+{
+  "store_availability": {
+    "general": {
+      "in_stock": "स्टॉक में",
+      "out_of_stock": "स्टॉक ख़त्म",
+      "view_store_info": "स्टोर की जानकारी देखें",
+      "check_other_stores": "अन्य दुकानों पर उपलब्धता की जाँच करें",
+      "available_for_pick_up_at_html": "पिकअप <b>{{ location_name }}</b> पर उपलब्ध है",
+      "unavailable_for_pick_up_at_html": "वर्तमान में पिकअप <b>{{ location_name }}</b> पर अनुपलब्ध है",
+      "available_for_pick_up_at_time_html": "पिकअप उपलब्ध है, {{ pick_up_time }}",
+      "unavailable_for_pick_up_at_time_html": "वर्तमान में पिकअप अनुपलब्ध है",
+      "kilometers": "km",
+      "miles": "mi"
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{%- capture output -%}
+{%- comment -%}
+  @param template {String}
+    A string representing the template to render
+
+  @param template (price)
+    The template for all prices in the Price UI
+    Innermost element must contain the data attribute 'price'
+
+    @param value {String}
+      A money value, empty if used as a template
+
+  @param template (price-percent)
+    The template for all prices displayed as a percentage of savings
+    Innermost element must contain the data attribute 'price-percent'
+
+    @param value {String}
+      The percentage value saved, empty if used as a template
+
+  @param template (price-min)
+    The template for price minimums, used in price ranges
+    Innermost element must contain the data attribute 'price-min'
+
+     @param value {String}
+      A money value, empty if used as a template
+
+  @param template (price-max)
+    The template for price maximums, used in price ranges
+    Innermost element must contain the data attribute 'price-max'
+
+     @param value {String}
+      A money value, empty if used as a template
+
+  @param template (unit-quantity)
+    The template for unit quantities, used in unit pricing
+    Innermost element must contain the data attribute 'unit-quantity'
+
+     @param value {String}
+      A string, empty if used as a template
+
+  @param template (unit-price)
+    The template for unit prices, used in unit pricing
+    Innermost element must contain the data attribute 'unit-price'
+
+     @param value {String}
+      A money value, empty if used as a template
+
+  @param template (unit-measurement)
+    The template for unit measurements, used in unit pricing
+    Innermost element must contain the data attribute 'unit-measurement'
+
+     @param value {String}
+      A string, empty if used as a template
+
+  @param template (price-ui)
+    The template for the Price UI.
+    Must contain the data attributes 'compare-at-price', 'price', and 'unit-pricing'
+
+    @param compare_at_price {Object}
+      Can be a price object or price-range object,
+      empty if used as a template or false if not included
+
+    @param price {Object}
+      Can be a price object or price-range object,
+      empty if used as a template
+
+    @param unit_pricing {Object}
+      Must be a unit-pricing object,
+      empty if used as a template or false if not included
+
+  @param template (price-ui-badge)
+    The template for the Price UI Badge.
+    Must contain the data attribute 'badge'
+
+    @param badge {String}
+      A string containing product information,
+      empty if used as a template
+{%- endcomment -%}
+
+{%- capture _price -%}<span class="money" data-price>{%- if value != blank -%}{{- value | money -}}{%- endif -%}</span>{%- endcapture -%}
+
+{%- if template == 'price' -%}
+  {{- _price -}}
+{%- elsif template == 'price-percent' -%}
+  <span data-price-percent>{%- if value != blank -%}{{- value -}}{%- endif -%}</span>
+{%- elsif template == 'price-min' -%}
+  <span class="price-min" data-price-min>{{ _price }}</span>
+{%- elsif template == 'price-max' -%}
+  <span class="price-max" data-price-max>{{ _price }}</span>
+{%- elsif template == 'unit-quantity' -%}
+  <span class="unit-quantity" data-unit-quantity>{%- if value != blank -%}{{- value -}}{%- endif -%}</span>
+{%- elsif template == 'unit-price' -%}
+  <span class="unit-price" data-unit-price>{{ _price }}</span>
+{%- elsif template == 'unit-measurement' -%}
+  <span class="unit-measurement" data-unit-measurement>{%- if value != blank -%}{{- value -}}{%- endif -%}</span>
+{%- elsif template == 'price-ui' -%}
+  <span class="price {% if compare_at_price != blank and compare_at_price != false -%}price--sale{%- endif -%}" data-price>{%- if price != blank -%}{{- price -}}{%- endif -%}</span>
+  {%- if compare_at_price != false -%}<span class="compare-at-price" data-compare-at-price>{%- if compare_at_price != blank -%}{{- compare_at_price -}}{%- endif -%}</span>{%- endif -%}
+  {%- if unit_pricing != false -%}<span class="unit-pricing" data-unit-pricing>{%- if unit_pricing != blank -%}{{- unit_pricing -}}{%- endif -%}</span>{%- endif -%}
+{%- elsif template == 'price-ui-badge' -%}
+  <div class="price-ui-badge__sticker">
+    <span class="price-ui-badge__sticker-text" data-badge>{%- if badge != blank -%}{{- badge -}}{%- endif -%}</span>
+  </div>
+{%- endif -%}
+{%- endcapture -%}
+{{- output -}}

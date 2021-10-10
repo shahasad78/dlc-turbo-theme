@@ -1,0 +1,77 @@
+<script
+  type="application/json"
+  data-section-type="content-page"
+  data-section-id="{{ section.id }}"
+>
+</script>
+
+{% assign content_page = pages[section.settings.content_page] %}
+
+{% style %}
+  {%
+    render 'css-loop',
+    css: section.settings.custom_css,
+    id: section.id
+  %}
+{% endstyle %}
+
+<div class="{{ section.settings.css_class }} featured_content">
+  <section class="section has-padding-top">
+    <div class="container">
+      {% if content_page != blank %}
+        {%
+          render 'page-multi-column',
+          content: content_page.content
+        %}
+      {% else %}
+        <div class="one-whole column">
+          <p class="center">
+            {{ 'homepage.onboarding.no_content' | t }}
+          </p>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Page",
+  "class": "shopify-section--page",
+  "settings": [
+    {
+      "type": "page",
+      "id": "content_page",
+      "label": "Content page"
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "paragraph",
+      "content": "[Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022329373)"
+    },
+    {
+      "type": "text",
+      "id": "css_class",
+      "label": "CSS Class"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "Custom CSS"
+    }
+  ],
+  "presets": [{
+    "name": "Page",
+    "category": "Text"
+  }],
+  "templates": [
+    "index",
+    "product",
+    "page"
+  ]
+}
+
+{% endschema %}

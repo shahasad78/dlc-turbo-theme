@@ -1,0 +1,139 @@
+{% comment %}Check for related products and increase limit by one (to offset the currently selected product that is removed from the product loop){% endcomment %}
+{% if related_products == true %}
+  {% assign limit = limit | plus: 0 %}
+  {% assign loop_limit = limit | plus: 1 %}
+{% else %}
+  {% assign limit = limit | plus: 0 %}
+  {% assign loop_limit = limit | plus: 0 %}
+{% endif %}
+
+{% if per_slide != blank %}
+  {% assign visible_products = per_slide %}
+{% else %}
+  {% if section.settings.products_per != blank %}
+    {% assign visible_products = section.settings.products_per | plus: 0 %}
+  {% else %}
+    {% assign visible_products = block.settings.products_per | plus: 0 %}
+  {% endif %}
+{% endif %}
+
+{% if template contains 'product' %}
+  {% if limit <= visible_products %}
+    {% assign products_length = limit %}
+  {% else %}
+    {% assign products_length = products.size | minus: 1 %}
+  {% endif %}
+{% elsif featured_collection %}
+  {% comment %} NE compatibility
+    {% assign products_length = collections[featured_collection].products.size %}
+    has changed to:
+    {% assign products_length = featured_collection.products.size %}
+  {% endcomment %}
+  {% assign products_length = featured_collection.products.size %}
+{% elsif section.settings.show_product_recommendations %}
+  {% assign products_length = limit %}
+{% else %}
+  {% assign products_length = products.size %}
+{% endif %}
+
+<div class="slider-gallery products-slider products-length-{{ products_length }} transparentBackground--{{settings.slideshow_button_style}}"
+      data-products-per-slide="{{ visible_products }}"
+      data-products-limit="{{ limit }}"
+      data-products-available="{{ products_length }}">
+  {% for product in products limit: loop_limit %}
+
+    {%- assign collection_handles = product.collections | map: 'handle' -%}
+
+    {% if product.id != skip_product.id %}
+      <div class="gallery-cell
+                  thumbnail
+                  visible-{{ visible_products }}
+                  quick-shop-style--{{ settings.quick_shop_style }}
+                  product__details
+                  thumbnail-hover-enabled--{{ settings.thumbnail_hover_enabled }}
+                  product-{{ product.id }}">
+        <div class="product-wrap {% if settings.collection_secondary_image != blank and product.media[1] != blank %}has-secondary-media-swap{% endif %}">
+          <div class="relative product_image">
+            <a href="{{ product.url | within: collection }}">
+              <div class="image__container">
+                {% if settings.quick_shop_enabled and settings.quick_shop_style == 'inline' and product.selected_or_first_available_variant.image %}
+                  {% render 'image-element',
+                          image: product.selected_or_first_available_variant.image,
+                          alt: alt_text,
+                          object_fit: settings.align_height,
+                          max_height: settings.collection_height
+                  %}
+                {% else %}
+                  {% render 'image-element',
+                          image: product.featured_media.preview_image,
+                          alt: alt_text,
+                          object_fit: settings.align_height,
+                          max_height: settings.collection_height
+                  %}
+                {% endif %}
+                {% if settings.collection_secondary_image != blank and product.media[1] != blank %}
+                  {% if product.media[1].media_type == 'external_video' %}
+                    <div class="external-video__container lazyload lazypreload secondary-media-hidden video-on-hover">
+                      <div class="youtube-wrapper" data-youtube-video>
+                        {{ product.media[1] | external_video_tag }}
+                      </div>
+                    </div>
+                  {% elsif product.media[1].media_type == 'video' %}
+                    <div class="video__container lazyload lazypreload secondary-media-hidden video-on-hover" data-html5-video>
+                      {{ product.media[1] | video_tag: controls: false }}
+                    </div>
+                  {% else %}
+                    {% render 'image-element',
+                            image: product.media[1].preview_image,
+                            alt: alt_text,
+                            additional_classes: 'secondary lazypreload secondary-media-hidden'
+                    %}
+                  {% endif %}
+                {% endif %}
+              </div>
+            </a>
+
+            {%
+              render 'product-details',
+              product: product
+              collection_handles: collection_handles
+            %}
+
+            {% if settings.quick_shop_style == 'inline' %}
+              {%
+                render 'collection-swatch',
+                product: product
+              %}
+            {% endif %}
+          </div>
+          <a class="product-info__caption {% if settings.thumbnail_hover_enabled %}hidden{% endif %}" href="{{ product.url | within: collection }}">
+            {%
+              render 'product-info',
+              product: product,
+              collection_handles: collection_handles
+            %}
+          </a>
+        </div>
+        {% if settings.quick_shop_style == 'popup' and settings.quick_shop_enabled %}
+          {%
+            render 'collection-swatch',
+            product: product
+          %}
+        {% endif %}
+
+        {% if settings.quick_shop_style == 'inline' and settings.quick_shop_enabled %}
+          {% unless collection_handles contains 'coming-soon' %}
+            <div class="inline-quickshop js-product_section product-{{ product.id }}">
+              {%
+                render 'product-form',
+                product: product,
+                show_payment_button: settings.show_payment_button,
+                collection_handles: collection_handles
+              %}
+            </div>
+          {% endunless %}
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>

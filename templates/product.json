@@ -1,0 +1,52 @@
+{
+  "wrapper": "div.shopify-section-wrapper.section",
+  "sections": {
+    "sidebar": {
+      "type": "product-sidebar"
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "title": {
+          "type": "title"
+        },
+        "price": {
+          "type": "price"
+        },
+        "description": {
+          "type": "description"
+        },
+        "form": {
+          "type": "form"
+        },
+        "share": {
+          "type": "share"
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "description",
+        "form",
+        "share"
+      ]
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true
+      }
+    }
+  },
+  "order": [
+    "sidebar",
+    "main",
+    "recently-viewed",
+    "recommendations"
+  ]
+}

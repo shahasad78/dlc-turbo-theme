@@ -1,0 +1,50 @@
+{% comment %}
+** Custom HTML - dynamic **
+- Draggable section
+{% endcomment %}
+
+{% comment %} Assign object as block or section {% endcomment %}
+{% if type == 'block' %}
+  {%- assign object = block -%}
+{% else %}
+  {%- assign object = section -%}
+{% endif %}
+
+{%- assign id = object.id -%}
+
+{% comment %} Content settings {% endcomment %}
+{%- assign custom_html = object.settings.custom_html -%}
+{% comment %} End content settings {% endcomment %}
+
+{% comment %} Advanced {% endcomment %}
+{%- assign css_class = object.settings.css_class -%}
+{%- assign custom_css = object.settings.custom_css -%}
+
+{% comment %} Section specific CSS {% endcomment %}
+{% style %}
+  {%
+    render 'css-loop',
+    css: custom_css,
+    id: id
+  %}
+{% endstyle %}
+
+<section class="section {{ css_class }}">
+  <div class="container">
+    <div
+      class="
+        one-whole
+        column
+        custom-html-container
+      "
+    >
+      {% if custom_html != blank %}
+        {{ custom_html }}
+      {% else %}
+        <p class="center">
+          {{ 'homepage.onboarding.no_content' | t }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</section>

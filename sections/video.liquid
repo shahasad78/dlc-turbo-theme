@@ -1,0 +1,516 @@
+<script
+  type="application/json"
+  data-section-type="video"
+  data-section-id="{{ section.id }}"
+>
+</script>
+
+{% assign object_selector = '#shopify-section-' | append: section.id %}
+{% assign mobile_crop = 'mobile-banner--crop-' | append: section.settings.mobile_image_crop %}
+{% assign mobile_text_alpha = section.settings.mobile_text_color | default: 'rgba(0,0,0,0)' | color_extract: 'alpha' %}
+
+<style>
+  {%
+    render 'css-loop',
+    css: section.settings.custom_css,
+    id: section.id
+  %}
+
+  {% if section.settings.mobile_text_below_image and mobile_text_alpha != 0 %}
+    @media only screen and (max-width: 480px) {
+      {{ object_selector }} .pretext,
+      {{ object_selector }} .headline,
+      {{ object_selector }} .subtitle {
+        color: {{ section.settings.mobile_text_color }};
+      }
+    }
+  {% endif %}
+</style>
+
+<section
+  class="
+    section
+    {% if section.settings.wide_display == true %}
+      is-width-wide
+      has-no-side-gutter
+    {% endif %}
+    {{ section.settings.css_class }}
+  "
+>
+  <div class="container">
+    <div class="one-whole column">
+      <div class="video-section full-width--{{ section.settings.wide_display }}">
+        <div
+          class="
+            video-wrapper
+            video-controls-enabled--{{ section.settings.show_controls }}
+            darken-video--{{ section.settings.video_dark_overlay }}
+            caption-background-{{ section.settings.caption_content_background }}
+            caption--below-{{ section.settings.mobile_text_below_image }}
+          "
+          id="video-{{ section.id }}"
+          data-autoplay="{{ section.settings.autoplay }}"
+          data-autoloop="{{ section.settings.autoloop }}"
+          data-mute-video="{{ section.settings.mute_video }}"
+          data-video-src="{{ section.settings.iframe_video.id }}"
+          data-aspect-ratio="{{ section.settings.aspect_ratio }}"
+          data-poster-image-uploaded="{% if section.settings.image != blank %}true{% else %}false{% endif%}"
+        >
+          <div class="video__overlay"></div>
+            {% if section.settings.image != blank %}
+              <div class="video-wrapper__image {% if section.settings.mobile_image %}is-hidden-mobile-only{% endif %}">
+                {%
+                  render 'image-element',
+                  image: section.settings.image,
+                  alt: section.settings.image.alt,
+                  stretch_width: true,
+                  additional_classes: mobile_crop
+                %}
+                {% if section.settings.caption_content_background == 'darken_bg' %}
+                  <div class="darken-bg"></div>
+                {% endif %}
+              </div>
+            {% else %}
+              {% unless section.settings.html5_video != blank or section.settings.iframe_video != blank %}
+                <div class="video-wrapper__image {% if section.settings.mobile_image %}is-hidden-mobile-only{% endif %}">
+                  {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--video' }}
+                </div>
+              {% endunless %}
+            {% endif %}
+            {% if section.settings.mobile_image and section.settings.image %}
+              <div class="video-wrapper__image is-hidden-desktop-only">
+                {%
+                  render 'image-element',
+                  image: section.settings.mobile_image,
+                  alt: section.settings.mobile_image.alt,
+                  stretch_width: true,
+                  additional_classes: mobile_crop
+                %}
+                {% if section.settings.caption_content_background == 'darken_bg' %}
+                  <div class="darken-bg"></div>
+                {% endif %}
+              </div>
+            {% endif %}
+
+            {% comment %} Checks there is an iframe video (YouTube or Vimeo) {% endcomment %}
+            {% if section.settings.iframe_video != blank %}
+              {% if section.settings.iframe_video.type == 'vimeo' %}
+                <div
+                  class="plyr__video-embed"
+                  id="video-{{ section.id }}"
+                  data-video-element
+                  data-external-video
+                >
+                  <iframe src="https://player.vimeo.com/video/{{ section.settings.iframe_video.id }}?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media" allowfullscreen allowtransparency allow="autoplay"></iframe>
+                </div>
+              {% elsif section.settings.iframe_video.type == 'youtube' %}
+                <div
+                  class="plyr__video-embed"
+                  id="video-{{ section.id }}"
+                  data-video-element
+                  data-external-video
+                >
+                  <iframe src="https://www.youtube.com/embed/{{ section.settings.iframe_video.id }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen allowtransparency allow="autoplay"></iframe>
+                </div>
+              {% endif %}
+              {% comment %} Checks there is an HTML5 video {% endcomment %}
+            {% elsif section.settings.html5_video != blank %}
+              <video
+                class="video-{{ section.id }}"
+                data-video-element
+                data-html5-video
+              >
+                <source src="{{ section.settings.html5_video }}">
+              </video>
+            {% endif %}
+
+            <div
+              class="
+                video__text-container
+                display-text-over-video--{{ section.settings.display_text_over_video }}
+                caption
+                js-caption position-{{ section.settings.text_position }}
+              "
+              data-video-text-container
+            >
+              <div
+                class="
+                  video__text-wrapper
+                  caption-content
+                  align-{{ section.settings.text_align }}
+                "
+              >
+                {% if section.settings.preheading != blank %}
+                  <div class="pretext" data-video-text>
+                    {{ section.settings.preheading }}
+                  </div>
+                {% endif %}
+
+                {% if section.settings.heading != blank %}
+                  <h1 class="headline" data-video-text>
+                    {{ section.settings.heading | escape }}
+                  </h1>
+                {% endif %}
+
+                {% if section.settings.subheading != blank %}
+                  <div class="subtitle" data-video-text>
+                    {{ section.settings.subheading }}
+                  </div>
+                {% endif %}
+
+                {% if section.settings.button1_link == blank %}
+                  {% assign button1_attrs = 'data-play-button' %}
+                {% endif %}
+
+                {%
+                  render 'banner-buttons',
+                  button1_text: section.settings.button1_label,
+                  button1_style: section.settings.button1_style,
+                  button1_link: section.settings.button1_link,
+                  button1_attrs: button1_attrs,
+                  button2_text: section.settings.button2_label,
+                  button2_style: section.settings.button2_style,
+                  button2_link: section.settings.button2_link,
+                  mobile_text_below_image: section.settings.mobile_text_below_image,
+                  mobile_text_color: section.settings.mobile_text_color,
+                  object_selector: object_selector,
+                %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Video",
+  "class": "shopify-section--video under-menu",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "wide_display",
+      "label": "Wide display",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "aspect_ratio",
+      "label": "Aspect ratio",
+      "default": "16:9",
+      "options": [
+        {
+          "value": "16:9",
+          "label": "16:9"
+        },
+        {
+          "value": "4:3",
+          "label": "4:3"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay video",
+      "info": "Limited browser support for autoplaying video. [Learn more](https:\/\/help.outofthesandbox.com\/hc\/en-us\/articles\/360000661568-Why-won-t-my-video-autoplay-)",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "autoloop",
+      "label": "Autoloop video",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "mute_video",
+      "label": "Mute video",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_controls",
+      "label": "Show video controls",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "video_dark_overlay",
+      "label": "Darken video",
+      "default": false
+    },
+    {
+      "type": "video_url",
+      "id": "iframe_video",
+      "label": "Video link",
+      "accept": ["youtube", "vimeo"],
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+    },
+    {
+      "type": "text",
+      "id": "html5_video",
+      "label": "HTML5 MP4/OGV File URL"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "1600 x 900px recommended"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_text_over_video",
+      "label": "Show text when video is playing",
+      "default": false
+    },
+    {
+      "type": "richtext",
+      "id": "preheading",
+      "label": "Preheading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "button1_label",
+      "label": "First button label"
+    },
+    {
+      "type": "url",
+      "id": "button1_link",
+      "label": "First button link"
+    },
+    {
+      "type": "select",
+      "id": "button1_style",
+      "label": "First button color",
+      "options": [
+        {
+          "value": "global-button--primary",
+          "label": "Primary button"
+        },
+        {
+          "value": "global-button--banner",
+          "label": "Banner button (outline)"
+        },
+        {
+          "value": "global-button--banner-highlighted",
+          "label": "Banner button (solid)"
+        },
+        {
+          "value": "global-button--banner-text",
+          "label": "Banner text button (outline)"
+        },
+        {
+          "value": "global-button--banner-text-highlighted",
+          "label": "Banner text button (solid)"
+        }
+      ],
+      "default": "global-button--banner"
+    },
+    {
+      "type": "text",
+      "id": "button2_label",
+      "label": "Second button label"
+    },
+    {
+      "type": "url",
+      "id": "button2_link",
+      "label": "Second button link"
+    },
+    {
+      "type": "select",
+      "id": "button2_style",
+      "label": "Second button color",
+      "options": [
+        {
+          "value": "global-button--primary",
+          "label": "Primary button"
+        },
+        {
+          "value": "global-button--banner",
+          "label": "Banner button (outline)"
+        },
+        {
+          "value": "global-button--banner-highlighted",
+          "label": "Banner button (solid)"
+        },
+        {
+          "value": "global-button--banner-text",
+          "label": "Banner text button (outline)"
+        },
+        {
+          "value": "global-button--banner-text-highlighted",
+          "label": "Banner text button (solid)"
+        }
+      ],
+      "default": "global-button--banner"
+    },
+    {
+      "type": "header",
+      "content": "Content layout"
+    },
+    {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text position",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text alignment",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Text contrast",
+      "info": "Improve legibility by applying a contrast technique to your banner’s text."
+    },
+    {
+      "type": "select",
+      "id": "caption_content_background",
+      "label": "Contrast technique",
+      "default": "original",
+      "options": [
+        {
+          "value": "original",
+          "label": "None"
+        },
+        {
+          "value": "darken_bg",
+          "label": "Darken banner image"
+        },
+        {
+          "value": "text_box",
+          "label": "Solid box"
+        },
+        {
+          "value": "translucent_text_box",
+          "label": "Translucent box"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Image",
+      "info": "Display a different image on mobile screens. This only appears when the desktop image is set."
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_crop",
+      "label": "Image cropping",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_text_below_image",
+      "label": "Show text below image",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "mobile_text_color",
+      "label": "Text below image",
+      "info": "Set this to “None” to use the “Regular text” color."
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "paragraph",
+      "content": "[Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022329373)"
+    },
+    {
+      "type": "text",
+      "id": "css_class",
+      "label": "CSS Class"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "Custom CSS"
+    }
+  ],
+  "presets": [{
+    "name": "Video",
+    "category": "Video",
+    "settings": {
+      "iframe_video": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+      "button1_label": "Play Video"
+    }
+  }],
+  "templates": [
+    "index",
+    "product",
+    "page"
+  ]
+}
+
+{% endschema %}

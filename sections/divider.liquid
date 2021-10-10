@@ -1,0 +1,85 @@
+<script
+  type="application/json"
+  data-section-type="divider"
+  data-section-id="{{ section.id }}"
+>
+</script>
+
+{% style %}
+  {%
+    render 'css-loop',
+    css: section.settings.custom_css,
+    id: section.id
+  %}
+
+  #shopify-section-{{ section.id }} {
+    margin: {{ section.settings.divider_spacing }}px 0;
+  }
+{% endstyle %}
+
+<section class="section {{ section.settings.css_class }}">
+  <div class="container">
+    <div class="one-whole column">
+      <hr class="divider divider--{{ section.settings.divider_border }}">
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Divider",
+  "class": "shopify-section--divider",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Add spacing in between your sections by using a divider."
+    },
+    {
+      "type": "range",
+      "id": "divider_spacing",
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "label": "Space",
+      "default": 20
+    },
+    {
+      "type": "checkbox",
+      "id": "divider_border",
+      "label": "Show border",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "paragraph",
+      "content": "[Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022329373)"
+    },
+    {
+      "type": "text",
+      "id": "css_class",
+      "label": "CSS Class"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "Custom CSS"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Divider",
+      "category": "Layout"
+    }
+  ],
+  "templates": [
+    "index",
+    "product",
+    "page"
+  ]
+}
+
+{% endschema %}

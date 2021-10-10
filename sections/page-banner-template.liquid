@@ -1,0 +1,277 @@
+<script
+  type="application/json"
+  data-section-type="page-banner-template"
+  data-section-id="{{ section.id }}"
+>
+</script>
+
+{%- assign image = section.settings.image -%}
+{%- assign mobile_image = section.settings.mobile_image -%}
+{%- assign background_style = section.settings.caption_content_background -%}
+{%- assign mobile_crop = 'mobile-banner--crop-' | append: section.settings.mobile_image_crop -%}
+{%- assign wide_display = section.settings.wide_display -%}
+{%- assign banner_pretext = section.settings.pretext -%}
+{%- assign banner_title = section.settings.title -%}
+{%- assign banner_subheading = section.settings.subtitle -%}
+{%- assign banner_button1 = section.settings.button1 -%}
+{%- assign banner_button1_link = section.settings.button1_link -%}
+{%- assign banner_button1_style = section.settings.button1_style -%}
+{%- assign banner_button2 = section.settings.button2 -%}
+{%- assign banner_button2_link = section.settings.button2_link -%}
+{%- assign banner_button2_style = section.settings.button2_style -%}
+{%- assign banner_text_align = section.settings.text_align -%}
+{%- assign banner_text_position = section.settings.text_position -%}
+
+{%
+  render 'template-banner',
+  image: image,
+  mobile_image: mobile_image
+  background_style: background_style,
+  mobile_crop: mobile_crop,
+  wide_display: wide_display,
+  banner_pretext: banner_pretext,
+  banner_title: banner_title,
+  banner_subheading: banner_subheading,
+  banner_button1: banner_button1,
+  banner_button1_link: banner_button1_link,
+  banner_button1_style: banner_button1_style,
+  banner_button2: banner_button2,
+  banner_button2_link: banner_button2_link,
+  banner_button2_style: banner_button2_style,
+  banner_text_align: banner_text_align,
+  banner_text_position: banner_text_position,
+  show_caption: true
+%}
+
+<section class="section">
+  <div class="container main content">
+    <div class="one-whole column page">
+      {%
+        render 'page-multi-column',
+        content: page.content
+      %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Page | banner",
+  "class": "shopify-section--page-banner-template",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "wide_display",
+      "label": "Wide display",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner image",
+      "info": "1800 x 800px recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile banner image",
+      "info": "Display a different image on mobile screens. This only appears when the desktop image is set."
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_crop",
+      "label": "Mobile image cropping",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Text contrast",
+      "info": "Improve legibility by applying a contrast technique to your banner’s text."
+    },
+    {
+      "type": "select",
+      "id": "caption_content_background",
+      "label": "Contrast technique",
+      "default": "original",
+      "options": [
+        {
+          "value": "original",
+          "label": "None"
+        },
+        {
+          "value": "darken_bg",
+          "label": "Darken banner image"
+        },
+        {
+          "value": "text_box",
+          "label": "Solid box"
+        },
+        {
+          "value": "translucent_text_box",
+          "label": "Translucent box"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "pretext",
+      "label": "Preheading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "button1",
+      "label": "First button label"
+    },
+    {
+      "type": "url",
+      "id": "button1_link",
+      "label": "First button link"
+    },
+    {
+      "type": "select",
+      "id": "button1_style",
+      "label": "First button color",
+      "options": [
+        {
+          "value": "global-button--primary",
+          "label": "Primary button"
+        },
+        {
+          "value": "global-button--banner",
+          "label": "Banner button (outline)"
+        },
+        {
+          "value": "global-button--banner-highlighted",
+          "label": "Banner button (solid)"
+        },
+        {
+          "value": "global-button--banner-text",
+          "label": "Banner text button (outline)"
+        },
+        {
+          "value": "global-button--banner-text-highlighted",
+          "label": "Banner text button (solid)"
+        }
+      ],
+      "default": "global-button--banner"
+    },
+    {
+      "type": "text",
+      "id": "button2",
+      "label": "Second button label"
+    },
+    {
+      "type": "url",
+      "id": "button2_link",
+      "label": "Second button link"
+    },
+    {
+      "type": "select",
+      "id": "button2_style",
+      "label": "Second button color",
+      "options": [
+        {
+          "value": "global-button--primary",
+          "label": "Primary button"
+        },
+        {
+          "value": "global-button--banner",
+          "label": "Banner button (outline)"
+        },
+        {
+          "value": "global-button--banner-highlighted",
+          "label": "Banner button (solid)"
+        },
+        {
+          "value": "global-button--banner-text",
+          "label": "Banner text button (outline)"
+        },
+        {
+          "value": "global-button--banner-text-highlighted",
+          "label": "Banner text button (solid)"
+        }
+      ],
+      "default": "global-button--banner"
+    }
+  ],
+  "default": {
+    "settings": {
+      "title": "Page Banner Template",
+      "subtitle": "<p>Create an amazing page with a full-width banner</p>",
+      "text_position": "center",
+      "text_align": "center"
+    }
+  }
+}
+
+{% endschema %}

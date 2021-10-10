@@ -1,0 +1,13 @@
+{%- assign products_limit = products_limit | minus: 1 -%}
+
+<div class="recently-viewed__title">
+  <h4 class="toggle">{{ block.settings.sidebar_rv_title }}</h4>
+</div>
+
+<div class="rv-container">
+  <div class="product-list recently-viewed-list">
+    {% for rvProducts in (0..products_limit) %}
+      <div class="rv-element rv-sidebar-element rv-box-{{ rvProducts }} thumbnail"></div>
+    {% endfor %}
+  </div>
+</div>

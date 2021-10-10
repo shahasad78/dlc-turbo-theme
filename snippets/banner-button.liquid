@@ -1,0 +1,76 @@
+{% comment %}
+  Generates markup for a banner button. These are buttons that appear over full width images, and may appear below the image on mobile.
+
+  @param button_text {String}
+    Button text content. If blank, button will not be rendered.
+  @param button_link {String}
+    Button link
+  @param button_style {String}
+    One of the following styles:
+    global-button--primary
+    global-button--banner-text
+    global-button--banner-text-highlighted
+    global-button--banner
+    global-button--banner-highlighted
+  @param mobile_text_below_image {Boolean}
+    If true,
+  @param local_text_color {Color}
+    Text color to be used for text style buttons
+  @param button_selector {String}
+    A CSS selector that will target this button only
+  @param button_class {String}
+    Class to add to button
+  @param button_attrs {String}
+    Custom attributes to add to button
+{% endcomment %}
+
+{% unless button_text == blank %}
+  {% assign highlighted = false %}
+  {% if button_style contains 'highlighted' %}
+    {% assign highlighted = true %}
+  {% endif %}
+  {% assign standard_button = false %}
+  {% if button_style == 'global-button--primary' %}
+    {% assign standard_button = true %}
+  {% endif %}
+  {% if mobile_text_below_image %}
+    {% if standard_button %}
+      {% assign button_style_mobile = 'global-button--primary-mobile' %}
+    {% else %}
+      {% if highlighted %}
+        {% assign button_style_mobile = 'global-button--text-highlighted-mobile' %}
+      {% else %}
+        {% assign button_style_mobile = 'global-button--text-mobile' %}
+      {% endif %}
+    {% endif %}
+    {% assign show_on_breakpoint = '-desktop' %}
+  {% endif %}
+  {% unless standard_button %}
+    {% assign local_text_alpha = local_text_color | default: 'rgba(0,0,0,0)' | color_extract: 'alpha' %}
+    {% if mobile_text_below_image and local_text_alpha != 0 %}
+      <style>
+        @media only screen and (max-width: 480px) {
+          {{ button_selector }} {
+            {%
+              render 'text-button-styles',
+              text_color: local_text_color,
+              solid: highlighted,
+            %}
+          }
+        }
+      </style>
+    {% endif %}
+  {% endunless %}
+  <a
+    {% if button_link != blank %}href="{{ button_link }}"{% endif %}
+    {{ button_attrs }}
+    class="
+      global-button
+      {{ button_style }}{{ show_on_breakpoint }}
+      {{ button_style_mobile }}
+      {{ button_class }}
+    "
+  >
+    {{ button_text }}
+  </a>
+{% endunless %}

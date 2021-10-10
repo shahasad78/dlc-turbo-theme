@@ -1,0 +1,16 @@
+{
+  "store_availability": {
+    "general": {
+      "in_stock": "在庫あり",
+      "out_of_stock": "在庫切れ",
+      "view_store_info": "ストア情報を表示する",
+      "check_other_stores": "他の店舗で空き状況を確認する",
+      "available_for_pick_up_at_html": "<b>{{ location_name }}</b>でピックアップ可能",
+      "unavailable_for_pick_up_at_html": "現在、<b>{{ location_name }}</b>でピックアップを利用できません",
+      "available_for_pick_up_at_time_html": "利用可能なピックアップ、{{ pick_up_time }}",
+      "unavailable_for_pick_up_at_time_html": "ピックアップは現在利用できません",
+      "kilometers": "km",
+      "miles": "mi"
+    }
+  }
+}

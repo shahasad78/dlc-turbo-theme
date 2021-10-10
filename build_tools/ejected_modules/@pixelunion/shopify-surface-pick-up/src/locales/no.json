@@ -1,0 +1,16 @@
+{
+  "store_availability": {
+    "general": {
+      "in_stock": "På lager",
+      "out_of_stock": "Utsolgt",
+      "view_store_info": "Vis butikkinformasjon",
+      "check_other_stores": "Sjekk tilgjengeligheten i andre butikker",
+      "available_for_pick_up_at_html": "Henting tilgjengelig på <b>{{ location_name }}</b>",
+      "unavailable_for_pick_up_at_html": "Henting er foreløpig ikke tilgjengelig på <b>{{ location_name }}</b>",
+      "available_for_pick_up_at_time_html": "Henting tilgjengelig, {{ pick_up_time }}",
+      "unavailable_for_pick_up_at_time_html": "Henting er foreløpig ikke tilgjengelig",
+      "kilometers": "km",
+      "miles": "mi"
+    }
+  }
+}

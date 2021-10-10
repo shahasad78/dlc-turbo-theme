@@ -1,0 +1,16 @@
+{
+  "store_availability": {
+    "general": {
+      "in_stock": "มีสินค้าในสต๊อก",
+      "out_of_stock": "สินค้าหมด",
+      "view_store_info": "ดูข้อมูลร้านค้า",
+      "check_other_stores": "ตรวจสอบความพร้อมในร้านค้าอื่น ๆ",
+      "available_for_pick_up_at_html": "มีบริการรับที่ <b>{{ location_name }}</b>",
+      "unavailable_for_pick_up_at_html": "ขณะนี้ไม่มีการรับที่ <b>{{ location_name }}</b>",
+      "available_for_pick_up_at_time_html": "มีรถไปรับ {{ pick_up_time }}",
+      "unavailable_for_pick_up_at_time_html": "ไม่สามารถรับสินค้าได้ในขณะนี้",
+      "kilometers": "km",
+      "miles": "mi"
+    }
+  }
+}

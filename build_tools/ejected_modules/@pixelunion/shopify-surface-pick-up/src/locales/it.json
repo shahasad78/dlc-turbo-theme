@@ -1,0 +1,16 @@
+{
+  "store_availability": {
+    "general": {
+      "in_stock": "disponibile",
+      "out_of_stock": "Esaurito",
+      "view_store_info": "Visualizza le informazioni sul negozio",
+      "check_other_stores": "Verifica la disponibilità in altri negozi",
+      "available_for_pick_up_at_html": "Ritiro disponibile presso <b>{{ location_name }}</b>",
+      "unavailable_for_pick_up_at_html": "Ritiro attualmente non disponibile presso <b>{{ location_name }}</b>",
+      "available_for_pick_up_at_time_html": "Ritiro disponibile, {{ pick_up_time }}",
+      "unavailable_for_pick_up_at_time_html": "Ritiro attualmente non disponibile",
+      "kilometers": "km",
+      "miles": "mi"
+    }
+  }
+}

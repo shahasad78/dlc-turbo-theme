@@ -1,0 +1,82 @@
+{%- assign product_found = false -%}
+{%- assign skip = false -%}
+
+{% unless template contains 'product' %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {% for product in products limit: limit %}
+          {
+            "@type": "ListItem",
+            "position": "{{ forloop.index | json }}",
+            "url": "{{ shop.url }}{{ product.url }}",
+            "name": "{{ product.title | escape }}"
+          } {%- unless forloop.last -%},{%- endunless -%}
+        {% endfor %}
+      ]
+    }
+  </script>
+{% endunless %}
+
+{% if template contains 'collection' %}
+  {%- assign matrixType = 'collection-matrix' -%}
+  {% if settings.pagination_type == 'load_more_button' %}
+    {%- assign paginationType = 'data-load-more--grid' -%}
+  {% endif %}
+{% elsif template contains 'search' %}
+  {%- assign matrixType = 'search-matrix' -%}
+  {% if settings.search_pagination_type == 'load_more_button' %}
+    {%- assign paginationType = 'data-load-more--grid' -%}
+  {% endif %}
+{% endif %}
+
+<div itemtype="http://schema.org/ItemList" class="product-list {{ matrixType }} is-flex is-flex-wrap equal-columns--outside-trim" {{ paginationType }}>
+  {% for product in products limit: limit %}
+    {% if product.id == skip_product.id or skip == true %}
+      {%- assign product_found = true -%}
+    {% else %}
+      {% if forloop.rindex0 == 0 and product_found == false and forloop.length != products.size and template != 'search' and template != 'index' and template != 'page.details' %}
+        {%- assign skip = true -%}
+      {% else %}
+        {% render 'product-thumbnail',
+                product: product,
+                products_per_row: products_per_row,
+                sidebar: sidebar
+        %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {% if template contains 'collection' %}
+    {% if settings.pagination_type != 'basic_pagination' %}
+      {% if paginate.next.url %}
+        <span class="js-load-more load-more">
+          <a href="{{ paginate.next.url }}" data-no-instant data-load-more class="global-button global-button--text">
+            {% if template contains 'collection' %}
+              {{ 'collections.general.load_more' | t }}
+            {% elsif template contains 'search' %}
+              {{ 'general.search.load_more' | t }}
+            {% endif %}
+          </a>
+        </span>
+      {% endif %}
+    {% endif %}
+  {% elsif template contains 'search' %}
+    {% if settings.search_pagination_type != 'basic_pagination' %}
+      {% if paginate.next.url %}
+        <span class="js-load-more load-more">
+          <a href="{{ paginate.next.url }}" data-no-instant data-load-more class="global-button global-button--text">
+            {% if template contains 'collection' %}
+              {{ 'collections.general.load_more' | t }}
+            {% elsif template contains 'search' %}
+              {{ 'general.search.load_more' | t }}
+            {% endif %}
+          </a>
+        </span>
+      {% endif %}
+    {% endif %}
+  {% endif %}
+</div>
+<div class="load-more__icon"></div>

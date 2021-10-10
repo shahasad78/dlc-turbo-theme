@@ -1,0 +1,432 @@
+{
+  "sections": {
+    "image-with-text-overlay-1": {
+      "type": "image-with-text-overlay",
+      "settings": {
+        "image": "",
+        "pretext": "<p>Introducing the</p>",
+        "title": "Turbo Shopify Theme",
+        "subtitle": "<p>From Out of the Sandbox</p>",
+        "caption_background": false,
+        "caption_background_transparency": false,
+        "text_position": "center",
+        "text_align": "center",
+        "button1": "",
+        "button1_link": "",
+        "button1_highlight": false,
+        "button2": "",
+        "button2_link": "",
+        "button2_highlight": false
+      }
+    },
+    "featured-text-1": {
+      "type": "featured-text",
+      "settings": {
+        "image": "",
+        "title": "Talk about your brand",
+        "content": "<p>Use this text to share information about your brand with your customers.</p>\r\n<p>Describe a product, share announcements, or welcome customers to your store.</p>",
+        "text_size": "featured_text",
+        "text_alignment": "center",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "featured-promotions-1": {
+      "type": "featured-promotions",
+      "blocks": {
+        "block-1": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "link": "",
+            "title": "Feature",
+            "text": "<p>Promotion description details.</p>",
+            "button_label": ""
+          }
+        },
+        "block-2": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "link": "",
+            "title": "Feature",
+            "text": "<p>Promotion description details.</p>",
+            "button_label": ""
+          }
+        },
+        "block-3": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "link": "",
+            "title": "Feature",
+            "text": "<p>Promotion description details.</p>",
+            "button_label": ""
+          }
+        },
+        "block-4": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "link": "",
+            "title": "Feature",
+            "text": "<p>Promotion description details.</p>",
+            "button_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2",
+        "block-3",
+        "block-4"
+      ],
+      "settings": {
+        "featured_promos_per_row": 4,
+        "featured_promos_grid": "full_width",
+        "featured_links_animation": "fadeInDown",
+        "feature_style": "square",
+        "promo_text_on_image_enabled": true
+      }
+    },
+    "featured-collection-1": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured collection",
+        "collection": "",
+        "collection_style": "slider",
+        "products_per": 4,
+        "products_limit": 24
+      }
+    },
+    "slideshow-1": {
+      "type": "slideshow",
+      "blocks": {
+        "block-1": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "pretext": "",
+            "title": "Turbo Shopify Theme",
+            "subtitle": "",
+            "text_position": "center",
+            "text_align": "center",
+            "caption_background": false,
+            "caption_background_transparency": false,
+            "button1": "Primary Button",
+            "button1_link": "",
+            "button1_highlight": true,
+            "button2": "Secondary Button",
+            "button2_link": "",
+            "button2_highlight": false
+          }
+        },
+        "block-2": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "pretext": "<p>Short text that precedes the headline</p>",
+            "title": "Your headline here",
+            "subtitle": "<p>This is a short subheading for your slideshow image</p>",
+            "text_position": "center",
+            "text_align": "center",
+            "caption_background": false,
+            "caption_background_transparency": false,
+            "button1": "",
+            "button1_link": "",
+            "button1_highlight": false,
+            "button2": "",
+            "button2_link": "",
+            "button2_highlight": false
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2"
+      ],
+      "settings": {
+        "slideshow_text_animation": "fadeInDown",
+        "slideshow_animation": "slide"
+      }
+    },
+    "image-text-1": {
+      "type": "image-text",
+      "blocks": {
+        "block-1": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "title": "Your headline",
+            "text": "<p>Promotion description appears here.</p>",
+            "link": "",
+            "button_label": "View all",
+            "bg_color": "rgba(0,0,0,0)",
+            "text_color": "rgba(0,0,0,0)"
+          }
+        },
+        "block-2": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "title": "Your headline",
+            "text": "<p>Promotion description appears here.</p>",
+            "link": "",
+            "button_label": "View all",
+            "bg_color": "rgba(0,0,0,0)",
+            "text_color": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2"
+      ],
+      "settings": {
+        "featured_links_per_row": "1",
+        "frontpage_text_align": "left"
+      }
+    },
+    "image-with-text-overlay-2": {
+      "type": "image-with-text-overlay",
+      "settings": {
+        "image": "",
+        "pretext": "",
+        "title": "Your Headline",
+        "subtitle": "",
+        "caption_background": false,
+        "caption_background_transparency": false,
+        "text_position": "center",
+        "text_align": "center",
+        "button1": "",
+        "button1_link": "",
+        "button1_highlight": false,
+        "button2": "",
+        "button2_link": "",
+        "button2_highlight": false
+      }
+    },
+    "collection-list-1": {
+      "type": "collection-list",
+      "blocks": {
+        "block-1": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "",
+            "image": ""
+          }
+        },
+        "block-2": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "",
+            "image": ""
+          }
+        },
+        "block-3": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "",
+            "image": ""
+          }
+        },
+        "block-4": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "",
+            "image": ""
+          }
+        },
+        "block-5": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "",
+            "image": ""
+          }
+        },
+        "block-6": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "",
+            "image": ""
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2",
+        "block-3",
+        "block-4",
+        "block-5",
+        "block-6"
+      ],
+      "settings": {
+        "title": "Collection list",
+        "frontpage_collections_per_row": 3
+      }
+    },
+    "testimonials-1": {
+      "type": "testimonial",
+      "blocks": {
+        "block-1": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "enable_image": true,
+            "title": "Customer Testimonial",
+            "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
+            "name": "",
+            "store_name": "",
+            "link": "",
+            "text_position": "center",
+            "text_align": "center",
+            "darken_bg": false
+          }
+        },
+        "block-2": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "enable_image": true,
+            "title": "Customer Testimonial",
+            "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
+            "name": "",
+            "store_name": "",
+            "link": "",
+            "text_position": "center",
+            "text_align": "center",
+            "darken_bg": false
+          }
+        },
+        "block-3": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "enable_image": true,
+            "title": "Customer Testimonial",
+            "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
+            "name": "",
+            "store_name": "",
+            "link": "",
+            "text_position": "center",
+            "text_align": "center",
+            "darken_bg": false
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2",
+        "block-3"
+      ],
+      "settings": {
+        "testimonial_text_animation": "fadeInDown"
+      }
+    },
+    "featured-product-1": {
+      "type": "featured-product",
+      "blocks": {
+        "title": {
+          "type": "title"
+        },
+        "price": {
+          "type": "price"
+        },
+        "description": {
+          "type": "description"
+        },
+        "form": {
+          "type": "form"
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "description",
+        "form"
+      ],
+      "settings": {
+        "gallery_arrows": true,
+        "activate_zoom": false,
+        "activate_autoplay": false,
+        "media_position": "is-flex-row",
+        "slideshow_animation": "slide",
+        "display_vendor": false,
+        "frontpage_display_description": true,
+        "product_description_position": "top"
+      }
+    },
+    "featured-product-2": {
+      "type": "featured-product",
+      "blocks": {
+        "title": {
+          "type": "title"
+        },
+        "price": {
+          "type": "price"
+        },
+        "description": {
+          "type": "description"
+        },
+        "form": {
+          "type": "form"
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "description",
+        "form"
+      ],
+      "settings": {
+        "gallery_arrows": true,
+        "activate_zoom": false,
+        "activate_autoplay": false,
+        "media_position": "is-flex-row-reverse",
+        "slideshow_animation": "slide",
+        "display_vendor": false,
+        "frontpage_display_description": true,
+        "product_description_position": "top"
+      }
+    },
+    "newsletter-1": {
+      "type": "newsletter",
+      "settings": {
+        "newsletter_title": "Subscribe",
+        "newsletter_text": "<p>Sign up to get the latest on sales, new releases and more &hellip;</p>",
+        "display_first_name": false,
+        "display_last_name": false,
+        "newsletter_section_text_align": "center",
+        "image": ""
+      }
+    },
+    "blog-posts-1": {
+      "type": "blog-posts",
+      "settings": {
+        "title": "Blog posts",
+        "blog_widget_select": "",
+        "home_page_articles": 3,
+        "blog_tags": false,
+        "blog_author": false,
+        "blog_date": true,
+        "blog_comment_count": true,
+        "read_more_link": true
+      }
+    }
+  },
+  "order": [
+    "image-with-text-overlay-1",
+    "featured-text-1",
+    "featured-promotions-1",
+    "featured-collection-1",
+    "slideshow-1",
+    "image-text-1",
+    "image-with-text-overlay-2",
+    "collection-list-1",
+    "testimonials-1",
+    "featured-product-1",
+    "featured-product-2",
+    "newsletter-1",
+    "blog-posts-1"
+  ]
+}

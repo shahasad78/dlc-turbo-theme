@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-sidebar-template"
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

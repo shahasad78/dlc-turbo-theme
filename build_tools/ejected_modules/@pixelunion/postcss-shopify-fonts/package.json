@@ -1,0 +1,41 @@
+{
+  "name": "@pixelunion/postcss-shopify-fonts",
+  "version": "1.0.4",
+  "description": "Easy CSS integration with Shopify font pickers",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "liquid"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Pixel Union",
+  "license": "UNLICENSED",
+  "repository": "github:pixelunion/postcss-liquid",
+  "dependencies": {
+    "postcss": "^7.0.18"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "babel-eslint": "10.1.0",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-jest": "^22.19.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+
+,"_resolved": "https://npm.pkg.github.com/download/@pixelunion/postcss-shopify-fonts/1.0.4/75e9647cab6dd0bf0e7604b730c648cfed35ad90c01ee7a609a959b9ba8f4a40"
+,"_integrity": "sha512-VvmnoCRmdY1+0hCxj4WWzR/tiAZZUwTTHXXaQ/jUVeTABkHM0Nlwobi3u+BnPRnZPR5pyU3DKw5ECOcy68jlaw=="
+,"_from": "@pixelunion/postcss-shopify-fonts@1.0.4"
+}

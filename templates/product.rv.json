@@ -1,0 +1,15 @@
+{
+  "layout": false,
+  "sections": {
+    "recently-viewed": {
+      "type": "product-recently-viewed-template"
+    },
+    "recommendations": {
+      "type": "product-recommendations"
+    }
+  },
+  "order": [
+    "recently-viewed",
+    "recommendations"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "store_availability": {
+    "general": {
+      "in_stock": "Na skladě",
+      "out_of_stock": "Vyprodáno",
+      "view_store_info": "Zobrazit informace o obchodu",
+      "check_other_stores": "Zkontrolujte dostupnost v jiných obchodech",
+      "available_for_pick_up_at_html": "Vyzvednutí k dispozici na adrese <b>{{ location_name }}</b>",
+      "unavailable_for_pick_up_at_html": "Vyzvednutí momentálně není k dispozici na adrese <b>{{ location_name }}</b>",
+      "available_for_pick_up_at_time_html": "Vyzvednutí k dispozici, {{pick_up_time}}",
+      "unavailable_for_pick_up_at_time_html": "Vyzvednutí momentálně není k dispozici",
+      "kilometers": "km",
+      "miles": "mi"
+    }
+  }
+}

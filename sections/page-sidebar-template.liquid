@@ -1,0 +1,139 @@
+<script
+  type="application/json"
+  data-section-type="page-sidebar-template"
+  data-section-id="{{ section.id }}"
+>
+</script>
+
+{% comment %} Check to see if sidebar should be enabled {% endcomment %}
+{% if section.blocks.size > 0 %}
+  {%- assign sidebar = true -%}
+{% else %}
+  {%- assign sidebar = false -%}
+{% endif %}
+
+<section class="section">
+  <a name="pagecontent" id="pagecontent"></a>
+  <div class="container content">
+    <div class="one-whole column">
+
+      <h1>{{ page.title }}</h1>
+      <div class="feature_divider"></div>
+    </div>
+
+    <div class="content-wrapper content-wrapper--page is-flex is-flex-wrap">
+      {% render 'sidebar' %}
+
+      <div class="has-sidebar-option sidebar-enabled--{{ sidebar }}">
+        <div class="container">
+          <div class="one-whole column page">
+            {{ page.content }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Page | sidebar",
+  "class": "shopify-section--page-sidebar-template",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Create sidebar by adding content blocks."
+    },
+    {
+      "type": "checkbox",
+      "id": "toggle",
+      "label": "Collapse sidebar content",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "filter_by_collection",
+      "name": "Collection list",
+      "limit": 1
+    },
+    {
+      "type": "menu",
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "custom_menu_linklist",
+          "label": "Menu"
+        }
+      ]
+    },
+    {
+      "type": "page",
+      "name": "Page",
+      "settings": [
+        {
+          "type": "page",
+          "id": "content_page",
+          "label": "Page"
+        }
+      ]
+    },
+    {
+      "type": "recently_viewed",
+      "name": "Recently viewed products",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "To test the recently viewed products, view your online store outside of the Editor and visit multiple product pages. [Learn more](https:\/\/help.outofthesandbox.com\/hc\/en-us\/articles\/115008765228)"
+        },
+        {
+          "type": "text",
+          "id": "sidebar_rv_title",
+          "label": "Title",
+          "default": "Recently Viewed"
+        },
+        {
+          "type": "range",
+          "id": "sidebar_rv_per",
+          "label": "Products limit",
+          "min": 1,
+          "max": 4,
+          "step": 1,
+          "default": 3
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Text area can be used for special announcements or general information.</p>"
+        }
+      ]
+    },
+    {
+      "type": "filter_by_type",
+      "name": "Type list",
+      "limit": 1
+    },
+    {
+      "type": "filter_by_vendor",
+      "name": "Vendor list",
+      "limit": 1
+    }
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,16 @@
+{
+  "store_availability": {
+    "general": {
+      "in_stock": "Auf Lager",
+      "out_of_stock": "Ausverkauft",
+      "view_store_info": "Ladeninformationen anzeigen",
+      "check_other_stores": "Überprüfen Sie die Verfügbarkeit in anderen Geschäften",
+      "available_for_pick_up_at_html": "Abholung verfügbar unter <b>{{ location_name }}</b>",
+      "unavailable_for_pick_up_at_html": "Abholung derzeit nicht verfügbar unter <b>{{ location_name }}</b>",
+      "available_for_pick_up_at_time_html": "Abholung möglich, {{ pick_up_time }}",
+      "unavailable_for_pick_up_at_time_html": "Abholung derzeit nicht verfügbar",
+      "kilometers": "km",
+      "miles": "mi"
+    }
+  }
+}

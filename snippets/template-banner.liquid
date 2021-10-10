@@ -1,0 +1,107 @@
+{% comment %}
+Banner snippet for all banners that appear at the template level
+Templates featured: list collection, collection, sub-collection, article, blog, search, contact, custom-contact, page.banner, page.faq
+{% endcomment %}
+
+{% comment %}
+Values
+wide_display: <boolean>
+background_style: <string>
+image: <image object>
+mobile_image: <image object>
+mobile_crop: <string>
+banner_pretext: <string>
+banner_text: <string>
+banner_subheading: <string>
+banner_button1: <string>
+banner_button1_link: <link>
+banner_button1_style: <string>
+banner_button2: <string>
+banner_button2_link: <link>
+banner_button2_style: <string>
+show_caption: <boolean>
+{% endcomment %}
+
+<section class="section {% if wide_display %}is-width-wide has-no-side-gutter{% endif %}">
+  <a name="pagecontent" id="pagecontent"></a>
+  <div class="container">
+    <div class="one-whole column">
+      <header class="banner center page-banner full-width--{{ wide_display }} caption-background-{{ background_style }}">
+          {% if mobile_image and image %}
+            <div class="is-hidden-mobile-only">
+          {% endif %}
+          {% if image %}
+            {% render 'image-element',
+                    image: image,
+                    alt: image.alt,
+                    stretch_width: true,
+                    progressive: true,
+                    additional_classes: mobile_crop
+            %}
+            {% if background_style == 'darken_bg' %}
+              <div class="darken-bg"></div>
+            {% endif %}
+          {% else %}
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--banner' }}
+          {% endif %}
+          {% if mobile_image and image %}
+            </div>
+            <div class="is-hidden-desktop-only">
+              {% render 'image-element',
+                      image: mobile_image,
+                      alt: mobile_image.alt,
+                      stretch_width: true,
+                      additional_classes: mobile_crop
+              %}
+              {% if background_style == 'darken_bg' %}
+                <div class="darken-bg"></div>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% unless banner_button1_link != blank and banner_button2_link != blank %}
+            {% if banner_button1_link != blank %}
+              <a href="{{ banner_button1_link }}" class="banner-full-link">
+                {{ banner_button1 }}
+              </a>
+            {% endif %}
+            {% if banner_button2_link != blank %}
+              <a href="{{ banner_button2_link }}" class="banner-full-link">
+                {{ banner_button2 }}
+              </a>
+            {% endif %}
+          {% endunless %}
+
+          {% comment %} Make sure to only display the banner caption if at least one of these conditions is met {% endcomment %}
+          {% unless banner_pretext == blank and banner_title == blank and banner_subheading == blank and banner_button1 == blank and banner_button2 == blank %}
+            {% assign caption_has_content = true %}
+          {% endunless %}
+
+          {% if show_caption and caption_has_content %}
+            <div class="caption position-{{ banner_text_position }}">
+              <div class="caption-content align-{{ banner_text_align }}">
+                {% if banner_pretext != blank %}
+                <div class="pretext">{{ banner_pretext }}</div>
+                {% endif %}
+                {% if banner_title != blank %}
+                <h1 class="headline">{{ banner_title }}</h1>
+                {% endif %}
+                {% if banner_subheading != blank %}
+                <div class="subtitle">{{ banner_subheading }}</div>
+                {% endif %}
+                {%
+                  render 'banner-buttons',
+                  button1_text: banner_button1,
+                  button1_style: banner_button1_style,
+                  button1_link: banner_button1_link,
+                  button2_text: banner_button2,
+                  button2_style: banner_button2_style,
+                  button2_link: banner_button2_link,
+                %}
+              </div>
+            </div>
+          {% endif %}
+      </header>
+    </div>
+  </div>
+</section>

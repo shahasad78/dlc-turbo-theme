@@ -1,0 +1,314 @@
+<script
+  type="application/json"
+  data-section-type="product-template"
+  data-section-id="{{ section.id }}"
+>
+</script>
+
+{% if section.settings.product_breadcrumb == false %}
+  {% style %}
+    .breadcrumb__wrapper {
+      display: none;
+    }
+  {% endstyle %}
+{% endif %}
+
+{% comment %}
+  The contents of the product.liquid template can be found in /sections/product-template.liquid
+{% endcomment %}
+
+<section>
+  <div class="container">
+    {% render 'product__structured-data' %}
+
+    <div class="breadcrumb__wrapper one-whole column">
+      <div class="breadcrumb-collection breadcrumb-collection--product">
+        {% if collection.previous_product or collection.next_product %}
+          <div class="nav_arrows breadcrumb_text">
+            {% if collection.previous_product %}
+              <a href="{{ collection.previous_product }}" title="{{ 'products.general.previous_product_html' | t }}" class="breadcrumb_link"><span class="icon-left-arrow"> {{ 'products.general.previous_product_html' | t }}</span></a>
+            {% endif %}
+            {% if collection.previous_product and collection.next_product %}<span class="breadcrumb-divider"> | </span>{% endif %}
+
+            {% if collection.next_product %}
+              <a href="{{collection.next_product}}" title="{{ 'products.general.next_product_html' | t }}" class="breadcrumb_link">{{ 'products.general.next_product_html' | t }} <span class="icon-right-arrow"></span></a>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% render 'product__breadcrumb' %}
+      </div>
+    </div>
+
+    <section
+      class="
+        product-container
+        is-flex
+        is-flex-wrap
+      "
+    >
+      {%
+        render 'product',
+        context: 'product',
+        product: product,
+        variant: product.selected_or_first_available_variant,
+        gallery_thumbnails: section.settings.product_thumbs,
+        gallery_click_to_zoom: section.settings.enable_product_lightbox,
+        gallery_hover_zoom: section.settings.activate_zoom,
+        gallery_arrows: section.settings.gallery_arrows,
+        gallery_thumbnail_position: section.settings.thumbnail_position,
+        gallery_thumbnail_slider: section.settings.enable_thumbnail_slider,
+        gallery_slideshow_speed: section.settings.slideshow_speed,
+        gallery_slideshow_transition: section.settings.slideshow_animation,
+        media_position: section.settings.media_position,
+        set_product_height: section.settings.set_product_height,
+        product_height: section.settings.product_height,
+        video_looping: section.settings.video_looping,
+        show_dynamic_checkout_button: settings.show_dynamic_checkout_button,
+        enable_shopify_review_comments: settings.enable_shopify_review_comments
+      %}
+    </section>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product information",
+  "class": "shopify-section--product-template is-product-main",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "product_breadcrumb",
+      "label": "Show breadcrumb links"
+    },
+    {
+      "type": "header",
+      "content": "Media",
+      "info": "Learn more about [media types](https://help.shopify.com/en/manual/products/product-media)"
+    },
+    {
+      "type": "radio",
+      "id": "media_position",
+      "label": "Product media position",
+      "options": [
+        {
+          "value": "is-flex-row",
+          "label": "Left"
+        },
+        {
+          "value": "is-flex-row-reverse",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "set_product_height",
+      "label": "Set height of product media",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "product_height",
+      "label": "Product media height",
+      "min": 200,
+      "max": 800,
+      "step": 10,
+      "default": 500,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_looping",
+      "label": "Enable video looping",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Product gallery"
+    },
+    {
+      "type": "checkbox",
+      "id": "product_thumbs",
+      "label": "Show thumbnails",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "gallery_arrows",
+      "label": "Show arrows",
+      "info": "Only applies to desktop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_product_lightbox",
+      "label": "Enable lightbox",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "activate_zoom",
+      "label": "Magnify product images on hover",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "slideshow_speed",
+      "label": "Gallery speed",
+      "min": 0,
+      "max": 6,
+      "unit": "sec",
+      "default": 0,
+      "info": "Set to 0 to disable autoplay."
+    },
+    {
+      "type": "select",
+      "id": "slideshow_animation",
+      "label": "Transition",
+      "options": [
+        {
+          "value": "slide",
+          "label": "Slide"
+        },
+        {
+          "value": "fade",
+          "label": "Fade"
+        }
+      ],
+      "default": "slide"
+    },
+    {
+      "type": "select",
+      "id": "thumbnail_position",
+      "label": "Thumbnails position",
+      "default": "bottom",
+      "options": [
+        {
+          "value": "bottom",
+          "label": "Below main image"
+        },
+        {
+          "value": "left",
+          "label": "Left of main image"
+        },
+        {
+          "value": "right",
+          "label": "Right of main image"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_thumbnail_slider",
+      "label": "Enable thumbnail slider",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "title",
+      "name": "Title",
+      "limit": 1
+    },
+    {
+      "type": "vendor",
+      "name": "Vendor",
+      "limit": 1
+    },
+    {
+      "type": "price",
+      "name": "Price",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "display_savings",
+          "label": "Show price savings",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "sku",
+      "name": "SKU",
+      "limit": 1
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Text block</p>"
+        }
+      ]
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "limit": 1
+    },
+    {
+      "type": "form",
+      "name": "Form",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Customize form features for the product in the products portion of the theme settings."
+        }
+      ]
+    },
+    {
+      "type": "product-links",
+      "name": "Product links",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_collections",
+          "label": "Show collections",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_types",
+          "label": "Show types",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_tags",
+          "label": "Show tags",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "share",
+      "name": "Share",
+      "limit": 1
+    },
+    {
+      "type": "size-chart",
+      "name": "Size chart",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "page",
+          "id": "size_chart",
+          "label": "Size chart",
+          "info": "[Learn more](https:\/\/help.outofthesandbox.com\/hc\/en-us\/articles\/115006910707-Using-the-Size-Chart-Sections-themes-)"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

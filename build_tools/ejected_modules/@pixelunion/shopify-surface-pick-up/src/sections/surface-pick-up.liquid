@@ -1,0 +1,21 @@
+<template data-html="surface-pick-up-embed">
+  {% inject '@pixelunion/shopify-surface-pick-up/surface-pick-up-embed' %}
+</template>
+
+<template data-html="surface-pick-up-items">
+  {% assign pick_up_availabilities = product_variant.store_availabilities | where: 'pick_up_enabled', true %}
+  {% if product_variant.available and pick_up_availabilities.size > 0 %}
+    {%- assign closest_location_country_code = pick_up_availabilities.first.location.address.country_code -%}
+    {%- assign imperialSystemCountries = 'US,MM,LR'  | split: ',' -%}
+    {%- if imperialSystemCountries contains closest_location_country_code -%}
+      {%- assign unit_system = 'imperial' -%}
+    {%- else -%}
+      {%- assign unit_system = 'metric' -%}
+    {%- endif -%}
+    <ul class="surface-pick-up-items" role="list">
+      {% for location in pick_up_availabilities %}
+        {% inject '@pixelunion/shopify-surface-pick-up/surface-pick-up-item' %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</template>

@@ -1,0 +1,17 @@
+{% if type == 'block' %}
+  {%- assign search_term = block.settings.search_term -%}
+{% else %}
+  {%- assign search_term = section.settings.search_term -%}
+{% endif %}
+
+<div class="search__container" data-autocomplete-{{ settings.enable_autocomplete }}>
+  <form class="search search__form" action="{{ routes.search_url }}">
+    <div class="search__wrapper">
+      <input type="hidden" name="type" value="{{ settings.search_option }}" />
+      <input type="text" name="q" placeholder="{{ search_term }}" value="{{ search.terms | replace: '*', ''}}" x-webkit-speech autocapitalize="off" autocomplete="off" autocorrect="off" />
+      <button type="submit" name="submit" class="search__button" value="">
+        <span class="icon-search"></span>
+      </button>
+    </div>
+  </form>
+</div>

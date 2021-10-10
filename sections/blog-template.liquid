@@ -1,0 +1,486 @@
+<script
+  type="application/json"
+  data-section-type="blog-template"
+  data-section-id="{{ section.id }}"
+>
+</script>
+
+{%- assign image = section.settings.image -%}
+{%- assign mobile_image = section.settings.mobile_image -%}
+{%- assign background_style = section.settings.caption_content_background -%}
+{%- assign mobile_crop = 'mobile-banner--crop-' | append: section.settings.mobile_image_crop -%}
+{%- assign wide_display = section.settings.wide_display -%}
+{% if current_tags %}
+{%- assign banner_title = current_tags -%}
+{% else %}
+{%- assign banner_title = blog.title -%}
+{% endif %}
+{%- assign banner_subheading = section.settings.subtitle -%}
+
+{% if image != blank %}
+  {%
+    render 'template-banner',
+    image: image,
+    mobile_image: mobile_image,
+    background_style: background_style,
+    mobile_crop: mobile_crop,
+    wide_display: wide_display,
+    banner_title: banner_title,
+    banner_subheading: banner_subheading,
+    show_caption: true
+  %}
+{% endif %}
+
+{% paginate blog.articles by section.settings.blog_posts_per_page %}
+{% if image == blank %}<a name="pagecontent" id="pagecontent"></a>{% endif %}
+<section class="section">
+  <div class="container content">
+    {% if image == blank %}
+      <div class="one-half column">
+        {% if current_tags %}
+          <h1 class="blog-title blog-tags--true">
+            <a href="/blogs/{{ blog.handle }}/tagged/{{ current_tags | handleize }}" title="{{ blog.title | escape }}">{{ current_tags }}</a>
+          </h1>
+        {% else %}
+          <h1 class="blog-title">{{ blog.title }}</h1>
+          {% if section.settings.subtitle %}
+            <p class="subtitle">{{ section.settings.subtitle }}</p>
+          {% endif %}
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="{% if image == blank %}one-half{% else %}one-whole{% endif %} column section_select medium-down--one-whole">
+      {% if section.settings.blog_tags %}
+          <select name="tag_filter" id="blog_filter" class="blog_filter">
+            <option {% unless current_tags %}selected="selected"{% endunless %} value="{{ blog.url }}">{{ 'blogs.general.view_all' | t }}</option>
+            {% for tag in blog.all_tags %}
+              <option {% if current_tags contains tag %}selected="selected"{% endif %} value="/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}">{{ tag }}</option>
+            {% endfor %}
+          </select>
+      {% endif %}
+    </div>
+
+    {% unless image != blank %}
+      <div class="one-whole column">
+        <div class="feature_divider"></div>
+      </div>
+    {% endunless %}
+
+    {% comment %} Check to see if sidebar should be enabled {% endcomment %}
+    {% if section.blocks.size > 0 %}
+      {%- assign sidebar = true -%}
+    {% else %}
+      {%- assign sidebar = false -%}
+    {% endif %}
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+          {% for article in blog.articles %}
+            {
+              "@type": "ListItem",
+              "position": "{{ forloop.index | json }}",
+              "url": "{{ shop.url }}{{ article.url }}",
+              "name": "{{ article.title }}"
+            } {%- unless forloop.last -%},{%- endunless -%}
+          {% endfor %}
+        ]
+      }
+    </script>
+
+    <div class="blog-template-wrapper is-flex is-flex-wrap">
+      <div class="has-sidebar-option sidebar-enabled--{{ sidebar }}">
+        <div class="container">
+          {% for article in blog.articles %}
+            {% if section.settings.blog_posts_per_row == 1 %}
+              {% if article.image %}
+                <div class="one-half column article_image medium-down--one-whole">
+                  <a href="{{ article.url }}" title="{{ article.title | escape }}">
+                    {%
+                      render 'image-element',
+                      image: article.image,
+                      alt: image.alt
+                    %}
+                  </a>
+                </div>
+                <div class="one-half column article medium-down--one-half">
+              {% else %}
+                <div class="one-whole column medium-down--one-whole article">
+              {% endif %}
+            {% else %}
+              <div class="{% render 'column-width', value: section.settings.blog_posts_per_row %} column medium-down--one-whole article">
+                {% if article.image != blank %}
+                  <a href="{{ article.url }}" title="{{ article.title | escape }}">
+                    {%
+                      render 'image-element',
+                      image: article.image,
+                      alt: image.alt
+                    %}
+                  </a>
+                {% endif %}
+            {% endif %}
+
+              <h2 class="article__title"><a href="{{ article.url }}">{{ article.title }}</a></h2>
+
+              <p class="blog_meta">
+                {% if section.settings.blog_author %}
+                  <span>{{ 'blogs.article.by_author' | t: author: article.author }}</span>
+                {% endif %}
+
+                {% if section.settings.blog_date %}
+                  <span>{{ article.published_at | date: format: "month_day_year" }}</span>
+                {% endif %}
+
+                {% if section.settings.read_time %}
+                  {%
+                    render 'include-read-time',
+                    article: article
+                  %}
+                {% endif %}
+
+                {% if section.settings.blog_comment_count %}
+                  {% if settings.disqus_enabled %}
+                    <span>
+                      <a href="{{ article.url }}#disqus_thread" data-disqus-identifier="{{ article.id }}" class="disqus-comment-count">{{ 'blogs.counts.comments_with_count' | t: count: 0 }}</a>
+                    </span>
+                  {% elsif article.comments_enabled? and article.comments_count > 0 %}
+                    <span>
+                      <a href="{{ article.url }}#comments">{{ 'blogs.counts.comments_with_count' | t: count: article.comments_count }}</a>
+                    </span>
+                  {% endif %}
+                {% endif %}
+              </p>
+
+              {% if section.settings.blog_tags %}
+                <div class="blog_meta tags">
+                  {% for tag in article.tags %}
+                    <span><a href="{{ shop.url }}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" title="{{ blog.title }} {{ 'blogs.general.tagged' | t }} {{ tag | escape }}">{{ tag }}</a></span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+
+              {% if section.settings.excerpt_display == 'full_excerpt' %}
+                {%- assign excerpt = article.excerpt -%}
+              {% elsif section.settings.excerpt_display == 'truncated_excerpt' %}
+                {%- assign excerpt = article.excerpt | truncate: 100 -%}
+              {% endif %}
+
+              {% if article.excerpt != blank %}
+                <div class="excerpt">
+                  {{ excerpt }}
+                </div>
+              {% endif %}
+
+              {% if section.settings.read_more_link %}
+                <a
+                  href="{{ article.url }}"
+                  title="{{ article.title | escape }}"
+                  class="
+                    {% if settings.read_more_style == 'button' %}
+                      blog__read-more-button global-button global-button--text
+                    {% else %}
+                      read-more-link
+                    {% endif %}
+                  "
+                >
+                  {{ 'blogs.general.continue_reading_html' | t }}
+                </a>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      {%
+        render 'blog-sidebar',
+        blog_handle: blog.handle
+      %}
+    </div>
+
+    <div class="one-whole column">
+      {%
+        render 'pagination',
+        paginate: paginate
+      %}
+    </div>
+    {% endpaginate %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog",
+  "class": "shopify-section--blog-template",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Banner"
+    },
+    {
+      "type": "checkbox",
+      "id": "wide_display",
+      "label": "Wide display",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner image",
+      "info": "1800 x 800px recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile banner image",
+      "info": "Display a different image on mobile screens. This only appears when the desktop image is set."
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_crop",
+      "label": "Mobile image cropping",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subheading",
+      "default": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "caption_content_background",
+      "label": "Text contrast technique",
+      "default": "original",
+      "info": "Improve legibility by applying a contrast technique to your banner’s text.",
+      "options": [
+        {
+          "value": "original",
+          "label": "None"
+        },
+        {
+          "value": "darken_bg",
+          "label": "Darken banner image"
+        },
+        {
+          "value": "text_box",
+          "label": "Solid box"
+        },
+        {
+          "value": "translucent_text_box",
+          "label": "Translucent box"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "blog_posts_per_row",
+      "label": "Blog posts per row",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "blog_posts_per_page",
+      "label": "Blog posts per page",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_tags",
+      "label": "Show blog post tags"
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_author",
+      "label": "Show author"
+    },
+    {
+      "type": "checkbox",
+      "id": "read_time",
+      "label": "Show estimated read time",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_date",
+      "label": "Show date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_comment_count",
+      "label": "Show comment count",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "read_more_link",
+      "label": "Show continue reading link for blog post excerpts",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "excerpt_display",
+      "label": "Excerpt display",
+      "default": "full_excerpt",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "full_excerpt",
+          "label": "Full excerpt"
+        },
+        {
+          "value": "truncated_excerpt",
+          "label": "Truncated excerpt"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Sidebar"
+    },
+    {
+      "type": "paragraph",
+      "content": "Create a sidebar by adding content blocks."
+    },
+    {
+      "type": "checkbox",
+      "id": "toggle",
+      "label": "Collapse sidebar content",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "post_tags",
+      "name": "Blog post tags",
+      "limit": 1
+    },
+    {
+      "type": "menu",
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "custom_menu_linklist",
+          "label": "Menu"
+        }
+      ]
+    },
+    {
+      "type": "newsletter",
+      "name": "Newsletter sign up form",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "newsletter_title",
+          "label": "Heading",
+          "default": "Subscribe"
+        },
+        {
+          "type": "richtext",
+          "id": "newsletter_text",
+          "label": "Subheading",
+          "default": "<p>Sign up to get the latest on sales, new releases and more …</p>"
+        }
+      ]
+    },
+    {
+      "type": "page",
+      "name": "Page",
+      "settings": [
+        {
+          "type": "page",
+          "id": "content_page",
+          "label": "Page"
+        }
+      ]
+    },
+    {
+      "type": "recent_posts",
+      "name": "Recent blog posts",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "blog_post_count",
+          "label": "Display blog posts",
+          "options": [
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            }
+          ],
+          "default": "10"
+        }
+      ]
+    },
+    {
+      "type": "search",
+      "name": "Search form",
+      "limit": 1
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Text area can be used for details about blog authors or general information.</p>"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

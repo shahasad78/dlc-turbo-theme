@@ -1,0 +1,16 @@
+{
+  "store_availability": {
+    "general": {
+      "in_stock": "Dalam stok",
+      "out_of_stock": "Kehabisan stok",
+      "view_store_info": "Lihat maklumat kedai",
+      "check_other_stores": "Periksa ketersediaan di kedai lain",
+      "available_for_pick_up_at_html": "Pengambilan tersedia di <b>{{ location_name }}</b>",
+      "unavailable_for_pick_up_at_html": "Pengambilan tidak tersedia di <b>{{ location_name }}</b>",
+      "available_for_pick_up_at_time_html": "Pengambilan tersedia, {{ pick_up_time }}",
+      "unavailable_for_pick_up_at_time_html": "Pengambilan tidak tersedia pada masa ini",
+      "kilometers": "km",
+      "miles": "mi"
+    }
+  }
+}

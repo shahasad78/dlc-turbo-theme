@@ -1,0 +1,169 @@
+{
+  "name": "@pixelunion/shopify-surface-pick-up",
+  "version": "1.1.7",
+  "description": "This component exists to surface either the single pickup location or the first store on the store list.",
+  "main": "dist/index.js",
+  "umd": "dist/index.umd.js",
+  "umdName": "ShopifySurfacePickUp",
+  "module": "dist/index.es.js",
+  "scripts": {
+    "build": "node rollup.js",
+    "prepare": "npm run build"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixelunion/shopify-surface-pick-up.git"
+  },
+  "author": "Pixel Union",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/pixelunion/shopify-surface-pick-up/issues"
+  },
+  "homepage": "https://github.com/pixelunion/shopify-surface-pick-up#readme",
+  "devDependencies": {
+    "@babel/core": "7.13.14",
+    "@babel/plugin-external-helpers": "7.12.13",
+    "@babel/preset-env": "7.13.12",
+    "@rollup/plugin-commonjs": "18.0.0",
+    "@rollup/plugin-node-resolve": "11.2.1",
+    "babel-eslint": "10.1.0",
+    "eslint": "7.23.0",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-plugin-import": "2.22.1",
+    "rollup": "2.44.0",
+    "rollup-plugin-babel": "4.4.0",
+    "stylelint": "13.12.0",
+    "stylelint-config-recess-order": "2.3.0",
+    "stylelint-config-recommended-scss": "4.2.0",
+    "stylelint-config-standard": "21.0.0",
+    "stylelint-scss": "3.19.0",
+    "uglify-js": "3.13.3"
+  },
+  "paskitPlugin": {
+    "build": [
+      {
+        "action": "section",
+        "input": "src/sections/surface-pick-up.liquid",
+        "output": "sections/surface-pick-up.liquid"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/en.default.json",
+        "output": "locales/en.default.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/cs.json",
+        "output": "locales/cs.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/da.json",
+        "output": "locales/da.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/de.json",
+        "output": "locales/de.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/es.json",
+        "output": "locales/es.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/fi.json",
+        "output": "locales/fi.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/fr.json",
+        "output": "locales/fr.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/hi.json",
+        "output": "locales/hi.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/it.json",
+        "output": "locales/it.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/ja.json",
+        "output": "locales/ja.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/ko.json",
+        "output": "locales/ko.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/ms.json",
+        "output": "locales/ms.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/nl.json",
+        "output": "locales/nl.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/no.json",
+        "output": "locales/no.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/pl.json",
+        "output": "locales/pl.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/pt-BR.json",
+        "output": "locales/pt-BR.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/pt-PT.json",
+        "output": "locales/pt-PT.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/sv.json",
+        "output": "locales/sv.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/th.json",
+        "output": "locales/th.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/tr.json",
+        "output": "locales/tr.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/zh-CN.json",
+        "output": "locales/zh-CN.json"
+      },
+      {
+        "action": "mergeLocale",
+        "input": "src/locales/zh-TW.json",
+        "output": "locales/zh-TW.json"
+      }
+    ]
+  },
+  "dependencies": {}
+
+,"_resolved": "https://npm.pkg.github.com/download/@pixelunion/shopify-surface-pick-up/1.1.7/83af7a93f84506e0f2ee2cb0065fec6096b61fd7b8d679b54784f7c59f23d885"
+,"_integrity": "sha512-KMoKN01vpHGro/cMmNyibp9Zx5S8KbVThLVbqjksJDc6N3WUx0iNTl8yelRuuallUiOKDNmLtpkZtCAuSOh6RQ=="
+,"_from": "@pixelunion/shopify-surface-pick-up@1.1.7"
+}

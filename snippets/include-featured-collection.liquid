@@ -1,0 +1,134 @@
+{% comment %}
+** Featured collection - dynamic **
+- Draggable section
+{% endcomment %}
+
+{% comment %} Assign object as block or section {% endcomment %}
+{% if type == 'block' %}
+  {%- assign object = block -%}
+{% else %}
+  {%- assign object = section -%}
+{% endif %}
+
+{%- assign id = object.id -%}
+
+{% comment %} Content settings {% endcomment %}
+{%- assign title = object.settings.title | escape -%}
+{%- assign collection = collections[object.settings.collection] -%}
+{% comment %} End content settings {% endcomment %}
+
+{% comment %} Advanced {% endcomment %}
+{%- assign css_class = object.settings.css_class -%}
+{%- assign custom_css = object.settings.custom_css -%}
+
+{% comment %} Section specific CSS {% endcomment %}
+{% style %}
+  {%
+    render 'css-loop',
+    css: custom_css,
+    id: id
+  %}
+{% endstyle %}
+
+{% if collection == blank %}
+  {%- assign section_onboarding = true -%}
+  {% comment %} Assign product length to be selected limit for onboarding {% endcomment %}
+  {%- assign products_length = object.settings.products_limit | plus: 0 -%}
+{% else %}
+  {%- assign section_onboarding = false -%}
+{% endif %}
+
+<div class="{{ css_class }}">
+  <section class="section">
+    <div class="container">
+      <div class="one-whole column center homepage_content">
+        {% if title != blank %}
+          <a href="{{ collection.url }}">
+            <h2 class="title">{{ title }}</h2>
+          </a>
+          <div class="feature_divider"></div>
+        {% endif %}
+
+        {% if object.settings.collection_description and collection.description != blank %}
+          <div class="featured-collection__description">
+            {{ collection.description }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  {% if object.settings.collection_style == 'slider' %}
+    <div class="js-product-slider homepage-product-slider full-width--true {% if object.settings.products_per  == 2 or object.settings.products_per  == 4 or object.settings.products_per  == 6 %}even-num-slides{% endif %} featured-collection__products">
+      {% if section_onboarding == false %}
+        {% if collection.products.size > 0 %}
+          {% render 'product-slider',
+                  limit: object.settings.products_limit,
+                  products: collection.products,
+                  per_slide: object.settings.products_per,
+                  featured_collection: collection
+          %}
+        {% endif %}
+      {% else %}
+        <div class="slider-gallery products-slider products-length-{{ products_length }}"
+             data-products-per-slide="{{ object.settings.products_per }}"
+             data-products-limit="{{ object.settings.products_limit }}"
+             data-products-available="{{ products_length }}">
+          {% for i in (1..object.settings.products_limit) %}
+            {%- assign per_slide_num = object.settings.products_per -%}
+
+            <div class="gallery-cell thumbnail {% if products_length > per_slide_num %}visible-{{ object.settings.products_per }}{% else %}visible-{{ products_length }}{% endif %}">
+              <div class="product-wrap">
+                <div class="relative product_image">
+                  <a href="#">
+                    <object class="placeholder-image">
+                      {% capture num %}{% cycle "1", "2", "3", "4", "5", "6" %}{% endcapture %}
+                      {{ 'product-' | append: num | placeholder_svg_tag: 'placeholder-svg placeholder-svg--product' }}
+                    </object>
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  {% else %}
+    {% if section_onboarding == false %}
+      <section class="section">
+        <div class="container">
+          <div class="one-whole column">
+            {% render 'product-loop',
+                    limit: object.settings.products_limit | plus: 1,
+                    products: collection.products,
+                    products_per_row: object.settings.products_per
+            %}
+          </div>
+        </div>
+      </section>
+    {% else %}
+      <section class="section">
+        <div class="product-list collection-matrix">
+          <div class="container">
+            {% for i in (1..object.settings.products_limit) %}
+              {% comment %}{% assign collection_group = products | map: 'id' %}{% endcomment %}
+              {%- assign collection_group_thumb = collection_group | append : 'thumb' -%}
+              {%- assign collection_group_mobile = collection_group | append : 'mobile' -%}
+
+              <div class="{% render 'column-width', value: object.settings.products_per %} column {% if settings.collection_secondary_image != blank and product.media[1] != blank %}has-secondary-media-swap{% endif %} thumbnail {% if settings.mobile_products_per_row == '1' %}medium-down--one-half small-down--one-whole{% else %}medium-down--one-half small-down--one-half{% endif %}">
+                <div class="product-wrap {% if settings.collection_secondary_image != blank and product.media[1] != blank %}has-secondary-media-swap{% endif %}">
+                  <div class="relative product_image">
+                    <a href="#">
+                      {% capture num %}{% cycle "1", "2", "3", "4", "5", "6" %}{% endcapture %}
+                      {{ 'product-' | append: num | placeholder_svg_tag: 'placeholder-svg placeholder-svg--product' }}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+    {% endif %}
+  {% endif %}
+</div>

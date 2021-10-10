@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "main": {
+      "type": "collection-sub-collections-template"
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

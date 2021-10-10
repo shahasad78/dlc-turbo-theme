@@ -1,0 +1,120 @@
+{% comment %}
+** Map - dynamic **
+- Draggable section
+{% endcomment %}
+
+{% comment %} Assign object as block or section {% endcomment %}
+{% if type == 'block' %}
+  {%- assign object = block -%}
+{% else %}
+  {%- assign object = section -%}
+{% endif %}
+
+{%- assign id = object.id -%}
+
+{% comment %} Content settings {% endcomment %}
+{%- assign map_address = object.settings.map_address -%}
+{%- assign image = object.settings.map_image -%}
+{%- assign mobile_image = object.settings.map_mobile_image -%}
+
+{% comment %} End content settings {% endcomment %}
+
+{% comment %} Advanced {% endcomment %}
+{%- assign css_class = object.settings.css_class -%}
+{%- assign custom_css = object.settings.custom_css -%}
+
+{% comment %} Section specific CSS {% endcomment %}
+{% style %}
+  {%
+    render 'css-loop',
+    css: custom_css,
+    id: id
+  %}
+{% endstyle %}
+
+<section
+  class="
+    section
+    {% if object.settings.map_wide_display == false %}
+      is-width-standard
+    {% else %}
+      is-width-wide
+      has-no-side-gutter
+    {% endif %}
+    map-section
+    section--draggable
+    map-id--{{ id }}
+    full-width--{{ object.settings.map_wide_display }}
+    {{ css_class }}
+  "
+>
+  <div class="container">
+    <div class="one-whole column">
+    {% if map_address != blank and object.settings.api_key != blank %}
+      <div id="map--{{ id }}" class="embed-container maps {% if object.settings.api_key %}js-api-map{% endif %}">
+          {% if object.settings.api_key != blank %}
+            <div class="map-section__container map" id="map-{{ id }}"
+                  data-address="{{ map_address | strip_html }}"
+                  data-zoom="{{ object.settings.zoom_level }}"
+                  data-pin="{{ object.settings.show_pin }}"
+                  data-id="map-{{ id }}"
+                  data-style="{{ object.settings.map_style }}"
+                  data-api-key="{{ object.settings.api_key }}"
+                  data-directions-address="{{ map_address | strip_html | handleize | replace: '_', '+' | replace: ' ', '+'}}">
+            </div>
+          {% endif %}
+      </div>
+
+    {% elsif map_address != blank and object.settings.api_key == blank %}
+      <div id="map--{{ id }}" class="lazyframe lazymap embed-container maps" data-init="true" data-src="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q={% if map_address != blank %}{{ map_address | strip_html | replace: ' ', '+' }}{% else %}{{ shop.address.street }}{% endif %}&amp;z={{ object.settings.zoom_level }}&amp;output=embed">
+        <iframe width="100%"  height="{{ object.settings.map_height }}" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q={% if map_address != blank %}{{ map_address | strip_html | replace: ' ', '+' }}{% else %}{{ shop.address.street }}{% endif %}&amp;z={{ object.settings.zoom_level }}&amp;output=embed"></iframe>
+      </div>
+    {% else %}
+      {% unless template contains 'page.contact-custom' %}
+        <div id="map--{{ id }}" class="map__placeholder maps">
+          {% if mobile_image != blank %}
+            <div class="is-hidden-mobile-only">
+          {% endif %}
+          {% if image != blank %}
+            {% render 'image-element',
+                    image: image,
+                    alt: image.alt
+            %}
+          {% else %}
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--map' }}
+          {% endif %}
+          {% if mobile_image != blank %}
+            </div>
+            <div class="is-hidden-desktop-only">
+              {% render 'image-element',
+                      image: mobile_image,
+                      alt: mobile_image.alt,
+                      stretch_width: true
+              %}
+            </div>
+          {% endif %}
+        </div>
+      {% endunless %}
+    {% endif %}
+
+    </div>
+  </div>
+</section>
+
+<style>
+  #map--{{ id }}.maps,
+  #map--{{ id }}.maps .map,
+  #map--{{ id }}.maps iframe,
+  #map--{{ id }}.maps .placeholder-svg {
+    height: {{ object.settings.map_height }}px;
+  }
+
+  #map--{{ id }}.map__placeholder img {
+    max-height: {{ object.settings.map_height }}px;
+  }
+
+  .maps {
+    max-width: 100%;
+    overflow: hidden;
+  }
+</style>

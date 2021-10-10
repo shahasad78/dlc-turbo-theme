@@ -1,0 +1,36 @@
+{% form article %}
+  {% if form.posted_successfully? %}
+    <div class="comment-form__success">
+      {% if blog.moderated? %}
+        <p class="comment-form__success-message">{{ 'blogs.comments.success_moderated' | t }}</p>
+      {% else %}
+        <p class="comment-form__success-message">{{ 'blogs.comments.success' | t }}</p>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if form.errors %}
+    <div class="comment-form__error">
+      <p class="comment-form__error-message">{{ 'general.forms.post_error' | t }}</p>
+    </div>
+  {% endif %}
+
+  <div class="comment-form__name">
+    <label for="comment_author">{{ 'blogs.comments.name' | t }} <span class="red">*</span></label>
+    <input type="text" id="comment_author" name="comment[author]" value="{{ form.author }}" required="required" />
+  </div>
+
+  <div class="comment-form__email">
+    <label for="comment_email">{{ 'blogs.comments.email' | t }} <span class="red">*</span></label>
+    <input type="text" id="comment_email" name="comment[email]" value="{{ form.email }}" required="required" />
+  </div>
+
+  <div class="comment-form__body">
+    <label for="comment_body">{{ 'blogs.comments.comment' | t }} <span class="red">*</span></label>
+    <textarea id="comment_body" name="comment[body]" rows="5" required="required">{{ form.body }}</textarea>
+  </div>
+
+  <div class="comment-form__submit">
+    <input type="submit" value="{{ 'blogs.comments.post' | t }}" id="comment-submit" class="global-button global-button--primary comment-form__submit-button" />
+  </div>
+{% endform %}

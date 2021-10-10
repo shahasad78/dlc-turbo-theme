@@ -1,0 +1,77 @@
+<script
+  type="application/json"
+  data-section-type="registration-form"
+  data-section-id="{{ section.id }}"
+>
+</script>
+
+<section class="section">
+  <a name="pagecontent" id="pagecontent"></a>
+  <div class="container has-padding-top has-padding-bottom">
+    <div class="one-whole column collection_nav">
+      <h1>{{ 'customer.register.title' | t }}</h1>
+      <div class="feature_divider"></div>
+    </div>
+
+    <div class="three-eighths columns medium-down--one-whole offset-by-five is-hidden-offset-mobile-only">
+      <br />
+
+      <div id="customer">
+        <div id="create-customer">
+          {% form 'create_customer' %}
+            {{ form.errors | default_errors }}
+
+            <div id="first_name">
+              <label for="first_name" class="login">{{ 'customer.register.first_name' | t }}</label>
+              <input type="text" value="" name="customer[first_name]" id="first_name" size="30" />
+            </div>
+
+            <div id="last_name">
+              <label for="last_name" class="login">{{ 'customer.register.last_name' | t }}</label>
+              <input type="text" value="" name="customer[last_name]" id="last_name" size="30" />
+            </div>
+
+            <div id="email">
+              <label for="email" class="login">{{ 'customer.register.email' | t }}</label>
+              <input type="email" value="" name="customer[email]" id="email" size="30" />
+            </div>
+
+            <div id="password">
+              <label for="password" class="login">{{ 'customer.register.password' | t }}</label>
+              <input type="password" value="" name="customer[password]" id="password" class="password" size="30" />
+            </div>
+
+            {% if section.settings.text %}
+              {{ section.settings.text }}
+            {% endif %}
+
+            <div class="acceptsMarketing">
+              <input type="checkbox" id="customer[accepts_marketing]" name="customer[accepts_marketing]">
+              <label for="customer[accepts_marketing]">{{ 'customer.register.accepts_marketing' | t }}</label>
+            </div>
+
+            <div class="action_bottom">
+              <input class="global-button global-button--primary" type="submit" value="{{ 'customer.register.sign_up' | t }}" />
+              <p class="right" style="padding-top: 8px;">{{ 'customer.register.returning_customer_label' | t }} <a href="{{ routes.account_login_url }}" id="customer_login_link">{{ 'customer.register.sign_in_html' | t }}</a></p>
+            </div>
+          {% endform %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Register",
+  "class": "shopify-section--registration-form",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    }
+  ]
+}
+
+{% endschema %}

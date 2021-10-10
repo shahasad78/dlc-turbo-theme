@@ -1,0 +1,11 @@
+{
+  "layout": false,
+  "sections": {
+    "main": {
+      "type": "search-json-template"
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

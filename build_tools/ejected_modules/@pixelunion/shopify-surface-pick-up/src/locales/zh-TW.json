@@ -1,0 +1,16 @@
+{
+  "store_availability": {
+    "general": {
+      "in_stock": "有現貨",
+      "out_of_stock": "缺貨",
+      "view_store_info": "查看店鋪信息",
+      "check_other_stores": "查看其他商店的空房情況",
+      "available_for_pick_up_at_html": "可在<b>{{ location_name }}</b>取件",
+      "unavailable_for_pick_up_at_html": "目前在<b>{{ location_name }}</b>不可用的取件",
+      "available_for_pick_up_at_time_html": "提供接送服務，{{ pick_up_time }}",
+      "unavailable_for_pick_up_at_time_html": "取件目前不可用",
+      "kilometers": "km",
+      "miles": "mi"
+    }
+  }
+}

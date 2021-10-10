@@ -1,0 +1,173 @@
+<script
+  type="application/json"
+  data-section-type="featured-text"
+  data-section-id="{{ section.id }}"
+>
+</script>
+
+{% style %}
+  {%
+    render 'css-loop',
+    css: section.settings.custom_css,
+    id: section.id
+  %}
+{% endstyle %}
+
+<section class="section {{ section.settings.css_class }}">
+  <div class="container">
+    <div class="one-whole column">
+      <div class="rich-text__content {{ section.settings.text_alignment }}">
+        {% if section.settings.image %}
+          {% if section.settings.mobile_image %}
+            <div class="is-hidden-mobile-only">
+          {% endif %}
+          {%
+            render 'image-element',
+            image: section.settings.image.src,
+            alt: section.settings.image.alt,
+            stretch_width: true
+          %}
+          {% if section.settings.mobile_image %}
+            </div>
+            <div class="is-hidden-desktop-only">
+              {%
+                render 'image-element',
+                image: section.settings.mobile_image,
+                alt: section.settings.mobile_image.alt,
+                stretch_width: true
+              %}
+            </div>
+          {% endif %}
+        {% endif %}
+
+        {% if section.settings.title != blank %}
+          <h2 class="rich-text__heading title">
+            {{ section.settings.title | escape }}
+          </h2>
+          <div class="feature_divider"></div>
+        {% endif %}
+
+        <div class="rich-text__text {{ section.settings.text_size }}">
+          {% if section.settings.content != blank %}
+            {{ section.settings.content }}
+          {% endif %}
+
+          {% if section.settings.button_label != blank %}
+            <a class="global-button" href="{{ section.settings.button_link }}">
+              {{ section.settings.button_label }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Rich text and image",
+  "class": "shopify-section--rich-text-and-image",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner image",
+      "info": "1800 x 800px recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile banner image",
+      "info": "Display a different image on mobile screens. This only appears when the desktop image is set."
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Talk about your brand"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Text",
+      "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "text_size",
+      "label": "Text size",
+      "default": "featured_text",
+      "options": [
+        {
+          "value": "regular_text",
+          "label": "Regular"
+        },
+        {
+          "value": "featured_text",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "default": "center",
+      "options": [
+        {
+          "value": "align_left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "paragraph",
+      "content": "[Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022329373)"
+    },
+    {
+      "type": "text",
+      "id": "css_class",
+      "label": "CSS Class"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "Custom CSS"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rich text and image",
+      "category": "Text"
+    }
+  ],
+  "templates": [
+    "index",
+    "product",
+    "page"
+  ]
+}
+
+{% endschema %}

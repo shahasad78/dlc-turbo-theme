@@ -1,0 +1,139 @@
+{% assign variant = product.selected_or_first_available_variant %}
+
+<div class="product-details">
+  <span class="title" itemprop="name">{{ product.title }}</span>
+  {% if settings.display_vendor %}
+    <span class="brand">
+      {{ product.vendor }}
+    </span>
+  {% endif %}
+  {% if settings.enable_shopify_collection_badges %}
+    <div class="shopify-reviews">
+      <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+    </div>
+  {% endif %}
+  {% if collection_handles contains 'coming-soon' %}
+    <span class="coming-soon">{{ 'collections.general.coming_soon' | t }}</span>
+  {% else %}
+    {% if settings.quick_shop_enabled and settings.quick_shop_style == 'inline' %}
+      {% comment %}Inject @pixelunion/shopify-price-ui/price-ui begin{% endcomment %}
+      <div class="price-ui price-ui--loading" data-price-ui>
+        <noscript>
+          <style>
+            .price-ui--loading {
+              display: block !important;
+              opacity: 1 !important;
+            }
+          </style>
+        </noscript>
+        {% assign compare_at_price = false %}
+      
+        {% if product.compare_at_price and product.compare_at_price != product.price %}
+          {% if product.compare_at_price_varies %}
+            {%- capture price_min -%}
+              {%-
+                render 'price-ui-templates',
+                template: 'price-min',
+                value: product.compare_at_price_min,
+              -%}
+            {%- endcapture -%}
+      
+            {%- capture price_max -%}
+              {%-
+                render 'price-ui-templates',
+                template: 'price-max',
+                value: product.compare_at_price_max,
+              -%}
+            {%- endcapture -%}
+      
+            {%- assign compare_at_price = 'product.price.range_html' | t: price_min: price_min, price_max: price_max -%}
+          {% else %}
+            {%- capture compare_at_price -%}
+              {%-
+                render 'price-ui-templates',
+                template: 'price',
+                value: product.compare_at_price,
+              -%}
+            {%- endcapture -%}
+          {% endif %}
+        {% endif %}
+      
+        {% if product.price_varies %}
+          {%- capture price_min -%}
+            {%-
+              render 'price-ui-templates',
+              template: 'price-min',
+              value: product.price_min,
+            -%}
+          {%- endcapture -%}
+      
+          {%- capture price_max -%}
+            {%-
+              render 'price-ui-templates',
+              template: 'price-max',
+              value: product.price_max,
+            -%}
+          {%- endcapture -%}
+      
+          {%- assign price = 'product.price.range_html' | t: price_min: price_min, price_max: price_max -%}
+        {% else %}
+          {%- capture price -%}
+            {%-
+              render 'price-ui-templates',
+              template: 'price',
+              value: product.price,
+            -%}
+          {%- endcapture -%}
+        {% endif %}
+      
+        {%-
+          render 'price-ui-templates',
+          template: 'price-ui',
+          compare_at_price: compare_at_price,
+          price: price,
+          unit_pricing: false,
+        -%}
+      </div>
+      {% comment %}Inject @pixelunion/shopify-price-ui/price-ui end{% endcomment %}
+
+    {% else %}
+      <span class="price {% if product.compare_at_price_max > product.price %}sale{% endif %}">
+        {% unless product.available == false and settings.display_price == false %}
+          <span class="current_price">
+            {% if product.price_varies %}
+              <small class="from"><em>{{ 'products.general.from' | t }}</em></small>
+            {% endif %}
+            {% if product.price_min > 0 %}
+              <span class="money">{% render 'price-element', price: product.price_min %}</span>
+            {% else %}
+              {% if settings.free_price_text != blank %}
+                <span class="free">{{ settings.free_price_text }}</span>
+              {% else %}
+                <span class="money">{% render 'price-element', price: product.price_min %}</span>
+              {% endif %}
+            {% endif %}
+          </span>
+          <span class="was_price">
+            {% if product.price < product.compare_at_price %}
+              <span class="money">{% render 'price-element', price: product.compare_at_price %}</span>
+            {% endif %}
+          </span>
+        {% endunless %}
+        <div class="sold_out">
+          {% unless product.available %}
+            {{ settings.sold_out_text }}
+          {% endunless %}
+        </div>
+      </span>
+    {% endif %}
+  {% endif %}
+  {% if settings.quick_shop_enabled and settings.quick_shop_style == 'popup' %}
+    {%
+      render 'unit-price',
+      item: variant,
+      variant: product,
+      product: product,
+      class: 'product-details__unit-price'
+    %}
+  {% endif %}
+</div>

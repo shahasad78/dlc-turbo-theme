@@ -1,0 +1,385 @@
+<script
+  type="application/json"
+  data-section-type="contact-custom-template"
+  data-section-id="{{ section.id }}"
+>
+</script>
+
+{%- assign image = section.settings.image -%}
+{%- assign mobile_image = section.settings.mobile_image -%}
+{%- assign background_style = section.settings.caption_content_background -%}
+{%- assign mobile_crop = 'mobile-banner--crop-' | append: section.settings.mobile_image_crop -%}
+{%- assign wide_display = section.settings.wide_display -%}
+{%- assign banner_title = section.settings.contact_heading -%}
+{%- assign banner_subheading = section.settings.subtitle -%}
+
+{% if image != blank %}
+  {%
+    render 'template-banner',
+    image: image,
+    mobile_image: mobile_image
+    background_style: background_style,
+    mobile_crop: mobile_crop,
+    wide_display: wide_display,
+    banner_title: banner_title,
+    banner_subheading: banner_subheading,
+    show_caption: true
+  %}
+{% endif %}
+
+{% if image == blank %}
+  <a name="pagecontent" id="pagecontent"></a>
+{% endif %}
+
+{% include 'include-custom-contact-form' %}
+
+{% schema %}
+{
+  "name": "Contact",
+  "class": "shopify-section--contact-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Banner"
+    },
+    {
+      "type": "checkbox",
+      "id": "wide_display",
+      "label": "Wide display",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner image",
+      "info": "1800 x 800px recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile banner image",
+      "info": "Display a different image on mobile screens. This only appears when the desktop image is set."
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_crop",
+      "label": "Mobile image cropping",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "contact_heading",
+      "label": "Heading",
+      "default": "Get in touch"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subheading",
+      "default": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "caption_content_background",
+      "label": "Text contrast technique",
+      "default": "original",
+      "info": "Improve legibility by applying a contrast technique to your banner’s text.",
+      "options": [
+        {
+          "value": "original",
+          "label": "None"
+        },
+        {
+          "value": "darken_bg",
+          "label": "Darken banner image"
+        },
+        {
+          "value": "text_box",
+          "label": "Solid box"
+        },
+        {
+          "value": "translucent_text_box",
+          "label": "Translucent box"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Contact Form"
+    },
+    {
+      "type": "image_picker",
+      "id": "contact_image",
+      "label": "Image",
+      "info": "1024 x 1024px recommended"
+    },
+    {
+      "type": "text",
+      "id": "contact_subheading",
+      "label": "Subheading",
+      "default": "Subheading"
+    },
+    {
+      "type": "richtext",
+      "id": "contact_content",
+      "label": "Text",
+      "default": "<p>Contact form description.</p>"
+    },
+    {
+      "type": "select",
+      "id": "contact_text_position",
+      "label": "Text position",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "contact_text_alignment",
+      "label": "Text alignment",
+      "default": "left",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "contact_social_buttons",
+      "label": "Show social media icons"
+    },
+    {
+      "type": "header",
+      "content": "Form"
+    },
+    {
+      "type": "image_picker",
+      "id": "contact_logo",
+      "label": "Logo",
+      "info": "500 x 500px recommended"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "custom",
+      "name": "Option",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        },
+        {
+          "type": "text",
+          "id": "placeholder",
+          "label": "Placeholder",
+          "default": "Make a selection",
+          "info": "Only applies to Drop-down"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Field is required"
+        },
+        {
+          "type": "text",
+          "id": "options_1",
+          "label": "Option 1",
+          "default": "Option 1"
+        },
+        {
+          "type": "text",
+          "id": "options_2",
+          "label": "Option 2",
+          "default": "Option 2"
+        },
+        {
+          "type": "text",
+          "id": "options_3",
+          "label": "Option 3",
+          "default": "Option 3"
+        },
+        {
+          "type": "text",
+          "id": "options_4",
+          "label": "Option 4"
+        },
+        {
+          "type": "text",
+          "id": "options_5",
+          "label": "Option 5"
+        },
+        {
+          "type": "text",
+          "id": "options_6",
+          "label": "Option 6"
+        },
+        {
+          "type": "select",
+          "id": "field_type",
+          "label": "Field type",
+          "default": "drop_down",
+          "options": [
+            {
+              "value": "drop_down",
+              "label": "Drop-down"
+            },
+            {
+              "value": "checkbox",
+              "label": "Checkbox"
+            },
+            {
+              "value": "radio",
+              "label": "Radio buttons"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Content",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Logo",
+          "info": "500 x 500px recommended"
+        },
+        {
+          "type": "range",
+          "id": "logo_display_width",
+          "label": "Logo display width",
+          "step": 5,
+          "min": 105,
+          "max": 205,
+          "default": 150,
+          "unit": "px"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Use this field to display text of any kind, such as standard reply times for inquiries.</p>"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "name": "Text field",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "label",
+          "label": "Label"
+        },
+        {
+          "type": "text",
+          "id": "placeholder",
+          "label": "Placeholder"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Field is required",
+          "info": "Email field is required"
+        },
+        {
+          "type": "select",
+          "id": "field_type",
+          "label": "Field type",
+          "default": "text",
+          "options": [
+            {
+              "value": "text",
+              "label": "Text"
+            },
+            {
+              "value": "textarea",
+              "label": "Textarea"
+            },
+            {
+              "value": "email",
+              "label": "Email"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "default": {
+    "settings": {
+      "contact_subheading": "Contact Us Today!",
+      "contact_content": "<p>Customize your contact form to suit your business! Add custom fields like a dropdown menu, checkbox, text fields and more, so that you can gather pertinent info from shoppers right from the get-go, to help answer their inquiries more effectively.</p>"
+    },
+    "blocks": [
+      {
+        "type": "richtext",
+        "settings": {
+          "placeholder": "Name",
+          "required": true,
+          "field_type": "text"
+        }
+      },
+      {
+        "type": "richtext",
+        "settings": {
+          "placeholder": "Email",
+          "required": true,
+          "field_type": "email"
+        }
+      },
+      {
+        "type": "richtext",
+        "settings": {
+          "placeholder": "Message",
+          "required": true,
+          "field_type": "textarea"
+        }
+      }
+    ]
+  }
+}
+
+{% endschema %}

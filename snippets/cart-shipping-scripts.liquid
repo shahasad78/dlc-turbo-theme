@@ -1,0 +1,15 @@
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js" data-no-instant defer></script>
+<script type="text/javascript" src="{{ 'shopify_common.js' | shopify_asset_url }}" data-no-instant defer></script>
+<script type="text/javascript" src="/services/javascripts/countries.js" data-no-instant defer></script>
+<script type="text/javascript" src="{{ 'jquery.cart.min.js' | asset_url }}" data-no-instant defer></script>
+
+<script type="text/javascript">
+  window.addEventListener('DOMContentLoaded', function() {
+    Shopify.Cart.ShippingCalculator.show({
+      submitButton: {{ 'cart.shipping_calculator.submit_button_label' | t | json }},
+      submitButtonDisabled: {{ 'cart.shipping_calculator.submit_button_label_disabled' | t | json }},
+      {% if customer and customer.default_address.country %}customerIsLoggedIn: true,{% endif %}
+      moneyFormat: $('body').data('money-format')
+    });
+  });
+</script>

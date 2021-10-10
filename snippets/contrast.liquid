@@ -1,0 +1,17 @@
+{%- capture _ -%}
+  {% comment %}
+    Returns a color that will provide good contrast against the orignal color.
+
+    @param contrast_base_color {Color}
+      The original color for which to calculate a contrasting color
+  {% endcomment %}
+
+  {% assign contrast_lightness = contrast_base_color | color_extract: 'lightness' %}
+  {% if contrast_lightness > 50 %}
+    {% assign new_color = '#333333' %}
+  {% else %}
+    {% assign new_color = '#ffffff' %}
+  {% endif %}
+  {% assign contrast_base_color = blank %}
+{%- endcapture -%}
+{{ new_color }}

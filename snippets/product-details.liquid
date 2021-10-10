@@ -1,0 +1,30 @@
+{% if settings.thumbnail_hover_enabled or settings.quick_shop_enabled and settings.quick_shop_style == 'popup' %}
+  <div class="thumbnail-overlay">
+    <a href="{{ product.url | within: collection }}" itemprop="url" class="hidden-product-link">
+      {{ product.title }}
+    </a>
+
+    <div class="info">
+      {% if settings.thumbnail_hover_enabled %}
+        {%
+          render 'product-info',
+          product: product,
+          collection_handles: collection_handles
+        %}
+      {% endif %}
+
+      {% if settings.quick_shop_enabled and settings.quick_shop_style == 'popup' %}
+        {%
+          render 'quick-shop-button',
+          product: product
+        %}
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
+
+{%
+  render 'price-ui-badges',
+  product: product,
+  collection_handles: collection_handles
+%}

@@ -1,0 +1,66 @@
+<div class="product_gallery js-product-gallery product-{{ product.id }}-gallery"
+    data-product-gallery
+    data-product-id="{{ product.id }}"
+    data-gallery-arrows-enabled="false">
+
+  {% for media in product.media %}
+    <div class="gallery-cell" data-product-id="{{ product.id }}" data-media-type="{% if media.alt contains 'youtube' or media.alt contains 'vimeo' %}external_video{% else %}{{ media.media_type }}{% endif %}" data-thumb="{{ image_large }}" data-title="{% if image_alt contains 'youtube' or image_alt contains 'vimeo' %}{{ product.title }}{% else %}{{ image_alt | escape }}{% endif %}">
+      {% if media.media_type == 'image' %}
+
+        {% capture image_id %}{{ media.id }}{% endcapture %}
+        {% capture image_alt %}{{ media.alt | escape }}{% endcapture %}
+        {% capture image_100x %}{{ media | img_url: '100x' }}{% endcapture %}
+        {% capture image_200x %}{{ media | img_url: '200x' }}{% endcapture %}
+        {% capture image_400x %}{{ media | img_url: '400x' }}{% endcapture %}
+        {% capture image_600x %}{{ media | img_url: '600x' }}{% endcapture %}
+        {% capture image_800x %}{{ media | img_url: '800x' }}{% endcapture %}
+        {% capture image_1200x %}{{ media | img_url: '1200x' }}{% endcapture %}
+        {% capture image_2000x %}{{ media | img_url: '2000x' }}{% endcapture %}
+        {% capture image_5000x %}{{ media | img_url: '5000x' }}{% endcapture %}
+
+        <div class="image__container" style="max-width: {{ media.width}}px">
+          {% if product.images.size > 0 %}
+            <img  data-zoom-src="{{ image_5000x }}"
+                  alt="{{ image_alt | escape }}"
+                  class=" lazyload {{ settings.image_loading_style }}"
+                  data-image-id="{{ product.media[forloop.index0].id }}"
+                  data-index="{{ forloop.index0 }}"
+                  data-sizes="{% if section.settings.enable_product_lightbox %}100vw{% else %}auto{% endif %}"
+                  data-aspectratio="{{ media.width }}/{{ media.height }}"
+                  data-src="{{ media | img_url: '1200x' }}"
+                  data-srcset=" {{ image_200x }} 200w,
+                                {{ image_400x }} 400w,
+                                {{ image_600x }} 600w,
+                                {{ image_800x }} 800w,
+                                {{ image_1200x }} 1200w,
+                                {{ image_2000x }} 2000w"
+                  height="{{ media.height }}"
+                  width="{{ media.width }}"
+                  srcset="data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'%20width='{{ media.width }}'%20height='{{ media.height }}'></svg>"
+                  />
+          {% else %}
+            <img src="{{ image | img_url: 'master' }}" />
+          {% endif %}
+        </div>
+      {% else %}
+        {% render 'image-element',
+          image: product.featured_media.preview_image,
+          alt: alt_text,
+          object_fit: align_height,
+          max_height: collection_height
+        %}
+      {% endif %}
+    </div>
+  {% endfor %}
+
+  {% if product.media == blank %}
+    <div class="gallery-cell">
+      {% render 'image-element',
+              image: product.featured_media.preview_image,
+              alt: alt_text,
+              object_fit: align_height,
+              max_height: collection_height
+      %}
+    </div>
+  {% endif %}
+</div>

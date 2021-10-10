@@ -1,0 +1,392 @@
+<script
+  type="application/json"
+  data-section-type="testimonial"
+  data-section-id="{{ section.id }}"
+>
+</script>
+
+{%- assign id = section.id -%}
+
+{% comment %} Content settings {% endcomment %}
+{%- assign blocks = section.blocks -%}
+{% comment %} End content settings {% endcomment %}
+
+{% comment %} Is the color set to transparent? {% endcomment %}
+{%- assign mobile_text_alpha = section.settings.mobile_text_color | default: 'rgba(0,0,0,0)' | color_extract: 'alpha' -%}
+
+{% comment %} Advanced {% endcomment %}
+{%- assign css_class = section.settings.css_class -%}
+{%- assign custom_css = section.settings.custom_css -%}
+
+{% comment %} Section specific CSS {% endcomment %}
+<style>
+  {%
+    render 'css-loop',
+    css: custom_css,
+    id: id
+  %}
+
+  {% if section.settings.mobile_text_below_image and mobile_text_alpha != 0 %}
+    @media only screen and (max-width: 480px) {
+      #shopify-section-{{ section.id }} .pretext,
+      #shopify-section-{{ section.id }} .headline,
+      #shopify-section-{{ section.id }} .subtitle {
+        color: {{ section.settings.mobile_text_color }};
+      }
+
+      #shopify-section-{{ section.id }} .feature_divider {
+        border-color: {{ section.settings.mobile_text_color }};
+      }
+    }
+  {% endif %}
+</style>
+
+{% if blocks.size > 0 %}
+  <section
+    class="
+      section
+      {% if section.settings.wide_display == true %}
+        is-width-wide
+        has-no-side-gutter
+      {% endif %}
+      {{ css_class }}
+    "
+  >
+    <div class="container">
+      <div class="one-whole column">
+        <div id="testimonial-{{ section.id }}" class="testimonial-slideshow js-testimonial {% if section.settings.testimonial_text_animation != '' %}text-animation--true{% endif %} transparentBackground--{{ settings.slideshow_button_style }} full-width--{{ section.settings.wide_display }}" data-slider-id="testimonial-{{ section.id }}" data-slideshow-speed="{{ section.settings.testimonial_speed }}" data-slideshow-text-animation="{{ section.settings.testimonial_text_animation }}" data-adaptive-height="{{ section.settings.activate_adaptiveHeight }}">
+          {% for block in blocks %}
+            {% comment %} Content settings {% endcomment %}
+            {%- assign testimonial = block.settings.testimonial -%}
+            {%- assign background_style = block.settings.caption_content_background -%}
+            {%- assign mobile_crop = 'mobile-banner--crop-' | append: block.settings.mobile_image_crop -%}
+            {% comment %} End content settings {% endcomment %}
+
+            <div class="testimonial-block gallery-cell slide-{{ forloop.index }} {% if block.settings.image == blank %}set-static testimonial-block--no-image{% endif %} caption-background-{{ background_style }} caption--below-{{ section.settings.mobile_text_below_image }}" {{ block.shopify_attributes }} data-block-id="{{ block.id }}">
+              {%- assign image = block.settings.image -%}
+              {%- assign mobile_image = block.settings.mobile_image -%}
+
+              {% if image %}
+                {% if mobile_image %}
+                  <div class="is-hidden-mobile-only">
+                {% endif %}
+                  {%
+                    render 'image-element',
+                    image: image,
+                    alt: image.alt,
+                    stretch_width: true,
+                    additional_classes: mobile_crop
+                  %}
+
+                  {% if background_style == 'darken_bg' %}
+                    <div class="darken-bg"></div>
+                  {% endif %}
+                {% if mobile_image %}
+                  </div>
+                  <div class="is-hidden-desktop-only">
+                    {%
+                      render 'image-element',
+                      image: mobile_image,
+                      alt: mobile_image.alt,
+                      stretch_width: true,
+                      additional_classes: mobile_crop
+                    %}
+                    {% if background_style == 'darken_bg' %}
+                      <div class="darken-bg"></div>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              {% endif %}
+
+              <div class="caption position-{{ block.settings.text_position }} js-caption">
+                <div class="caption-content testimonial-text {% if image != blank %}testimonial-text-mobile{% endif %} align-{{ block.settings.text_align }}">
+                  {% if block.settings.title != blank %}
+                    <p class="headline">{{ block.settings.title }}</p>
+                    <div class="feature_divider"></div>
+                  {% endif %}
+
+                  <div class="subtitle">
+                    {{ testimonial }}
+
+                    <p>
+                      {% if block.settings.name != blank %}
+                        {{ block.settings.name }}<br>
+                      {% endif %}
+
+                      {% if block.settings.store_name != blank %}
+                        {% if block.settings.link != blank %}<a href="{{ block.settings.link }}">{% endif %}
+                        <strong>{{ block.settings.store_name }}</strong>
+                        {% if block.settings.link != blank %}</a>{% endif %}
+                      {% endif %}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "class": "shopify-section--testimonials",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "wide_display",
+      "label": "Wide display",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "testimonial_text_animation",
+      "label": "Text animation",
+      "default": "fadeInDown",
+      "options": [
+        {
+          "value": "",
+          "label": "None"
+        },
+        {
+          "value": "fadeIn",
+          "label": "Fade In"
+        },
+        {
+          "value": "fadeInUp",
+          "label": "Fade Up"
+        },
+        {
+          "value": "fadeInDown",
+          "label": "Fade Down"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "testimonial_speed",
+      "label": "Change testimonials every",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 6,
+      "unit": "sec"
+    },
+    {
+      "type": "checkbox",
+      "id": "activate_adaptiveHeight",
+      "label": "Enable adaptive height",
+      "info": "Slideshow will adjust based on height of individual slides",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_text_below_image",
+      "label": "Show text below image",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "mobile_text_color",
+      "label": "Text below image",
+      "info": "Set this to “None” to use the “Regular text” color."
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "paragraph",
+      "content": "[Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022329373)"
+    },
+    {
+      "type": "text",
+      "id": "css_class",
+      "label": "CSS Class"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "Custom CSS"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Customer Testimonial"
+        },
+        {
+          "type": "richtext",
+          "id": "testimonial",
+          "label": "Testimonial",
+          "default": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer name"
+        },
+        {
+          "type": "text",
+          "id": "store_name",
+          "label": "Store name"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Store link"
+        },
+        {
+          "type": "header",
+          "content": "Content layout"
+        },
+        {
+          "type": "select",
+          "id": "text_position",
+          "label": "Text position",
+          "default": "center",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "text_align",
+          "label": "Text alignment",
+          "default": "center",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "Background image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1600 x 1000px recommended"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile Image",
+          "info": "Display a different image on mobile screens. This only appears when the desktop image is set."
+        },
+        {
+          "type": "select",
+          "id": "mobile_image_crop",
+          "label": "Image cropping",
+          "default": "none",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "Text contrast",
+          "info": "Improve legibility by applying a contrast technique to your banner’s text."
+        },
+        {
+          "type": "select",
+          "id": "caption_content_background",
+          "label": "Contrast technique",
+          "default": "original",
+          "options": [
+            {
+              "value": "original",
+              "label": "None"
+            },
+            {
+              "value": "darken_bg",
+              "label": "Darken banner image"
+            },
+            {
+              "value": "text_box",
+              "label": "Solid box"
+            },
+            {
+              "value": "translucent_text_box",
+              "label": "Translucent box"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "category": "Text",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ],
+  "templates": [
+    "index",
+    "product",
+    "page"
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,50 @@
+<script
+  type="application/json"
+  data-section-type="custom-html"
+  data-section-id="{{ section.id }}"
+>
+</script>
+
+{% include 'include-custom-html' %}
+
+{% schema %}
+{
+  "name": "Custom HTML",
+  "class": "shopify-section--custom-html",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "custom_html",
+      "label": "Custom html"
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "paragraph",
+      "content": "[Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022329373)"
+    },
+    {
+      "type": "text",
+      "id": "css_class",
+      "label": "CSS Class"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "Custom CSS"
+    }
+  ],
+  "presets": [{
+    "name": "Custom HTML",
+    "category": "Content"
+  }],
+  "templates": [
+    "index",
+    "product",
+    "page"
+  ]
+}
+
+{% endschema %}

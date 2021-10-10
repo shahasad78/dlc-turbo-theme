@@ -1,0 +1,113 @@
+{% comment %}
+** Newsletter - dynamic **
+- Draggable section
+{% endcomment %}
+
+{% comment %}Assign object as block or section{% endcomment %}
+{% if type == 'block' %}
+  {%- assign object = block -%}
+{% else %}
+  {%- assign object = section -%}
+{% endif %}
+
+{%- assign id = object.id -%}
+
+{% comment %} Content settings {% endcomment %}
+{%- assign newsletter_title = object.settings.newsletter_title -%}
+{%- assign newsletter_text = object.settings.newsletter_text -%}
+{%- assign image = object.settings.image -%}
+{%- assign mobile_image = object.settings.mobile_image -%}
+{% comment %} End content settings {% endcomment %}
+
+{% comment %} Advanced {% endcomment %}
+{%- assign css_class = object.settings.css_class -%}
+{%- assign custom_css = object.settings.custom_css -%}
+
+{% comment %} Section specific CSS {% endcomment %}
+{% style %}
+  {% render 'css-loop',
+          css: custom_css,
+          id: id
+  %}
+{% endstyle %}
+
+<section class="section {{ css_class }} {% if object.settings.wide_display == true %}is-width-wide has-no-side-gutter{% endif %}">
+  <div class="newsletter_section
+              {% if object.settings.display_first_name and object.settings.display_last_name %}newsletter-both-names--true {% else %}newsletter-both-names--false {% endif %}
+              {% if image != blank %}newsletter-bgr-true{% endif %}
+              text-align--{{ object.settings.newsletter_section_text_align }}
+              lazyload
+              {{ settings.image_loading_style }}"
+        {% if image != blank %}
+          data-bg="{{ image | img_url: '1600x' }}"
+          {% if mobile_image != blank %}
+          data-mobile-bg="{{ mobile_image | img_url: '800x' }}"
+          {% endif %}
+          data-sizes="100vw"
+        {% endif %}>
+    <div class="container">
+      <div class="{% if object.settings.newsletter_section_text_align == "center" %}offset-by-three{% elsif object.settings.newsletter_section_text_align == "right" %}offset-by-six{% endif %} five-eighths columns medium-down--one-whole is-hidden-offset-mobile-only section_form">
+        {% if newsletter_title != blank %}
+          <h2 class="title">{{ newsletter_title }}</h2>
+        {% endif %}
+
+        {% if newsletter_text != blank %}
+          <div class="newsletter-text">
+            {{ newsletter_text }}
+          </div>
+        {% endif %}
+
+      <div class="newsletter">
+        <span class="message"></span>
+
+        {% if settings.mailchimp_link != blank %}
+          <form action="{{ settings.mailchimp_link }}" method="post" name="mc-embedded-subscribe-form" id="contact_form" target="_blank">
+            <div class="input-row">
+              {% if object.settings.display_first_name %}
+                <input type="text" value="" class="firstName" name="FNAME" placeholder="{{ 'general.newsletter_form.subscriber_first_name' | t }}">
+              {% endif %}
+
+              {% if object.settings.display_last_name %}
+                <input type="text" value="" name="LNAME" placeholder="{{ 'general.newsletter_form.subscriber_last_name' | t }}">
+              {% endif %}
+            </div>
+
+            <div class="input-row">
+              <input type="email" value="" name="EMAIL" class="contact_email" placeholder="{{ 'general.newsletter_form.placeholder' | t }}">
+              <input type="submit" value="{{ 'general.newsletter_form.submit' | t }}" class="global-button global-button--primary newsletter-form__sign-up" name="subscribe" />
+            </div>
+          </form>
+        {% else %}
+          {% form 'customer' %}
+            {% if form.posted_successfully? %}
+              <p><em>{{ 'general.newsletter_form.success_text' | t }}</em></p>
+            {% elsif form.errors %}
+              {% for field in form.errors %}
+                <p><em>{{ field }} - {{ form.errors.messages[field] }}</em></p>
+              {% endfor %}
+            {% endif %}
+
+            <input type="hidden" name="contact[tags]" value="prospect,newsletter"/>
+
+            <div class="input-row">
+              {% if object.settings.display_first_name %}
+                <input type="text" class="firstName" name="contact[first_name]" placeholder="{{ 'general.newsletter_form.subscriber_first_name' | t }}" />
+              {% endif %}
+
+              {% if object.settings.display_last_name %}
+                <input type="text" name="contact[last_name]" placeholder="{{ 'general.newsletter_form.subscriber_last_name' | t }}" />
+              {% endif %}
+            </div>
+
+            <div class="input-row">
+              <input type="hidden" name="challenge" value="false" />
+              <input type="email" class="contact_email" name="contact[email]" required placeholder="{{ 'general.newsletter_form.placeholder' | t }}" />
+              <input type='submit' class="global-button global-button--primary newsletter-form__sign-up" value="{{ 'general.newsletter_form.submit' | t }}" />
+            </div>
+          {% endform %}
+        {% endif %}
+       </div>
+      </div>
+    </div>
+  </div>
+</section>

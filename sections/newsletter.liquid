@@ -1,0 +1,111 @@
+<script
+  type="application/json"
+  data-section-type="newsletter"
+  data-section-id="{{ section.id }}"
+>
+</script>
+
+{% include 'include-newsletter' %}
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "class": "shopify-section--newsletter",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "wide_display",
+      "label": "Wide display",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "display_first_name",
+      "label": "Show first name",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "display_last_name",
+      "label": "Show last name",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "newsletter_title",
+      "label": "Heading",
+      "default": "Subscribe"
+    },
+    {
+      "type": "richtext",
+      "id": "newsletter_text",
+      "label": "Subheading",
+      "default": "<p>Sign up to get the latest on sales, new releases and more …</p>"
+    },
+    {
+      "type": "select",
+      "id": "newsletter_section_text_align",
+      "label": "Text alignment",
+      "default": "center",
+      "options": [
+          {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner image",
+      "info": "1600 x 300px recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile banner image",
+      "info": "Display a different image on mobile screens. This only appears when the desktop image is set."
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "paragraph",
+      "content": "[Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022329373)"
+    },
+    {
+      "type": "text",
+      "id": "css_class",
+      "label": "CSS Class"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "Custom CSS"
+    }
+  ],
+  "presets": [{
+    "name": "Newsletter",
+    "category": "Promotional"
+  }],
+  "templates": [
+    "index",
+    "product",
+    "page"
+  ]
+}
+
+{% endschema %}

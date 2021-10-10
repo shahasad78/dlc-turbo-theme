@@ -1,0 +1,159 @@
+<script
+  type="application/json"
+  data-section-type="product-recommendations"
+  data-section-id="{{ section.id }}"
+>
+</script>
+
+{% comment %} Content settings {% endcomment %}
+{%- assign product_recommendations_heading = section.settings.product_recommendations_heading -%}
+
+{% comment %} End content settings {% endcomment %}
+
+{% comment %} NE compatibility {% endcomment %}
+{% comment%} This setting and conditional should be removed in the New Editor {% endcomment %}
+{% if section.settings.show_product_recommendations %}
+{% comment %} Ends NE compatibility {% endcomment %}
+  {% comment %} Check whether product has any tags for custom related products {% endcomment %}
+  {% for tag in product.tags %}
+    {% if tag contains 'meta-related-collection-' %}
+      {% assign related_collection_handle = tag | remove: 'meta-related-collection-' %}
+    {% endif %}
+  {% endfor %}
+
+  {% if related_collection_handle != blank %}
+    {% comment %} Show products based on merchant-added tags prepended with 'meta-related-collection-' {% endcomment %}
+    {% assign collection_size = collections[related_collection_handle].all_products_count %}
+
+    {% if collection_size > 0 %}
+      {% assign custom_collection = collections[related_collection_handle] %}
+      {% assign products = custom_collection.products %}
+    {% endif %}
+
+    {% if custom_collection and collection_size > 0 %}
+      {% assign show_custom_collection = true %}
+    {% endif %}
+
+  {% else %}
+    {% comment %} Shopify generated dynamic recommendations, falling back to default related products (based on parent collection) {% endcomment %}
+    {% assign dynamic_collection = recommendations %}
+    {% assign products = recommendations.products %}
+    {% assign show_dynamic_collection = true %}
+  {% endif %}
+
+  {% comment %} HTML markup {% endcomment %}
+  {% capture product_collections_markup %}
+    <div class="recommended-products__title {% unless section.settings.product_recommendations_style == 'slider' %}one-whole column{% endunless %}" data-recommended-product-count="{% if show_dynamic_collection == true %}{{ recommendations.products_count }}{% else %}{{ collection_size }}{% endif %}">
+      <h2 class="title center">{{ section.settings.product_recommendations_heading }}</h2>
+      <div class="feature_divider"></div>
+    </div>
+
+    {% if section.settings.product_recommendations_style == 'slider' %}
+      {% comment %} Recommended Products Slider {% endcomment %}
+      <div class="recommended-products--slider js-recommended-products-slider">
+        {%
+          render 'product-slider',
+          limit: section.settings.recommended_products_limit,
+          products: products,
+          per_slide: section.settings.products_per_row - 1,
+          skip_product: product
+        %}
+      </div>
+    {% else %}
+      {% comment %} Recommended Products Grid {% endcomment %}
+      <div class="recommended-products--grid">
+        <div class="container">
+          <div class="one-whole column">
+            {%
+              render 'product-loop',
+              limit: section.settings.recommended_products_limit,
+              products: products,
+              products_per_row: section.settings.products_per_row,
+              skip_product: product
+            %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endcapture %}
+
+  {% if show_custom_collection %}
+    <div class="product-recommendations product-recommendations--{% if template contains 'details' %}details{% else %}{{ template | replace: '.', '-' | handle }}{% endif %} meta-related-recommended-collection" data-enabled="{{ section.settings.show_product_recommendations }}">
+      {{ product_collections_markup }}
+    </div>
+  {% elsif show_dynamic_collection %}
+    <div class="product-recommendations product-recommendations--{% if template contains 'details' %}details{% else %}{{ template | replace: '.', '-' | handle }}{% endif %}" data-recommendations-url="{{ routes.product_recommendations_url }}" data-product-id="{{ product.id }}" data-limit="{{ section.settings.recommended_products_limit }}" data-enabled="{{ section.settings.show_product_recommendations }}">
+      {{ product_collections_markup }}
+    </div>
+  {% endif %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Recommended products",
+  "class": "shopify-section--recommended-products",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product recommendations"
+    },
+    {
+      "type":"paragraph",
+      "content": "The settings configured in this section will remain consistent across all product templates. If using the product.details template, adding the Recommended Products content block is also required. [Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360034424013)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_recommendations",
+      "label": "Show dynamic recommendations",
+      "info": "Dynamic recommendations change and improve with time. [Learn more](https://help.shopify.com/en/themes/development/recommended-products)",
+      "default": true
+    },
+    {
+      "type": "radio",
+      "id": "product_recommendations_style",
+      "label": "Layout",
+      "default": "grid",
+      "options": [
+        {
+          "value": "slider",
+          "label": "Slider"
+        },
+        {
+          "value": "grid",
+          "label": "Grid"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "product_recommendations_heading",
+      "label": "Heading",
+      "default": "You may also like"
+    },
+    {
+      "type": "range",
+      "id": "products_per_row",
+      "label": "Products per row",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "recommended_products_limit",
+      "label": "Limit products",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 4
+    }
+  ],
+  "templates": [
+    "index",
+    "product",
+    "page"
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,16 @@
+{
+  "store_availability": {
+    "general": {
+      "in_stock": "Op voorraad",
+      "out_of_stock": "Niet op voorraad",
+      "view_store_info": "Bekijk winkelinformatie",
+      "check_other_stores": "Controleer beschikbaarheid bij andere winkels",
+      "available_for_pick_up_at_html": "Ophalen is mogelijk op <b>{{ location_name }}</b>",
+      "unavailable_for_pick_up_at_html": "Ophalen is momenteel niet beschikbaar op <b>{{ location_name }}</b>",
+      "available_for_pick_up_at_time_html": "Ophalen mogelijk, {{ pick_up_time }}",
+      "unavailable_for_pick_up_at_time_html": "Ophalen is momenteel niet beschikbaar",
+      "kilometers": "km",
+      "miles": "mi"
+    }
+  }
+}

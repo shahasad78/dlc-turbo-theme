@@ -1,0 +1,90 @@
+{% paginate customer.orders by 20 %}
+  <section class="section">
+    <a name="pagecontent" id="pagecontent"></a>
+    <div class="container has-padding-top has-padding-bottom">
+      <div class="one-half column medium-down--one-whole">
+        <h1>{{ 'customer.account.details' | t }}</h1>
+      </div>
+
+      <div class="one-half column medium-down--one-whole account-header-logout">
+        <span>
+          <a href="{{ routes.account_logout_url }}" id="customer_logout_link">{{ 'layout.customer.log_out' | t }}</a>
+        </span>
+      </div>
+
+      <div class="one-whole column">
+        <div class="feature_divider"></div>
+      </div>
+
+      <aside class="one-third column medium-down--one-whole account-sidebar">
+        <h4 class="name">
+          <a href="{{ routes.account_url }}" title="{{ 'layout.customer.my_account' | t }}">{{ customer.name }}</a>
+        </h4>
+
+        <p class="email note">{{ customer.email }}</p>
+
+        <h4>{{ 'customer.addresses.primary' | t }}</h4>
+
+        <div class="address note">
+          {% if customer.default_address != nil %}
+            <p>{{ customer.default_address.address1 }}</p>
+
+            {% if customer.default_address.address2 != "" %}
+              <p>{{ customer.default_address.address2 }}</p>
+            {% endif %}
+
+            <p>{{ customer.default_address.city }}{% if customer.default_address.province_code %}, {{ customer.default_address.province_code }}{% endif %} {{ customer.default_address.zip }}</p>
+
+            <p>{{ customer.default_address.country }}</p>
+
+            <p>{{ customer.default_address.phone }}</p>
+          {% else %}
+            <p>{{ 'customer.addresses.no_addresses' | t }}</p>
+          {% endif %}
+
+          <p>
+            <a href="{{ routes.account_addresses_url }}">
+              {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
+            </a>
+          </p>
+        </div>
+      </aside>
+
+      <main class="two-thirds columns medium-down--one-whole account-main">
+        <h4>{{ 'customer.orders.title' | t }}</h4>
+
+        {% if customer.orders.size != 0 %}
+          <table id="customer-orders" class="collapsible-table">
+            <thead>
+              <tr>
+                <th>{{ 'customer.orders.order_number' | t }}</th>
+                <th>{{ 'customer.orders.date' | t }}</th>
+                <th>{{ 'customer.orders.payment_status' | t }}</th>
+                <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
+                <th>{{ 'customer.orders.total' | t }}</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {% for order in customer.orders %}
+                <tr class="{% cycle 'odd', 'even' %} {% if order.cancelled %}cancelled_order{% endif %}">
+                  <td data-label="{{ 'customer.orders.order_number' | t }}">{{ order.name | link_to: order.customer_url }}</td>
+                  <td data-label="{{ 'customer.orders.date' | t }}">{{ order.created_at | date: format: "month_day_year" }}</td>
+                  <td data-label="{{ 'customer.orders.payment_status' | t }}">{{ order.financial_status_label }}</td>
+                  <td data-label="{{ 'customer.orders.fulfillment_status' | t }}">{{ order.fulfillment_status_label }}</td>
+                  <td data-label="{{ 'customer.orders.total' | t }}">
+                    <span class="money">{% render 'price-element', price: order.total_price %}</span>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% else %}
+          <p>{{ 'customer.orders.none' | t }}</p>
+        {% endif %}
+
+        {% render 'pagination', paginate: paginate %}
+      </main>
+    </div>
+  </section>
+{% endpaginate %}

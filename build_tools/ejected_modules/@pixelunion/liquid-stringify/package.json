@@ -1,0 +1,41 @@
+{
+  "name": "@pixelunion/liquid-stringify",
+  "version": "1.0.0",
+  "description": "PostCSS stringifier for handling blocks of Liquid code",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "liquid"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Pixel Union",
+  "license": "UNLICENSED",
+  "repository": "github:pixelunion/postcss-liquid",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "dependencies": {
+    "postcss": "^7.0.18"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "babel-eslint": "10.1.0",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-jest": "^22.19.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+
+,"_resolved": "https://npm.pkg.github.com/download/@pixelunion/liquid-stringify/1.0.0/572f7e31a027d8b055025ca83b05487ae64b77c7eef0c943064b446aaedc713a"
+,"_integrity": "sha512-UsZ7a5Cy5NxQMnvApoPliH60e0Z/ppkwfnCJGtgSKHKMwrX/8b3yGP2VQ8ul5MviWxyMUcKqMNVGWjNY91mBrg=="
+,"_from": "@pixelunion/liquid-stringify@1.0.0"
+}

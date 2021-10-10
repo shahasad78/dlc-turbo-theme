@@ -1,0 +1,16 @@
+{
+  "store_availability": {
+    "general": {
+      "in_stock": "Stokta var",
+      "out_of_stock": "Stoklar tükendi",
+      "view_store_info": "Mağaza bilgilerini görüntüleyin",
+      "check_other_stores": "Diğer mağazalardaki stok durumunu kontrol edin",
+      "available_for_pick_up_at_html": "Teslim alma <b>{{ location_name }}</b> adresinden alınabilir",
+      "unavailable_for_pick_up_at_html": "Şu anda <b>{{ location_name }}</b> konumunda teslim alınamıyor",
+      "available_for_pick_up_at_time_html": "Teslim alma mevcut, {{ pick_up_time }}",
+      "unavailable_for_pick_up_at_time_html": "Şu anda teslim alınamıyor",
+      "kilometers": "km",
+      "miles": "mi"
+    }
+  }
+}

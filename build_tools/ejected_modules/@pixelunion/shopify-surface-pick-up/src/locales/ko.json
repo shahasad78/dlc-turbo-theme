@@ -1,0 +1,16 @@
+{
+  "store_availability": {
+    "general": {
+      "in_stock": "재고",
+      "out_of_stock": "품절",
+      "view_store_info": "매장 정보보기",
+      "check_other_stores": "다른 매장에서 재고 확인",
+      "available_for_pick_up_at_html": "<b>{{ location_name }}</b>에서 픽업 가능",
+      "unavailable_for_pick_up_at_html": "현재 <b>{{ location_name }}</b>에서 수령 할 수 없습니다.",
+      "available_for_pick_up_at_time_html": "수령 가능, {{ pick_up_time }}",
+      "unavailable_for_pick_up_at_time_html": "현재 픽업 불가",
+      "kilometers": "km",
+      "miles": "mi"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "store_availability": {
+    "general": {
+      "in_stock": "I lager",
+      "out_of_stock": "Ej i lager",
+      "view_store_info": "Visa butiksinformation",
+      "check_other_stores": "Kontrollera tillgänglighet i andra butiker",
+      "available_for_pick_up_at_html": "Hämtning tillgänglig på <b>{{ location_name }}</b>",
+      "unavailable_for_pick_up_at_html": "Hämtning är för närvarande inte tillgänglig på <b>{{ location_name }}</b>",
+      "available_for_pick_up_at_time_html": "Hämtning tillgänglig, {{ pick_up_time }}",
+      "unavailable_for_pick_up_at_time_html": "Hämtning är för närvarande inte tillgänglig",
+      "kilometers": "km",
+      "miles": "mi"
+    }
+  }
+}

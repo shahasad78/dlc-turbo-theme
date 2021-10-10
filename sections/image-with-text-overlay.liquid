@@ -1,0 +1,413 @@
+<script
+  type="application/json"
+  data-section-type="image-with-text-overlay"
+  data-section-id="{{ section.id }}"
+>
+</script>
+
+{% assign object_selector = '#shopify-section-' | append: section.id %}
+{% assign mobile_crop = 'mobile-banner--crop-' | append: section.settings.mobile_image_crop %}
+{% assign mobile_text_alpha = section.settings.mobile_text_color | default: 'rgba(0,0,0,0)' | color_extract: 'alpha' %}
+
+<style>
+  {%
+    render 'css-loop',
+    css: section.settings.custom_css,
+    id: section.id
+  %}
+
+  {% if section.settings.mobile_text_below_image and mobile_text_alpha != 0 %}
+    @media only screen and (max-width: 480px) {
+      {{ object_selector }} .pretext,
+      {{ object_selector }} .headline,
+      {{ object_selector }} .subtitle {
+        color: {{ section.settings.mobile_text_color }};
+      }
+    }
+  {% endif %}
+</style>
+
+<section
+  id="banner-{{ section.id }}"
+  class="
+    section
+    {% if section.settings.wide_display == false %}
+      is-width-standard
+    {% else %}
+      is-width-wide
+      has-no-side-gutter
+    {% endif %}
+    full-width--{{ section.settings.wide_display }}
+    caption-background-{{ section.settings.caption_content_background }}
+    caption--below-{{ section.settings.mobile_text_below_image }}
+    {{ section.settings.css_class }}
+  "
+>
+  <div class="container">
+    <div
+      class="
+        one-whole
+        column
+        banner
+      "
+    >
+      {% if section.settings.mobile_image %}
+        <div class="is-hidden-mobile-only">
+      {% endif %}
+
+      {% if section.settings.image %}
+        {%
+          render 'image-element',
+          image: section.settings.image,
+          alt: section.settings.image.alt,
+          stretch_width: true,
+          additional_classes: mobile_crop
+        %}
+
+        {% if section.settings.caption_content_background == 'darken_bg' %}
+          <div class="darken-bg"></div>
+        {% endif %}
+      {% else %}
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--banner' }}
+      {% endif %}
+
+      {% if section.settings.mobile_image %}
+        </div>
+        <div class="is-hidden-desktop-only">
+          {%
+            render 'image-element',
+            image: section.settings.mobile_image,
+            alt: section.settings.mobile_image.alt,
+            stretch_width: true,
+            additional_classes: mobile_crop
+          %}
+
+          {% if section.settings.caption_content_background == 'darken_bg' %}
+            <div class="darken-bg"></div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% unless section.settings.button1_link != blank and section.settings.button2_link != blank %}
+        {% if section.settings.button1_link != blank and section.settings.button1 == blank %}
+          <a href="{{ section.settings.button1_link }}" class="banner-full-link">
+            {{ section.settings.button1 }}
+          </a>
+        {% endif %}
+
+        {% if section.settings.button2_link != blank and section.settings.button2 == blank %}
+          <a href="{{ section.settings.button2_link }}" class="banner-full-link">
+            {{ section.settings.button2 }}
+          </a>
+        {% endif %}
+      {% endunless %}
+
+      {% unless section.settings.pretext == blank and section.settings.title == blank and section.settings.subtitle == blank and section.settings.button1 == blank and section.settings.button2 == blank %}
+        <div
+          class="
+            position-{{ section.settings.text_position }}
+            caption
+            js-caption
+          "
+        >
+          <div class="caption-content align-{{ section.settings.text_align }}">
+            {% if  section.settings.pretext != blank %}
+              <div class="pretext">
+                {{  section.settings.pretext }}
+              </div>
+            {% endif %}
+
+            {% if section.settings.title != blank %}
+              <h1 class="headline">
+                {{ section.settings.title | escape }}
+              </h1>
+            {% endif %}
+
+            {% if section.settings.subtitle != blank %}
+              <div class="subtitle">
+                {{ section.settings.subtitle }}
+              </div>
+            {% endif %}
+
+            {%
+              render 'banner-buttons',
+              button1_text: section.settings.button1,
+              button1_style: section.settings.button1_style,
+              button1_link: section.settings.button1_link,
+              button2_text: section.settings.button2,
+              button2_style: section.settings.button2_style,
+              button2_link: section.settings.button2_link,
+              mobile_text_below_image: section.settings.mobile_text_below_image,
+              mobile_text_color: section.settings.mobile_text_color,
+              object_selector: object_selector,
+            %}
+          </div>
+        </div>
+      {% endunless %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image with text overlay",
+  "class": "shopify-section--image-with-text-overlay under-menu",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "wide_display",
+      "label": "Wide display",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "1800 x 1000px recommended"
+    },
+    {
+      "type": "richtext",
+      "id": "pretext",
+      "label": "Preheading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "button1",
+      "label": "First button label"
+    },
+    {
+      "type": "url",
+      "id": "button1_link",
+      "label": "First button link"
+    },
+    {
+      "type": "select",
+      "id": "button1_style",
+      "label": "First button color",
+      "options": [
+        {
+          "value": "global-button--primary",
+          "label": "Primary button"
+        },
+        {
+          "value": "global-button--banner",
+          "label": "Banner button (outline)"
+        },
+        {
+          "value": "global-button--banner-highlighted",
+          "label": "Banner button (solid)"
+        },
+        {
+          "value": "global-button--banner-text",
+          "label": "Banner text button (outline)"
+        },
+        {
+          "value": "global-button--banner-text-highlighted",
+          "label": "Banner text button (solid)"
+        }
+      ],
+      "default": "global-button--banner"
+    },
+    {
+      "type": "text",
+      "id": "button2",
+      "label": "Second button label"
+    },
+    {
+      "type": "url",
+      "id": "button2_link",
+      "label": "Second button link"
+    },
+    {
+      "type": "select",
+      "id": "button2_style",
+      "label": "Second button color",
+      "options": [
+        {
+          "value": "global-button--primary",
+          "label": "Primary button"
+        },
+        {
+          "value": "global-button--banner",
+          "label": "Banner button (outline)"
+        },
+        {
+          "value": "global-button--banner-highlighted",
+          "label": "Banner button (solid)"
+        },
+        {
+          "value": "global-button--banner-text",
+          "label": "Banner text button (outline)"
+        },
+        {
+          "value": "global-button--banner-text-highlighted",
+          "label": "Banner text button (solid)"
+        }
+      ],
+      "default": "global-button--banner"
+    },
+    {
+      "type": "header",
+      "content": "Content layout"
+    },
+    {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Text contrast",
+      "info": "Improve legibility by applying a contrast technique to your banner’s text."
+    },
+    {
+      "type": "select",
+      "id": "caption_content_background",
+      "label": "Contrast technique",
+      "default": "original",
+      "options": [
+        {
+          "value": "original",
+          "label": "None"
+        },
+        {
+          "value": "darken_bg",
+          "label": "Darken banner image"
+        },
+        {
+          "value": "text_box",
+          "label": "Solid box"
+        },
+        {
+          "value": "translucent_text_box",
+          "label": "Translucent box"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Image",
+      "info": "Display a different image on mobile screens. This only appears when the desktop image is set."
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_crop",
+      "label": "Image cropping",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_text_below_image",
+      "label": "Show text below image",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "mobile_text_color",
+      "label": "Text below image",
+      "info": "Set this to “None” to use the “Regular text” color."
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "paragraph",
+      "content": "[Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022329373)"
+    },
+    {
+      "type": "text",
+      "id": "css_class",
+      "label": "CSS Class"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "Custom CSS"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text overlay",
+      "category": "Image",
+      "settings": {
+        "image": "",
+        "title": "Your Headline",
+        "text_position": "center",
+        "text_align": "center"
+      }
+    }
+  ],
+  "templates": [
+    "index",
+    "product",
+    "page"
+  ]
+}
+
+{% endschema %}

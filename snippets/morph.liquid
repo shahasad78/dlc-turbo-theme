@@ -1,0 +1,44 @@
+{%- capture _ -%}
+  {% comment %}
+    This adjusts the color to give it an appropriate difference from the original color.
+    It is usually used for link hover color, and things where we need to distinguish a change.
+
+    @param morph_base_color {Color}
+      The origin color to morph
+
+    @param morph_adjustment {Number}
+      The number to multiply the lightness and saturation by. Default 2.
+  {% endcomment %}
+
+  {% if morph_adjustment == blank %}
+    {% assign morph_adjustment = 2 %}
+  {% endif %}
+
+  {% assign morph_adjustment = morph_adjustment | times: 1.0 %}
+
+  {% assign color_lightness = morph_base_color | color_extract: 'lightness' %}
+
+  {% if color_lightness > 20.0 %}
+    {% if color_lightness > 50.0 %}
+      {% assign light_adjustment = color_lightness | divided_by: 25.0 | times: morph_adjustment %}
+    {% else %}
+      {% assign light_adjustment = color_lightness | divided_by: 15.0 | times: morph_adjustment %}
+    {% endif %}
+    {% assign new_color = morph_base_color | color_darken: light_adjustment %}
+  {% else %}
+    {% if color_lightness < 7.0 %}
+      {% assign light_adjustment = 3.0 | times: morph_adjustment %}
+      {% assign new_color = morph_base_color | color_desaturate: 45.0 %}
+    {% elsif color_lightness < 12.0 %}
+      {% assign light_adjustment = 2.25 | times: morph_adjustment %}
+      {% assign new_color = morph_base_color | color_desaturate: 15.0 %}
+    {% else %}
+      {% assign light_adjustment = 1.75 | times: morph_adjustment %}
+      {% assign new_color = morph_base_color %}
+    {% endif %}
+    {% assign new_color = new_color | color_lighten: light_adjustment %}
+  {% endif %}
+  {% assign morph_base_color = blank %}
+  {% assign morph_adjustment = blank %}
+{%- endcapture -%}
+{{ new_color }}

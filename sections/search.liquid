@@ -1,0 +1,147 @@
+<script
+  type="application/json"
+  data-section-type="search"
+  data-section-id="{{ section.id }}"
+>
+</script>
+
+{% style %}
+  {%
+    render 'css-loop',
+    css: section.settings.custom_css,
+    id: section.id
+  %}
+{% endstyle %}
+
+<section
+  class="
+    section
+    is-width-wide
+    has-no-side-gutter
+    {{ section.settings.css_class }}
+  "
+>
+  <div
+    class="
+      search__section
+      {% if section.settings.image != blank %}
+        search-bgr-true
+      {% endif %}
+      text-align--{{ section.settings.search_section_text_align }}
+      lazyload
+    "
+    {% if section.settings.image != blank %}
+      data-bg="{{ section.settings.image | img_url: '1600x' }}"
+      {% if section.settings.mobile_image != blank %}
+        data-mobile-bg="{{ section.settings.mobile_image | img_url: '800x' }}"
+      {% endif %}
+      data-sizes="100vw"
+    {% endif %}
+  >
+    <div class="section_form">
+      {% if section.settings.search_title != blank %}
+        <h2 class="title">
+          {{ section.settings.search_title }}
+        </h2>
+      {% endif %}
+
+      {% if section.settings.search_text != blank %}
+        <div class="search-text">
+          {{ section.settings.search_text }}
+        </div>
+      {% endif %}
+
+      {% render 'search-form' %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Search",
+  "class": "shopify-section--search",
+  "settings": [
+    {
+      "type": "text",
+      "id": "search_title",
+      "label": "Heading",
+      "default": "Search our shop"
+    },
+    {
+      "type": "richtext",
+      "id": "search_text",
+      "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "search_section_text_align",
+      "label": "Text alignment",
+      "default": "center",
+      "options": [
+          {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "search_term",
+      "label": "Placeholder text",
+      "default": "Search..."
+    },
+    {
+      "type": "header",
+      "content": "Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner image",
+      "info": "1600 x 300px recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile banner image",
+      "info": "Display a different image on mobile screens. This only appears when the desktop image is set."
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "paragraph",
+      "content": "[Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022329373)"
+    },
+    {
+      "type": "text",
+      "id": "css_class",
+      "label": "CSS Class"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "Custom CSS"
+    }
+  ],
+  "presets": [{
+    "name": "Search",
+    "category": "Content"
+  }],
+  "templates": [
+    "index",
+    "product",
+    "page"
+  ]
+}
+
+{% endschema %}

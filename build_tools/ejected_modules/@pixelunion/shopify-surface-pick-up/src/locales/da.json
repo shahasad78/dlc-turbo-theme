@@ -1,0 +1,16 @@
+{
+  "store_availability": {
+    "general": {
+      "in_stock": "På lager",
+      "out_of_stock": "Udsolgt",
+      "view_store_info": "Se butiksinformation",
+      "check_other_stores": "Tjek tilgængelighed i andre butikker",
+      "available_for_pick_up_at_html": "Afhentning er tilgængelig på <b>{{ location_name }}</b>",
+      "unavailable_for_pick_up_at_html": "Afhentning er i øjeblikket ikke tilgængelig på <b>{{ location_name }}</b>",
+      "available_for_pick_up_at_time_html": "Afhentning tilgængelig, {{ pick_up_time }}",
+      "unavailable_for_pick_up_at_time_html": "Afhentning er i øjeblikket ikke tilgængelig",
+      "kilometers": "km",
+      "miles": "mi"
+    }
+  }
+}

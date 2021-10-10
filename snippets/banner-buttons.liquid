@@ -1,0 +1,42 @@
+{% if button1_text != blank or button2_text != blank %}
+  {% assign max_size_mobile = 12 %}
+  {% assign max_size_tablet = 20 %}
+  {% assign max_size = 27 %}
+  {%- capture container_direction -%}
+    {%- if button1_text.size > max_size or button2_text.size > max_size -%}
+      button-grid-container--column
+    {% elsif button1_text.size > max_size_tablet or button2_text.size > max_size_tablet %}
+      button-grid-container--column-tablet
+    {% elsif button1_text.size > max_size_mobile or button2_text.size > max_size_mobile %}
+      button-grid-container--column-mobile
+    {%- endif -%}
+  {%- endcapture -%}
+  <div class="button-grid-container {{ container_direction }}">
+    {% assign button1_class = 'first_button' %}
+    {% assign button1_selector = object_selector | append: ' .' | append: button1_class %}
+    {%
+      render 'banner-button',
+      button_text: button1_text,
+      button_style: button1_style,
+      button_link: button1_link,
+      mobile_text_below_image: mobile_text_below_image,
+      local_text_color: mobile_text_color,
+      button_selector: button1_selector,
+      button_class: button1_class,
+      button_attrs: button1_attrs,
+    %}
+    {% assign button2_class = 'second_button' %}
+    {% assign button2_selector = object_selector | append: ' .' | append: button2_class %}
+    {%
+      render 'banner-button',
+      button_text: button2_text,
+      button_style: button2_style,
+      button_link: button2_link,
+      mobile_text_below_image: mobile_text_below_image,
+      local_text_color: mobile_text_color,
+      button_selector: button2_selector,
+      button_class: button2_class,
+      button_attrs: button2_attrs,
+    %}
+  </div>
+{% endif %}

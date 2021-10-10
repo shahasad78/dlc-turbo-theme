@@ -1,0 +1,195 @@
+{% if section.blocks.size > 0 %}
+  <div
+    class="
+      sidebar
+      toggle-all--{{ section.settings.toggle }}
+    "
+    data-sidebar
+    data-sidebar-allow-toggle="{{ section.settings.toggle }}"
+  >
+    <div class="sidebar__content">
+      {% assign collapsable_block_types = 'menu,recent_posts,post_tags,page,text' %}
+      {% for block in section.blocks %}
+        {% assign sidebar_block_element = 'div' %}
+        {% if collapsable_block_types contains block.type %}
+          {% assign sidebar_block_element = 'details' %}
+        {% endif %}
+        <{{ sidebar_block_element }}
+          class="
+            sidebar-block
+            {% if forloop.first %}sidebar-block--first{% endif %}
+          "
+          data-sidebar-block
+          {{ block.shopify_attributes }}
+          {% if section.settings.toggle %}open{% endif %}
+        >
+          {% case block.type %}
+            {% when 'menu' %}
+              {% assign sidebar_menu = linklists[block.settings.custom_menu_linklist] %}
+              {% if sidebar_menu != blank %}
+                <summary>
+                  <h4 class="sidebar-block__heading">{{ sidebar_menu.title }}<span class="right icon-down-arrow sidebar-block-toggle-icon"></span></h4>
+                </summary>
+                <ul class="toggle_list">
+                  {% for link in sidebar_menu.links %}
+                    {% if link.active %}
+                      {% assign active_link = true %}
+                    {% else %}
+                      {% assign active_link = false %}
+                      {% for sub_link in linklists[link.handle].links %}
+                        {% if sub_link.active %}
+                          {% assign active_link = true %}
+                        {% else %}
+                          {% for sub_sub_link in linklists[sub_link.handle].links %}
+                            {% if sub_sub_link.active %}
+                              {% assign active_link = true %}
+                            {% endif %}
+                          {% endfor %}
+                        {% endif %}
+                      {% endfor %}
+                    {% endif %}
+
+                    <li>
+                      {% if link.url == 'http://' or link.url == '' or link.url == '/' or link.url == 'https://' or link.url == '#' %}
+                      <a data-no-instant href="{{ link.url }}" class="{% if link.active %}active{% endif %} parent-link--false">
+                          {{ link.title }}
+                        </a>
+                      {% else %}
+                      <a data-no-instant href="{{ link.url }}" class="{% if link.active %}active{% endif %} parent-link--true">
+                        {{ link.title }}
+                      </a>
+                      {% endif %}
+
+                      {% if linklists[link.handle].links != blank %}
+                        <span class="menu-toggle icon-down-arrow {% if active_link %}active{% endif %}" aria-haspopup="true" aria-expanded="{% if active_link %}true{% else %}false{% endif %}"> </span>
+
+                        <ul class="{% if active_link %}active{% endif %}">
+                          {% for sub_link in linklists[link.handle].links %}
+                            {% if sub_link.active %}
+                              {% assign active_link = true %}
+                            {% else %}
+                              {% assign active_link = false %}
+                              {% for sub_sub_link in linklists[sub_link.handle].links %}
+                                {% if sub_sub_link.active %}
+                                  {% assign active_link = true %}
+                                {% endif %}
+                              {% endfor %}
+                            {% endif %}
+
+                            <li class="sub-menu {% if active_link %}active{% endif %}">
+                              <a {% if sub_link.active %}class="active"{% endif %} href="{{ sub_link.url }}">{{ sub_link.title }}</a>
+
+                              {% if linklists[sub_link.handle].links != blank %}
+                                <span class="menu-toggle icon-down-arrow {% if active_link %}active{% endif %}" aria-haspopup="true" aria-expanded="{% if active_link %}true{% else %}false{% endif %}"> </span>
+
+                                <ul class="{% if active_link %}active{% endif %}">
+                                  {% for sub_sub_link in linklists[sub_link.handle].links %}
+                                    <li class="sub-menu">
+                                      <a {% if sub_sub_link.active %}class="active"{% endif %} href="{{ sub_sub_link.url }}">{{ sub_sub_link.title }}</a>
+                                    </li>
+                                  {% endfor %}
+                                </ul>
+                              {% endif %}
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% else %}
+                <summary>
+                  <h4 class="sidebar-block__heading">Menu Title<span class="right icon-down-arrow sidebar-block-toggle-icon"></span></h4>
+                </summary>
+                <ul class="toggle_list">
+                  <li><p>{{ 'homepage.onboarding.no_content' | t }}</p></li>
+                </ul>
+              {% endif %}
+
+            {% when 'search' %}
+              <div data-autocomplete-{{ settings.enable_autocomplete }}>
+                <form class="blog_search search__form" action="{{ routes.search_url }}">
+                  <input type="hidden" name="type" value="article" />
+                  <span class="icon-search search-submit"></span>
+                  <input type="text" name="q" class="search_box" placeholder="{{ 'general.search.title' | t }} {{ blog.title | escape }}..." autocapitalize="off" autocomplete="off" autocorrect="off" value="{{ search.terms }}" />
+                </form>
+              </div>
+
+            {% when 'newsletter' %}
+              {% if block.settings.newsletter_title != blank %}
+                <h4 class="sidebar-block__heading">{{ block.settings.newsletter_title }}</h4>
+              {% endif %}
+              {% if block.settings.newsletter_text != blank %}
+                <div class="newsletter-block__text">{{ block.settings.newsletter_text }}</div>
+              {% endif %}
+              {% render 'newsletter-form', context: 'blog' %}
+
+            {% when 'recent_posts' %}
+              <summary>
+                <h4 class="sidebar-block__heading">{{ 'blogs.sidebar.recent_articles' | t }}<span class="right icon-down-arrow sidebar-block-toggle-icon"></span></h4>
+              </summary>
+              <ul class="toggle_list">
+                {% for article in blogs[blog_handle].articles limit: block.settings.blog_post_count %}
+                  <li>
+                    <a href="{{ article.url }}" title="{{ article.title | escape }}">{{ article.title }}</a>
+                    {% if settings.blog_date %}
+                      <div class="meta">
+                        <span class="label">{{ article.published_at | date: format: "month_day_year" }}</span>
+                      </div>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+
+            {% when 'post_tags'  %}
+              <summary>
+                <h4 class="sidebar-block__heading">{{ 'blogs.sidebar.categories' | t }}<span class="right icon-down-arrow sidebar-block-toggle-icon"></span></h4>
+              </summary>
+              <ul class="toggle_list">
+                {% for tag in blogs[blog_handle].all_tags %}
+                  <li>
+                    <a href="{{ shop.url}}/blogs/{{ blogs[blog_handle].handle }}/tagged/{{ tag | handleize }}" title="{{ blogs[blog_handle].title }} {{ 'blogs.general.tagged' | t }} {{ tag | escape }}">{{ tag }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+
+            {% when 'page' %}
+              {% if block.settings.content_page != blank %}
+                <summary>
+                  <h4 class="sidebar-block__heading">{{ pages[block.settings.content_page].title }}<span class="right icon-down-arrow sidebar-block-toggle-icon"></h4>
+                </summary>
+                <ul class="toggle_list content_block">
+                  <li>{{ pages[block.settings.content_page].content }}</li>
+                </ul>
+              {% else %}
+                <summary>
+                  <h4 class="sidebar-block__heading">Page title<span class="right icon-down-arrow sidebar-block-toggle-icon"></span></h4>
+                </summary>
+                <ul class="toggle_list">
+                  <li><p>{{ 'homepage.onboarding.no_content' | t }}</p></li>
+                </ul>
+              {% endif %}
+
+            {% when 'text' %}
+              <summary>
+                <h4 class="sidebar-block__heading">{{ block.settings.title }}<span class="right icon-down-arrow sidebar-block-toggle-icon"></span></h4>
+              </summary>
+              <ul class="toggle_list content_block">
+                <li>{{ block.settings.text }}</li>
+              </ul>
+          {% endcase %}
+        </{{ sidebar_block_element }}>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% style %}
+    #shopify-section-{{ section.id }} .sidebar {
+      width: 25%;
+    }
+
+    #shopify-section-{{ section.id }} .has-sidebar-option {
+      width: 75%;
+    }
+  {% endstyle %}
+{% endif %}

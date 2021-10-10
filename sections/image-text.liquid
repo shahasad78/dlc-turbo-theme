@@ -1,0 +1,356 @@
+<script
+  type="application/json"
+  data-section-type="image-text"
+  data-section-id="{{ section.id }}"
+>
+</script>
+
+{% comment %} Assign object as block or section {% endcomment %}
+{% if type == 'block' %}
+  {%- assign object = block -%}
+{% else %}
+  {%- assign object = section -%}
+{% endif %}
+
+{%- assign id = object.id -%}
+
+{% comment %} Content settings {% endcomment %}
+{%- assign blocks = object.blocks -%}
+{% comment %} End content settings {% endcomment %}
+
+{% comment %} Advanced {% endcomment %}
+{%- assign css_class = object.settings.css_class -%}
+{%- assign custom_css = object.settings.custom_css -%}
+
+{% comment %} Section specific CSS {% endcomment %}
+{% style %}
+  {%
+    render 'css-loop',
+    css: custom_css,
+    id: id
+  %}
+{% endstyle %}
+
+<section
+  class="
+    section
+    {% if object.settings.wide_display == false %}
+      is-width-standard
+    {% else %}
+      is-width-wide
+      has-no-side-gutter
+    {% endif %}
+    {% if object.settings.featured_links_per_row == '2' %}
+      is-flex
+      is-flex-wrap
+    {% endif %}
+    {{ css_class }}
+  "
+>
+  {% if blocks.size > 0 %}
+    {% for block in blocks %}
+      <div
+        class="
+          container
+          image-with-text-container
+          section-{{ forloop.index }}
+          featured_collections
+          {% if object.settings.featured_links_per_row == '1' %}
+            {% if object.settings.frontpage_image_position == 'row' %}
+              is-flex-{% cycle 'row', 'row-reverse' %}
+            {% else %}
+              is-flex-{% cycle 'row-reverse', 'row' %}
+            {% endif %}
+          {% elsif object.settings.featured_links_per_row == '2' %}
+            one-half
+            column
+            medium-down--one-whole
+            is-flex-{{ object.settings.frontpage_image_position }}
+            has-no-side-gutter
+          {% endif %}
+        "
+        {{ block.shopify_attributes }}
+      >
+
+      {% comment %} Content settings {% endcomment %}
+      {%- assign image = block.settings.image -%}
+      {% comment %} End content settings {% endcomment %}
+
+        <div class="featured-link--half one-half column image-with-text__image-column is-align-center image-with-text__column medium-down--one-whole image-crop--{{ block.settings.image_crop }}">
+          <div class="featured-link--wrap">
+            <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %} title="{{ block.settings.title }}">
+              {% if image != blank %}
+                {%
+                  render 'image-element',
+                  image: image,
+                  alt: image.alt,
+                  stretch_width: true
+                %}
+              {% else %}
+                {% capture i %}{% cycle "1", "2", "3", "4", "5", "6" %}{% endcapture %}
+                {{ 'collection-' | append: i | placeholder_svg_tag: 'placeholder-svg placeholder-svg--promotions' }}
+              {% endif %}
+            </a>
+          </div>
+        </div>
+        <div class="featured-link--half one-half column image-with-text__text-column is-flex is-align-center image-with-text__column medium-down--one-whole block--{{ block.id }}">
+          <div class="info text-align--{{ object.settings.frontpage_text_align }}">
+            <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %} class="collection_title">
+              {{ block.settings.title | escape }}
+            </a>
+            {% if block.settings.text != blank %}
+              <div class="description">{{ block.settings.text }}</div>
+            {% endif %}
+            {% unless block.settings.button_label == blank %}
+              {% assign local_text_alpha = block.settings.text_color | default: 'rgba(0,0,0,0)' | color_extract: 'alpha' %}
+              {% if local_text_alpha != 0 %}
+                <style>
+                  .block--{{ block.id }} .global-button {
+                    {%
+                      render 'text-button-styles',
+                      text_color: block.settings.text_color,
+                    %}
+                  }
+                </style>
+              {% endif %}
+              <a
+                {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %}
+                class="global-button global-button--text image-text__button"
+              >
+                {{ block.settings.button_label }}
+              </a>
+            {% endunless %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}
+</section>
+
+<style>
+  {% for block in blocks %}
+
+    {% comment %} Is the color set to transparent? {% endcomment %}
+    {%- assign bg_alpha = block.settings.bg_color | default: 'rgba(0,0,0,0)' | color_extract: 'alpha' -%}
+    {%- assign text_alpha = block.settings.text_color | default: 'rgba(0,0,0,0)' | color_extract: 'alpha' -%}
+
+    {% if bg_alpha != 0 %}
+      .block--{{ block.id }} {
+        background-color: {{ block.settings.bg_color }};
+      }
+    {% endif %}
+
+    {% if text_alpha != 0 %}
+      .block--{{ block.id }} .collection_title,
+      .block--{{ block.id }} p {
+        color: {{ block.settings.text_color }};
+      }
+    {% endif %}
+  {% endfor %}
+
+  {% if object.settings.wide_display == false and object.settings.featured_links_per_row == '1' %}
+    #shopify-section-{{ object.id }} .image-with-text-container {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    @media only screen and (max-width: 480px) {
+      #shopify-section-{{ object.id }} .image-with-text-container {
+        margin-bottom: 10%;
+      }
+    }
+
+  {% elsif object.settings.wide_display == false and object.settings.featured_links_per_row == '2' %}
+    @media only screen and (max-width: 480px) {
+      #shopify-section-{{ object.id }} .image-with-text-container {
+        margin-bottom: 10%;
+      }
+    }
+
+  {% endif %}
+</style>
+
+{% schema %}
+{
+  "name": "Image with text",
+  "class": "shopify-section--image-with-text",
+  "max_blocks": 16,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "wide_display",
+      "label": "Wide display",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "featured_links_per_row",
+      "label": "Images per row",
+      "default": "1",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "frontpage_text_align",
+      "label": "Text alignment",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "frontpage_image_position",
+      "label": "First image position",
+      "info": "Subsequent images will appear staggered",
+      "default": "row",
+      "options": [
+        {
+          "value": "row",
+          "label": "Left"
+        },
+        {
+          "value": "row-reverse",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "paragraph",
+      "content": "[Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022329373)"
+    },
+    {
+      "type": "text",
+      "id": "css_class",
+      "label": "CSS Class"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "Custom CSS"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image with text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1024 x 1024px recommended"
+        },
+        {
+          "type": "select",
+          "id": "image_crop",
+          "label": "Image cropping",
+          "info": "Only applied when text area is taller than image.",
+          "default": "none",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "none",
+              "label": "None"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Your headline"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Promotion description appears here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "View all"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Button link"
+        },
+        {
+          "type": "header",
+          "content": "Colors"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Image with text",
+    "category": "Image",
+    "settings": {
+      "featured_links_per_row": "1",
+      "frontpage_text_align": "left"
+    },
+    "blocks": [
+      {
+        "type": "image"
+      },
+      {
+        "type": "image"
+      }
+    ]
+  }],
+  "templates": [
+    "index",
+    "product",
+    "page"
+  ]
+}
+
+{% endschema %}

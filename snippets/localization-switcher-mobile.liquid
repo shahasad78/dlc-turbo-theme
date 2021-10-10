@@ -1,0 +1,67 @@
+{% comment %}
+Required values
+id: <string>
+currency_selector: <boolean>
+locale_selector: <boolean>
+show_currency: <boolean>
+Optional values
+additional_classes: <string>
+{% endcomment %}
+
+{%- if locale_selector == true -%}
+  <li data-mobile-dropdown-rel="catalog-no-link" class="sublink">
+    <a data-mobile-dropdown-rel="catalog-no-link" class="parent-link--false">{{ request.locale.endonym_name }}<span class="right icon-down-arrow"></span></a>
+    <ul class="{{ additional_classes }} disclosure-text-style-{{ settings.nav_font_style }}">
+      {%- form 'localization', class: 'selectors-form disclosure__mobile-menu' -%}
+      <input type="hidden" name="locale_code" id="LocaleSelector" value="{{ form.current_locale.iso_code }}" data-disclosure-input/>
+
+      {% for locale in form.available_locales %}
+          <li class="disclosure-list__item {% if locale.iso_code == form.current_locale.iso_code %}disclosure-list__item--current{% endif %}">
+            <button type="submit" class="disclosure__button" name="locale_code" value="{{ locale.iso_code }}">
+              {{ locale.endonym_name }}
+            </button>
+          </li>
+        {%- endfor -%}
+      {%- endform -%}
+    </ul>
+  </li>
+{%- endif -%}
+
+
+{%- if show_currency == true and settings.show_multiple_currencies == true -%}
+  {% capture codes %},USD,EUR,GBP,CAD,ARS,AUD,ILS,BBD,BDT,BSD,BHD,BRL,BOB,BND,BGN,MMK,KYD,CLP,CNY,COP,CRC,HRK,CZK,DKK,DOP,XCD,EGP,XPF,FJD,GHS,GTQ,GYD,GEL,HKD,HUF,ISK,INR,IDR,NIS,JMD,JPY,JOD,KZT,KES,KWD,LVL,LTL,MXN,MYR,MUR,MDL,MAD,MNT,MZN,ANG,NZD,NGN,NOK,OMR,PKR,PYG,PEN,PHP,PLN,QAR,RON,RUB,SAR,RSD,SCR,SGD,SYP,ZAR,KRW,LKR,SEK,CHF,TWD,THB,TZS,TTD,TRY,TND,UAH,AED,UYU,VEB,VND,ZMK,{% endcapture %}
+  {% assign supported_codes = settings.supported_currencies | split: ' ' %}
+  <li data-mobile-dropdown-rel="catalog-no-link" class="sublink" data-currency-converter>
+    <a data-mobile-dropdown-rel="catalog-no-link" class="parent-link--false"><span class="currency-code">{{ shop.currency }}</span><span class="right icon-down-arrow"></span></a>
+
+    <ul class="{{ additional_classes }} disclosure-text-style-{{ settings.nav_font_style }}">
+      {% for code in supported_codes %}
+        <li class="disclosure-list__item {% if currency.iso_code == form.current_currency.iso_code %}disclosure-list__item--current{% endif %}">
+          <button type="submit" class="disclosure__button" name="currency_code" value="{{ code }}">
+            {{ code }}
+          </button>
+        </li>
+      {% endfor %}
+    </ul>
+  </li>
+{%- elsif currency_selector == true -%}
+  <li data-mobile-dropdown-rel="catalog-no-link" class="sublink">
+  <a data-mobile-dropdown-rel="catalog-no-link" class="parent-link--false">{{ cart.currency.iso_code }} {%- if cart.currency.symbol -%}{{ cart.currency.symbol }}{%- endif -%}<span class="right icon-down-arrow"></span></a>
+
+    <ul class="{{ additional_classes }} disclosure-text-style-{{ settings.nav_font_style }}">
+      {%- form 'localization', class: 'selectors-form disclosure__mobile-menu' -%}
+        <input type="hidden" name="currency_code" id="CurrencySelector" value="{{ form.current_currency.iso_code }}" data-disclosure-input/>
+
+        {% for currency in form.available_currencies %}
+          <li class="disclosure-list__item {% if currency.iso_code == form.current_currency.iso_code %}disclosure-list__item--current{% endif %}">
+            <button type="submit" class="disclosure__button" name="currency_code" value="{{ currency.iso_code }}">
+              {{ currency.iso_code }} {%- if currency.symbol -%}{{ currency.symbol }}{%- endif -%}
+            </button>
+          </li>
+        {%- endfor -%}
+      {%- endform -%}
+    </ul>
+  </li>
+
+
+{%- endif -%}

@@ -1,0 +1,16 @@
+{
+  "store_availability": {
+    "general": {
+      "in_stock": "Varastossa",
+      "out_of_stock": "Loppu varastosta",
+      "view_store_info": "Näytä kaupan tiedot",
+      "check_other_stores": "Tarkista saatavuus muista kaupoista",
+      "available_for_pick_up_at_html": "Nouto on saatavana osoitteesta <b>{{ location_name }}</b>",
+      "unavailable_for_pick_up_at_html": "Nouto ei ole tällä hetkellä käytettävissä osoitteessa <b>{{ location_name }}</b>",
+      "available_for_pick_up_at_time_html": "Nouto käytettävissä, {{ pick_up_time }}",
+      "unavailable_for_pick_up_at_time_html": "Nouto ei ole tällä hetkellä käytettävissä",
+      "kilometers": "km",
+      "miles": "mi"
+    }
+  }
+}

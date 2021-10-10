@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="sixteen columns">
+    {% if block.settings.title != blank %}
+      <h2 class="title center">
+        {{ block.settings.title | escape }}
+      </h2>
+      <div class="feature_divider no-margin"></div>
+    {% endif %}
+
+    <div class="logo-bar">
+      <div class="logo-bar__item">
+        {% if block.settings.link != blank %}
+          <a href="{{ block.settings.link }}" class="logo-bar__link">
+        {% endif %}
+        {% if block.settings.image != blank %}
+          {% render 'image-element',
+                  image: block.settings.image,
+                  alt: block.settings.image.alt
+          %}
+        {% else %}
+          {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+        {% if block.settings.link != blank %}
+          </a>
+        {% endif %}
+      </div>
+
+      <div class="logo-bar__item">
+        {% if block.settings.link_two != blank %}
+          <a href="{{ block.settings.link_two }}" class="logo-bar__link">
+        {% endif %}
+        {% if block.settings.image_two != blank %}
+          {% render 'image-element',
+                  image: block.settings.image_two,
+                  alt: block.settings.image_two.alt
+          %}
+        {% else %}
+          {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+        {% if block.settings.link_two != blank %}
+          </a>
+        {% endif %}
+      </div>
+
+      <div class="logo-bar__item">
+        {% if block.settings.link_three != blank %}
+          <a href="{{ block.settings.link_three }}" class="logo-bar__link">
+        {% endif %}
+        {% if block.settings.image_three != blank %}
+          {% render 'image-element',
+                  image: block.settings.image_three,
+                  alt: block.settings.image_three.alt
+          %}
+        {% else %}
+          {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+        {% if block.settings.link_three != blank %}
+          </a>
+        {% endif %}
+      </div>
+
+      <div class="logo-bar__item">
+        {% if block.settings.link_four != blank %}
+          <a href="{{ block.settings.link_four }}" class="logo-bar__link">
+        {% endif %}
+        {% if block.settings.image_four != blank %}
+          {% render 'image-element',
+                  image: block.settings.image_four,
+                  alt: block.settings.image_four.alt
+          %}
+        {% else %}
+          {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+        {% if block.settings.link_four != blank %}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

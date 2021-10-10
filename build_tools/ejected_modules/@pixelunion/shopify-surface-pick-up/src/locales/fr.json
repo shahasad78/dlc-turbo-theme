@@ -1,0 +1,16 @@
+{
+  "store_availability": {
+    "general": {
+      "in_stock": "En stock",
+      "out_of_stock": "En rupture de stock",
+      "view_store_info": "Afficher les informations du magasin",
+      "check_other_stores": "Vérifier la disponibilité dans d'autres magasins",
+      "available_for_pick_up_at_html": "Prise en charge disponible à <b>{{ location_name }}</b>",
+      "unavailable_for_pick_up_at_html": "Prise en charge actuellement indisponible à <b>{{ location_name }}</b>",
+      "available_for_pick_up_at_time_html": "Ramassage disponible, {{ pick_up_time }}",
+      "unavailable_for_pick_up_at_time_html": "Ramassage actuellement indisponible",
+      "kilometers": "km",
+      "miles": "mi"
+    }
+  }
+}

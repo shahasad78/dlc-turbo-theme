@@ -1,0 +1,34 @@
+{% capture _ %}
+  {% comment %}
+    This snippet generates the CSS variables for a text style button, based on an input color. It is designed to be used in cases where the local text color is not the default global text color.
+
+    @param text_color {Color}
+      Local text color to be used for button
+
+    @param solid {Boolean} [false]
+      If true, solid background ("highlighted") button colors will be produced. Otherwise default outline style will be generated.
+  {% endcomment %}
+  {% capture text_color_contrasted %}{% render 'contrast', contrast_base_color: text_color %}{% endcapture %}
+  {% if solid %}
+    {% capture text_color_morphed %}{% render 'morph', morph_base_color: text_color %}{% endcapture %}
+    {% capture text_button_styles %}
+      --button-color-border: {{ text_color }};
+      --button-color-background: {{ text_color }};
+      --button-color-text: {{ text_color_contrasted }};
+      --button-color-border-hover: {{ text_color_morphed }};
+      --button-color-background-hover: {{ text_color_morphed }};
+      --button-color-text-hover: {{ text_color_contrasted }};
+    {% endcapture %}
+  {% else %}
+    {% comment %}Outline style{% endcomment %}
+    {% capture text_button_styles %}
+      --button-color-border: {{ text_color }};
+      --button-color-background: transparent;
+      --button-color-text: {{ text_color }};
+      --button-color-border-hover: {{ text_color }};
+      --button-color-background-hover: {{ text_color }};
+      --button-color-text-hover: {{ text_color_contrasted }};
+    {% endcapture %}
+  {% endif %}
+{% endcapture %}
+{{ text_button_styles }}

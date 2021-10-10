@@ -1,0 +1,82 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-faq-template",
+      "settings": {
+        "title": "Page FAQ Template",
+        "subtitle": "<p>Create an amazing FAQ page with a full-width banner</p>",
+        "text_position": "center",
+        "text_align": "center"
+      },
+      "blocks": {
+        "block-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Section"
+          }
+        },
+        "block-2": {
+          "type": "Content",
+          "settings": {
+            "title": "Title",
+            "subtitle": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+          }
+        },
+        "block-3": {
+          "type": "Content",
+          "settings": {
+            "title": "Title",
+            "subtitle": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+          }
+        },
+        "block-4": {
+          "type": "Content",
+          "settings": {
+            "title": "Title",
+            "subtitle": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+          }
+        },
+        "block-5": {
+          "type": "heading",
+          "settings": {
+            "heading": "Section"
+          }
+        },
+        "block-6": {
+          "type": "Content",
+          "settings": {
+            "title": "Title",
+            "subtitle": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+          }
+        },
+        "block-7": {
+          "type": "Content",
+          "settings": {
+            "title": "Title",
+            "subtitle": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+          }
+        },
+        "block-8": {
+          "type": "Content",
+          "settings": {
+            "title": "Title",
+            "subtitle": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2",
+        "block-3",
+        "block-4",
+        "block-5",
+        "block-6",
+        "block-7",
+        "block-8"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

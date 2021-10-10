@@ -1,0 +1,123 @@
+{%- assign secondaryImage = product.media[1] -%}
+{%- assign collection_handles = product.collections | map: 'handle' -%}
+
+{% if product.featured_media.preview_image.alt contains 'youtube' or image.alt contains 'vimeo' %}
+  {%- assign alt_text = product.title -%}
+{% else %}
+  {%- assign alt_text = product.featured_image.alt -%}
+{% endif %}
+
+{% style %}
+  .shopify-model-viewer-ui model-viewer {
+    --progress-bar-height: 2px;
+    --progress-bar-color: $product-media-fill-color;
+  }
+{% endstyle %}
+
+<div class="
+    {%
+      render 'column-width',
+      value: products_per_row
+    %}
+    column
+    {% if settings.mobile_products_per_row == '1' %}
+      medium-down--one-half small-down--one-whole
+    {% else %}
+      medium-down--one-half small-down--one-half
+    {% endif %}
+    thumbnail
+    {% if settings.quick_shop_enabled %}
+      quick-shop-style--{{ settings.quick_shop_style }}
+      product__details
+    {% endif %}
+    thumbnail-hover-enabled--{{ settings.thumbnail_hover_enabled }}
+    product-{{ product.id }}"
+    {% if settings.pagination_type == 'load_more_button' %}data-load-more--grid-item{% endif %}>
+  <div class="product-wrap {% if settings.collection_secondary_image != blank and secondaryImage != blank %}has-secondary-media-swap{% endif %}">
+    <div class="relative product_image">
+      <a href="{{ product.url | within: collection }}">
+        <div class="image__container">
+          {% if settings.product_form_style == 'select' %}
+            {%
+              render 'quick-shop-gallery',
+              product: product
+            %}
+          {% else %}
+            {% if settings.quick_shop_enabled and settings.quick_shop_style == 'inline' and product.selected_or_first_available_variant.image %}
+              {%
+                render 'image-element',
+                image: product.selected_or_first_available_variant.image,
+                alt: alt_text,
+                object_fit: align_height,
+                max_height: collection_height
+              %}
+            {% else %}
+              {%
+                render 'image-element',
+                image: product.featured_media.preview_image,
+                alt: alt_text,
+                object_fit: align_height,
+                max_height: collection_height
+              %}
+            {% endif %}
+          {% endif %}
+        </div>
+
+        {% if settings.collection_secondary_image != blank and product.media[1] != blank %}
+          {% if product.media[1].media_type == 'external_video' %}
+            <div class="external-video__container lazyload lazypreload secondary-media-hidden video-on-hover">
+              <div class="youtube-wrapper" data-youtube-video>
+                {{ product.media[1] | external_video_tag }}
+              </div>
+            </div>
+          {% elsif product.media[1].media_type == 'video' %}
+            <div class="video__container lazyload lazypreload secondary-media-hidden video-on-hover" data-html5-video>
+              {{ product.media[1] | video_tag: controls: false }}
+            </div>
+          {% else %}
+            {%
+              render 'image-element',
+              image: product.media[1].preview_image,
+              alt: alt_text,
+              additional_classes: 'secondary lazypreload secondary-media-hidden'
+            %}
+          {% endif %}
+        {% endif %}
+        </a>
+    </div>
+
+    {%
+      render 'product-details',
+      product: product,
+      collection_handles: collection_handles
+    %}
+  </div>
+
+  <a class="product-info__caption {% if settings.thumbnail_hover_enabled %}hidden{% endif %}" href="{{ product.url | within: collection }}">
+    {%
+      render 'product-info',
+      product: product
+      collection_handles: collection_handles
+    %}
+  </a>
+
+  {% unless settings.quick_shop_style == 'inline' and settings.quick_shop_enabled %}
+    {%
+      render 'collection-swatch',
+      product: product
+    %}
+  {% endunless %}
+
+  {% if settings.quick_shop_style == 'inline' and settings.quick_shop_enabled %}
+    {% unless collection_handles contains 'coming-soon' %}
+      <div class="inline-quickshop js-product_section product-{{ product.id }}">
+        {%
+          render 'product-form',
+          product: product,
+          show_payment_button: settings.show_payment_button,
+          collection_handles: collection_handles,
+        %}
+      </div>
+    {% endunless %}
+  {% endif %}
+</div>
