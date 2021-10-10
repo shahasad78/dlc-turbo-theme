@@ -37,6 +37,64 @@
         "custom_css": ""
       }
     },
+    "slideshow-1": {
+      "type": "slideshow",
+      "blocks": {
+        "block-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Featured_Maura.jpg",
+            "pretext": "",
+            "title": "Turbo Shopify Theme",
+            "subtitle": "",
+            "button1": "Primary Button",
+            "button1_link": "",
+            "button1_style": "global-button--banner",
+            "button2": "Secondary Button",
+            "button2_link": "",
+            "button2_style": "global-button--banner",
+            "text_position": "center",
+            "text_align": "center",
+            "caption_content_background": "original",
+            "mobile_image_crop": "none"
+          }
+        },
+        "block-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gio-nyc-brooklyin-bridge-small.jpg",
+            "pretext": "<p>Short text that precedes the headline<\/p>",
+            "title": "Your headline here",
+            "subtitle": "<p>This is a short subheading for your slideshow image<\/p>",
+            "button1": "",
+            "button1_link": "",
+            "button1_style": "global-button--banner",
+            "button2": "",
+            "button2_link": "",
+            "button2_style": "global-button--banner",
+            "text_position": "center",
+            "text_align": "center",
+            "caption_content_background": "original",
+            "mobile_image_crop": "none"
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2"
+      ],
+      "settings": {
+        "wide_display": true,
+        "slideshow_text_animation": "fadeInDown",
+        "slideshow_animation": "slide",
+        "slideshow_speed": 6,
+        "activate_adaptiveHeight": true,
+        "mobile_text_below_image": true,
+        "mobile_text_color": "",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
     "featured-promotions-1": {
       "type": "featured-promotions",
       "blocks": {
@@ -102,64 +160,6 @@
         "collection_style": "slider",
         "products_per": 4,
         "products_limit": 24,
-        "css_class": "",
-        "custom_css": ""
-      }
-    },
-    "slideshow-1": {
-      "type": "slideshow",
-      "blocks": {
-        "block-1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Featured_Maura.jpg",
-            "pretext": "",
-            "title": "Turbo Shopify Theme",
-            "subtitle": "",
-            "button1": "Primary Button",
-            "button1_link": "",
-            "button1_style": "global-button--banner",
-            "button2": "Secondary Button",
-            "button2_link": "",
-            "button2_style": "global-button--banner",
-            "text_position": "center",
-            "text_align": "center",
-            "caption_content_background": "original",
-            "mobile_image_crop": "none"
-          }
-        },
-        "block-2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/gio-nyc-brooklyin-bridge-small.jpg",
-            "pretext": "<p>Short text that precedes the headline<\/p>",
-            "title": "Your headline here",
-            "subtitle": "<p>This is a short subheading for your slideshow image<\/p>",
-            "button1": "",
-            "button1_link": "",
-            "button1_style": "global-button--banner",
-            "button2": "",
-            "button2_link": "",
-            "button2_style": "global-button--banner",
-            "text_position": "center",
-            "text_align": "center",
-            "caption_content_background": "original",
-            "mobile_image_crop": "none"
-          }
-        }
-      },
-      "block_order": [
-        "block-1",
-        "block-2"
-      ],
-      "settings": {
-        "wide_display": true,
-        "slideshow_text_animation": "fadeInDown",
-        "slideshow_animation": "slide",
-        "slideshow_speed": 6,
-        "activate_adaptiveHeight": false,
-        "mobile_text_below_image": true,
-        "mobile_text_color": "",
         "css_class": "",
         "custom_css": ""
       }
@@ -482,9 +482,9 @@
   "order": [
     "image-with-text-overlay-1",
     "featured-text-1",
+    "slideshow-1",
     "featured-promotions-1",
     "featured-collection-1",
-    "slideshow-1",
     "image-text-1",
     "image-with-text-overlay-2",
     "collection-list-1",
