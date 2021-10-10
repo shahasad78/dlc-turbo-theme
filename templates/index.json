@@ -27,9 +27,9 @@
     "featured-text-1": {
       "type": "featured-text",
       "settings": {
-        "title": "Talk about your brand",
-        "content": "<p>Use this text to share information about your brand with your customers.<\/p>\r\n<p>Describe a product, share announcements, or welcome customers to your store.<\/p>",
-        "button_label": "",
+        "title": "Fashion fitness faith",
+        "content": "<p>We aim to inspire physical and spiritual transformation through positivity, encouragement, and community.  Let’s be a better person today than we were yesterday.<\/p>",
+        "button_label": "Learn More",
         "button_link": "",
         "text_size": "featured_text",
         "text_alignment": "center",
