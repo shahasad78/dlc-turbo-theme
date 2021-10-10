@@ -15,7 +15,7 @@
         "button2_link": "",
         "button2_style": "global-button--banner",
         "text_position": "left",
-        "text_align": "left",
+        "text_align": "center",
         "caption_content_background": "translucent_text_box",
         "mobile_image_crop": "none",
         "mobile_text_below_image": true,
