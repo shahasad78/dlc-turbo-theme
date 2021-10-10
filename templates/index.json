@@ -452,17 +452,18 @@
       "type": "newsletter",
       "settings": {
         "wide_display": true,
-        "display_first_name": false,
-        "display_last_name": false,
-        "newsletter_title": "Subscribe",
-        "newsletter_text": "<p>Sign up to get the latest on sales, new releases and more &hellip;<\/p>",
+        "display_first_name": true,
+        "display_last_name": true,
+        "newsletter_title": "Subscribe to the cross-wire Newsletter",
+        "newsletter_text": "<p>Stay up-to-date on sales, new releases, workout tips and more …<\/p>",
         "newsletter_section_text_align": "center",
-        "css_class": "",
-        "custom_css": ""
+        "css_class": "dlc-newsletter",
+        "custom_css": "{ background-color: #ffd700; }"
       }
     },
     "blog-posts-1": {
       "type": "blog-posts",
+      "disabled": true,
       "settings": {
         "title": "Blog posts",
         "blog_widget_select": "",
