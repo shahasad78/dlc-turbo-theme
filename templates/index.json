@@ -95,6 +95,15 @@
         "custom_css": ""
       }
     },
+    "16339079467d7c47d4": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 20,
+        "divider_border": false,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
     "featured-promotions-1": {
       "type": "featured-promotions",
       "blocks": {
@@ -154,9 +163,9 @@
     "featured-collection-1": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured collection",
+        "title": "Hispanic Heritage",
         "collection_description": true,
-        "collection": "",
+        "collection": "hispanic-heritage",
         "collection_style": "slider",
         "products_per": 4,
         "products_limit": 24,
@@ -458,7 +467,7 @@
         "newsletter_text": "<p>Stay up-to-date on sales, new releases, workout tips and more …<\/p>",
         "newsletter_section_text_align": "center",
         "css_class": "",
-        "custom_css": ".newsletter-section { \nbackground-color: #ffd700; \n}"
+        "custom_css": ".newsletter_section { \n   background-color: #d4af37; \n}"
       }
     },
     "blog-posts-1": {
@@ -484,6 +493,7 @@
     "image-with-text-overlay-1",
     "featured-text-1",
     "slideshow-1",
+    "16339079467d7c47d4",
     "featured-promotions-1",
     "featured-collection-1",
     "image-text-1",
