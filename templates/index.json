@@ -28,7 +28,7 @@
       "type": "featured-text",
       "settings": {
         "title": "Fashion fitness faith",
-        "content": "<p>We aim to inspire physical and spiritual transformation through positivity, encouragement, and community.  Let’s be a better person today than we were yesterday.<\/p>",
+        "content": "<p>We aim to inspire physical and spiritual transformation through positivity, encouragement, and community.  <\/p><p><\/p><p>Let’s be a better person today than we were yesterday.<\/p>",
         "button_label": "Learn More",
         "button_link": "",
         "text_size": "featured_text",
