@@ -45,7 +45,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Featured_Maura.jpg",
             "pretext": "",
-            "title": "Turbo Shopify Theme",
+            "title": "DLC Classics",
             "subtitle": "",
             "button1": "Primary Button",
             "button1_link": "",
@@ -53,8 +53,8 @@
             "button2": "Secondary Button",
             "button2_link": "",
             "button2_style": "global-button--banner",
-            "text_position": "center",
-            "text_align": "center",
+            "text_position": "left",
+            "text_align": "left",
             "caption_content_background": "original",
             "mobile_image_crop": "none"
           }
