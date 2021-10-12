@@ -110,6 +110,7 @@
         "block-1": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/maura-fall-hoodie-and-sweatpants-backside-v2-_800x800_7c456779-8746-40fe-aee3-c1ccfff8fe30.jpg",
             "link": "",
             "title": "Fall",
             "text": "<p>Promotion description details.<\/p>",
@@ -119,6 +120,7 @@
         "block-2": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/hat-promo-_800x800_680308a0-5101-41ea-9500-1c8dd6272710.jpg",
             "link": "",
             "title": "Hats",
             "text": "<p>From dad hats to classic baseball caps, we've got your head covered.<\/p>",
@@ -255,7 +257,7 @@
         "block-3": {
           "type": "collection",
           "settings": {
-            "feature_collection": ""
+            "feature_collection": "hats"
           }
         },
         "block-4": {
