@@ -243,13 +243,13 @@
         "block-1": {
           "type": "collection",
           "settings": {
-            "feature_collection": ""
+            "feature_collection": "hispanic-heritage"
           }
         },
         "block-2": {
           "type": "collection",
           "settings": {
-            "feature_collection": ""
+            "feature_collection": "fall"
           }
         },
         "block-3": {
