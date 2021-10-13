@@ -1,7 +1,39 @@
 {
   "sections": {
     "main": {
-      "type": "collection-sub-collections-template"
+      "type": "collection-sub-collections-template",
+      "blocks": {
+        "9cdf68e8-ceb3-43b1-98fa-2dbf9288d8c2": {
+          "type": "filter_by_collection",
+          "settings": {
+          }
+        },
+        "95c76568-3539-4cb1-8ee8-09f168503547": {
+          "type": "faceted_filtering",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "9cdf68e8-ceb3-43b1-98fa-2dbf9288d8c2",
+        "95c76568-3539-4cb1-8ee8-09f168503547"
+      ],
+      "settings": {
+        "featured_collection_image": false,
+        "wide_display": true,
+        "mobile_image_crop": "none",
+        "caption_content_background": "original",
+        "collection_breadcrumb": true,
+        "display_collection_title": false,
+        "collection_tags": true,
+        "collection_sort": true,
+        "align_height": false,
+        "collection_height": 200,
+        "collections_per_row": 3,
+        "products_per_row": 3,
+        "pagination_limit": 48,
+        "toggle": false
+      }
     }
   },
   "order": [
