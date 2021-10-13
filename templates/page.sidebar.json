@@ -1,10 +1,57 @@
 {
   "sections": {
     "main": {
-      "type": "page-sidebar-template"
+      "type": "page-sidebar-template",
+      "settings": {
+        "toggle": false
+      }
+    },
+    "1634104602acc66706": {
+      "type": "collection-list",
+      "blocks": {
+        "1634104602acc66706-0": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "hispanic-heritage-cuba"
+          }
+        },
+        "1634104602acc66706-1": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "hispanic-heritage-puerto-rico-collection"
+          }
+        },
+        "1634104602acc66706-2": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "hispanic-heritage-mexico-collection"
+          }
+        },
+        "8c81f727-34a9-4632-8bc6-9f8d1100b4fb": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "hispanic-heritage-dominican-republic-collection"
+          }
+        }
+      },
+      "block_order": [
+        "1634104602acc66706-0",
+        "1634104602acc66706-1",
+        "1634104602acc66706-2",
+        "8c81f727-34a9-4632-8bc6-9f8d1100b4fb"
+      ],
+      "settings": {
+        "title": "Hispanic Heritage Collections - By Flag",
+        "align_height": false,
+        "collection_height": 200,
+        "frontpage_collections_per_row": 2,
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "1634104602acc66706"
   ]
 }
