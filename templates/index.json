@@ -51,7 +51,7 @@
         "slideshow_text_animation": "fadeInUp",
         "slideshow_animation": "fade",
         "slideshow_speed": 6,
-        "activate_adaptiveHeight": false,
+        "activate_adaptiveHeight": true,
         "mobile_text_below_image": true,
         "mobile_text_color": "",
         "css_class": "",
