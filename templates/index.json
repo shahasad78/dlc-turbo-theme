@@ -492,19 +492,6 @@
         "css_class": "",
         "custom_css": ""
       }
-    },
-    "16341049866308fc2f": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Fall collection",
-        "collection_description": true,
-        "collection": "",
-        "collection_style": "slider",
-        "products_per": 3,
-        "products_limit": 9,
-        "css_class": "",
-        "custom_css": ""
-      }
     }
   },
   "order": [
@@ -521,7 +508,6 @@
     "featured-product-1",
     "featured-product-2",
     "newsletter-1",
-    "blog-posts-1",
-    "16341049866308fc2f"
+    "blog-posts-1"
   ]
 }
