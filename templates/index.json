@@ -3,25 +3,6 @@
     "slideshow-1": {
       "type": "slideshow",
       "blocks": {
-        "block-1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Featured_Maura.jpg",
-            "pretext": "",
-            "title": "DLC Classic Women's T-Shirts",
-            "subtitle": "<p>The most comfortable, versatile shirts in your wardrobe.<\/p>",
-            "button1": "I need this in my life",
-            "button1_link": "",
-            "button1_style": "global-button--banner",
-            "button2": "",
-            "button2_link": "",
-            "button2_style": "global-button--banner",
-            "text_position": "left",
-            "text_align": "left",
-            "caption_content_background": "translucent_text_box",
-            "mobile_image_crop": "center"
-          }
-        },
         "block-2": {
           "type": "image",
           "settings": {
@@ -40,11 +21,30 @@
             "caption_content_background": "original",
             "mobile_image_crop": "none"
           }
+        },
+        "block-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Featured_Maura.jpg",
+            "pretext": "",
+            "title": "DLC Classic Women's T-Shirts",
+            "subtitle": "<p>The most comfortable, versatile shirts in your wardrobe.<\/p>",
+            "button1": "I need this in my life",
+            "button1_link": "",
+            "button1_style": "global-button--banner",
+            "button2": "",
+            "button2_link": "",
+            "button2_style": "global-button--banner",
+            "text_position": "left",
+            "text_align": "left",
+            "caption_content_background": "translucent_text_box",
+            "mobile_image_crop": "center"
+          }
         }
       },
       "block_order": [
-        "block-1",
-        "block-2"
+        "block-2",
+        "block-1"
       ],
       "settings": {
         "wide_display": true,
@@ -60,6 +60,7 @@
     },
     "image-with-text-overlay-1": {
       "type": "image-with-text-overlay",
+      "disabled": true,
       "settings": {
         "wide_display": true,
         "image": "shopify:\/\/shop_images\/Lifting_-_Working_Face_w-LUT_a_2x_956e13b5-54d3-4918-b115-79beb04d70a8.png",
