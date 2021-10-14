@@ -48,10 +48,10 @@
       ],
       "settings": {
         "wide_display": true,
-        "slideshow_text_animation": "fadeInDown",
-        "slideshow_animation": "slide",
+        "slideshow_text_animation": "fadeInUp",
+        "slideshow_animation": "fade",
         "slideshow_speed": 6,
-        "activate_adaptiveHeight": true,
+        "activate_adaptiveHeight": false,
         "mobile_text_below_image": true,
         "mobile_text_color": "",
         "css_class": "",
