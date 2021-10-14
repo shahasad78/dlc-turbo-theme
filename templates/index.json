@@ -248,13 +248,13 @@
         "block-1": {
           "type": "collection",
           "settings": {
-            "feature_collection": "hispanic-heritage"
+            "feature_collection": "dlc-classics-mens"
           }
         },
         "block-2": {
           "type": "collection",
           "settings": {
-            "feature_collection": "fall"
+            "feature_collection": "dlc-classic-womens"
           }
         },
         "block-3": {
@@ -266,13 +266,13 @@
         "block-4": {
           "type": "collection",
           "settings": {
-            "feature_collection": ""
+            "feature_collection": "active-accessories"
           }
         },
         "block-5": {
           "type": "collection",
           "settings": {
-            "feature_collection": ""
+            "feature_collection": "fall"
           }
         },
         "block-6": {
