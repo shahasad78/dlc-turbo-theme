@@ -37,7 +37,7 @@
             "button2_style": "global-button--banner",
             "text_position": "left",
             "text_align": "left",
-            "caption_content_background": "translucent_text_box",
+            "caption_content_background": "darken_bg",
             "mobile_image_crop": "center"
           }
         }
