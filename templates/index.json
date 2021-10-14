@@ -467,7 +467,7 @@
         "display_first_name": true,
         "display_last_name": true,
         "newsletter_title": "Subscribe to the cross-wire Newsletter",
-        "newsletter_text": "<p>Stay up-to-date on sales, new releases, workout tips and more! PLUS receive 10% off of your first order!<\/p>",
+        "newsletter_text": "<p>Receive 10% off of your first order! PLUS Stay up-to-date on sales, new releases, workout tips and more!<\/p>",
         "newsletter_section_text_align": "center",
         "css_class": "",
         "custom_css": ".newsletter_section { \n   background-color: #d4af37; \n}\n\n.global-button--primary {\n    --button-color-border: #151515;\n    --button-color-background: #151515;\n    --button-color-text: #ffffff;\n    --button-color-border-hover: #000000;\n    --button-color-background-hover: ##917725;\n    --button-color-text-hover: #ffffff;\n}"
