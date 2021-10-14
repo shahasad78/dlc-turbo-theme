@@ -181,12 +181,13 @@
         "block-1": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Hispanic_Heritage.png",
             "image_crop": "none",
-            "title": "Your headline",
-            "text": "<p>Promotion description appears here.<\/p>",
-            "button_label": "View all",
-            "link": "",
-            "bg_color": "rgba(0,0,0,0)",
+            "title": "Hispanic Heritage month",
+            "text": "<p>Celebrate your hispanic heritage with our flag-inspired collection of shirts.<\/p>",
+            "button_label": "View by Flag",
+            "link": "shopify:\/\/pages\/hispanic-heritage-collections-by-flag",
+            "bg_color": "#d4af37",
             "text_color": "rgba(0,0,0,0)"
           }
         },
