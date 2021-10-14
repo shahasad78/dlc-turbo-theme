@@ -1,5 +1,63 @@
 {
   "sections": {
+    "slideshow-1": {
+      "type": "slideshow",
+      "blocks": {
+        "block-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Featured_Maura.jpg",
+            "pretext": "",
+            "title": "DLC Classic Women's T-Shirts",
+            "subtitle": "<p>The most comfortable, versatile shirts in your wardrobe.<\/p>",
+            "button1": "I need this in my life",
+            "button1_link": "",
+            "button1_style": "global-button--banner",
+            "button2": "",
+            "button2_link": "",
+            "button2_style": "global-button--banner",
+            "text_position": "left",
+            "text_align": "left",
+            "caption_content_background": "translucent_text_box",
+            "mobile_image_crop": "center"
+          }
+        },
+        "block-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lifting_-_Working_Face_w-LUT_a_2x_956e13b5-54d3-4918-b115-79beb04d70a8.png",
+            "pretext": "<p>DLC 2.0 is here! Check out<\/p>",
+            "title": "DLC Essentials",
+            "subtitle": "<p>Brand new site, Brand new apparel!<\/p>",
+            "button1": "See What's New",
+            "button1_link": "",
+            "button1_style": "global-button--banner",
+            "button2": "",
+            "button2_link": "",
+            "button2_style": "global-button--banner",
+            "text_position": "right",
+            "text_align": "center",
+            "caption_content_background": "original",
+            "mobile_image_crop": "none"
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2"
+      ],
+      "settings": {
+        "wide_display": true,
+        "slideshow_text_animation": "fadeInDown",
+        "slideshow_animation": "slide",
+        "slideshow_speed": 6,
+        "activate_adaptiveHeight": true,
+        "mobile_text_below_image": true,
+        "mobile_text_color": "",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
     "image-with-text-overlay-1": {
       "type": "image-with-text-overlay",
       "settings": {
@@ -33,64 +91,6 @@
         "button_link": "",
         "text_size": "featured_text",
         "text_alignment": "center",
-        "css_class": "",
-        "custom_css": ""
-      }
-    },
-    "slideshow-1": {
-      "type": "slideshow",
-      "blocks": {
-        "block-1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Featured_Maura.jpg",
-            "pretext": "",
-            "title": "DLC Classic Women's T-Shirts",
-            "subtitle": "<p>The most comfortable, versatile shirts in your wardrobe.<\/p>",
-            "button1": "I need this in my life",
-            "button1_link": "",
-            "button1_style": "global-button--banner",
-            "button2": "",
-            "button2_link": "",
-            "button2_style": "global-button--banner",
-            "text_position": "left",
-            "text_align": "left",
-            "caption_content_background": "translucent_text_box",
-            "mobile_image_crop": "center"
-          }
-        },
-        "block-2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/gio-nyc-brooklyin-bridge-small.jpg",
-            "pretext": "<p>Short text that precedes the headline<\/p>",
-            "title": "Your headline here",
-            "subtitle": "<p>This is a short subheading for your slideshow image<\/p>",
-            "button1": "",
-            "button1_link": "",
-            "button1_style": "global-button--banner",
-            "button2": "",
-            "button2_link": "",
-            "button2_style": "global-button--banner",
-            "text_position": "center",
-            "text_align": "center",
-            "caption_content_background": "original",
-            "mobile_image_crop": "none"
-          }
-        }
-      },
-      "block_order": [
-        "block-1",
-        "block-2"
-      ],
-      "settings": {
-        "wide_display": true,
-        "slideshow_text_animation": "fadeInDown",
-        "slideshow_animation": "slide",
-        "slideshow_speed": 6,
-        "activate_adaptiveHeight": true,
-        "mobile_text_below_image": true,
-        "mobile_text_color": "",
         "css_class": "",
         "custom_css": ""
       }
@@ -140,7 +140,7 @@
           "type": "image",
           "settings": {
             "link": "",
-            "title": "Feature",
+            "title": "Athlesiure",
             "text": "<p>Promotion description details.<\/p>",
             "button_label": ""
           }
@@ -164,6 +164,7 @@
     },
     "featured-collection-1": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Hispanic Heritage",
         "collection_description": true,
@@ -184,7 +185,7 @@
             "image": "shopify:\/\/shop_images\/Hispanic_Heritage.png",
             "image_crop": "none",
             "title": "Hispanic Heritage month",
-            "text": "<p>Celebrate your hispanic heritage with our flag-inspired collection of shirts.<\/p>",
+            "text": "<p>The Hispanic Heritage month collection is here!  Celebrate your Latinx Heritage in style with these incredible flag-inspired, textured De La Cross clothes.<\/p>",
             "button_label": "View by Flag",
             "link": "shopify:\/\/pages\/hispanic-heritage-collections-by-flag",
             "bg_color": "#d4af37",
@@ -506,9 +507,9 @@
     }
   },
   "order": [
+    "slideshow-1",
     "image-with-text-overlay-1",
     "featured-text-1",
-    "slideshow-1",
     "16339079467d7c47d4",
     "featured-promotions-1",
     "featured-collection-1",
