@@ -27,8 +27,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Featured_Maura.jpg",
             "pretext": "",
-            "title": "DLC Classic Women's T-Shirts",
-            "subtitle": "<p>The most comfortable, versatile shirts in your wardrobe.<\/p>",
+            "title": "DLC Classics",
+            "subtitle": "<p>The most comfortable, <\/p><p>versatile shirts in your wardrobe.<\/p>",
             "button1": "I need this in my life",
             "button1_link": "",
             "button1_style": "global-button--banner",
@@ -37,7 +37,7 @@
             "button2_style": "global-button--banner",
             "text_position": "left",
             "text_align": "left",
-            "caption_content_background": "darken_bg",
+            "caption_content_background": "translucent_text_box",
             "mobile_image_crop": "center"
           }
         }
