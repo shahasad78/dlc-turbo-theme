@@ -245,6 +245,12 @@
     "collection-list-1": {
       "type": "collection-list",
       "blocks": {
+        "block-6": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "dlc-essentials-2-0"
+          }
+        },
         "block-1": {
           "type": "collection",
           "settings": {
@@ -274,21 +280,15 @@
           "settings": {
             "feature_collection": "fall"
           }
-        },
-        "block-6": {
-          "type": "collection",
-          "settings": {
-            "feature_collection": "dlc-essentials-2-0"
-          }
         }
       },
       "block_order": [
+        "block-6",
         "block-1",
         "block-2",
         "block-3",
         "block-4",
-        "block-5",
-        "block-6"
+        "block-5"
       ],
       "settings": {
         "title": "Collection list",
