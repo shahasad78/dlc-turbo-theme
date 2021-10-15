@@ -109,6 +109,7 @@
     },
     "featured-promotions-1": {
       "type": "featured-promotions",
+      "disabled": true,
       "blocks": {
         "block-1": {
           "type": "image",
@@ -198,12 +199,13 @@
         "block-2": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/maura-fall-hoodie-and-sweatpants-backside-v2-_800x800_7c456779-8746-40fe-aee3-c1ccfff8fe30.jpg",
             "image_crop": "none",
-            "title": "Your headline",
-            "text": "<p>Promotion description appears here.<\/p>",
-            "button_label": "View all",
-            "link": "",
-            "bg_color": "rgba(0,0,0,0)",
+            "title": "Fall into comfort",
+            "text": "<p>All new fall athlesiure wear.  Hoodies, sweatpants, jackets, and more!<\/p>",
+            "button_label": "Bless Me",
+            "link": "shopify:\/\/collections\/fall",
+            "bg_color": "#d4af37",
             "text_color": "rgba(0,0,0,0)"
           }
         }
@@ -225,8 +227,9 @@
       "type": "image-with-text-overlay",
       "settings": {
         "wide_display": true,
+        "image": "shopify:\/\/shop_images\/maura-fall-hoodie-and-sweatpants-backside-v2-_800x800_7c456779-8746-40fe-aee3-c1ccfff8fe30.jpg",
         "pretext": "",
-        "title": "Your Headline",
+        "title": "Fall into",
         "subtitle": "",
         "button1": "",
         "button1_link": "",
