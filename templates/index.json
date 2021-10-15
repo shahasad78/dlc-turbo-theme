@@ -6,7 +6,7 @@
         "block-2": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/featured-banner-brandon-_1800x1000_3c43a061-1b90-4598-b277-ddba6abbc8b2.jpg",
+            "image": "shopify:\/\/shop_images\/featured-banner-brandon-lifting-_1800x1000_128f97c0-1f54-46fa-851a-cf70028f9a0f.jpg",
             "pretext": "<p>DLC 2.0 is here! Check out<\/p>",
             "title": "DLC Essentials",
             "subtitle": "<p>Brand new site, Brand new apparel!<\/p>",
@@ -19,7 +19,7 @@
             "text_position": "right",
             "text_align": "center",
             "caption_content_background": "original",
-            "mobile_image": "shopify:\/\/shop_images\/featured-banner-brandon-mobile-_800x800_cf6df9ac-c150-40ec-b256-78fa9c30f517.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/featured-banner-brandon-lifting-mobile-_800x800_511c0ff0-16a3-480c-b66b-c5222a83cd42.jpg",
             "mobile_image_crop": "none"
           }
         },
