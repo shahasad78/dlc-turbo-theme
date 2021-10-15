@@ -40,7 +40,7 @@
             "text_align": "left",
             "caption_content_background": "translucent_text_box",
             "mobile_image": "shopify:\/\/shop_images\/featured-banner-maura-mobile-_800x800_324a7516-b81c-4647-88bb-580c19ded44e.jpg",
-            "mobile_image_crop": "center"
+            "mobile_image_crop": "none"
           }
         }
       },
