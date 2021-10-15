@@ -19,6 +19,7 @@
             "text_position": "right",
             "text_align": "center",
             "caption_content_background": "original",
+            "mobile_image": "shopify:\/\/shop_images\/featured-banner-brandon-mobile-_800x800_cf6df9ac-c150-40ec-b256-78fa9c30f517.jpg",
             "mobile_image_crop": "none"
           }
         },
@@ -38,6 +39,7 @@
             "text_position": "left",
             "text_align": "left",
             "caption_content_background": "translucent_text_box",
+            "mobile_image": "shopify:\/\/shop_images\/featured-banner-maura-mobile-_800x800_324a7516-b81c-4647-88bb-580c19ded44e.jpg",
             "mobile_image_crop": "center"
           }
         }
