@@ -49,9 +49,44 @@
         "member_accent_color": "#b7972d",
         "member_overlay_color": "#000"
       }
+    },
+    "1634344432e1a0a3c9": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 20,
+        "divider_border": false,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "163435553433f780d0": {
+      "type": "image-with-text-overlay",
+      "settings": {
+        "wide_display": true,
+        "image": "shopify:\/\/shop_images\/dlc-about-us-our-purpose-grand-canyon-brandon-background.jpg",
+        "pretext": "",
+        "title": "Our Purpose",
+        "subtitle": "<p>People have associated fitness apparel with clichéd tropes like “CRUSH X-Y-Z”  or “#$@& Excuses!”.<\/p><p> While this approach has its proper place, no one is representing the <em><strong>wisdom seekers<\/strong><\/em>, the <em><strong>spiritual trailblazers<\/strong><\/em>, and the <em><strong>explorers of discernment<\/strong><\/em> who are conditioning <em><strong>mind and body<\/strong><\/em> in their quest to be the absolute best versions of themselves within and without.<\/p><p>We represent <strong>YOU<\/strong>, the sage journeyer, the one who sees beyond the status quo.  We support you on your transformational journey by way of <strong>FASHION<\/strong>, <strong>FITNESS<\/strong>, and <strong>FAITH<\/strong>.<\/p><p>“BUILD EVERYTHING”<\/p>",
+        "button1": "",
+        "button1_link": "",
+        "button1_style": "global-button--banner",
+        "button2": "",
+        "button2_link": "",
+        "button2_style": "global-button--banner",
+        "text_position": "center",
+        "text_align": "center",
+        "caption_content_background": "darken_bg",
+        "mobile_image_crop": "none",
+        "mobile_text_below_image": true,
+        "mobile_text_color": "",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "1634344432e1a0a3c9",
+    "163435553433f780d0"
   ]
 }
