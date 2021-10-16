@@ -764,13 +764,6 @@
               "social_icons_footer": false
             }
           },
-          "footer-1": {
-            "type": "link_list",
-            "settings": {
-              "menu": "footer",
-              "social_icons_footer": false
-            }
-          },
           "1489125398203": {
             "type": "link_list",
             "settings": {
@@ -788,14 +781,13 @@
           "1489125420927": {
             "type": "page",
             "settings": {
-              "page": "courtesy",
+              "page": "contact",
               "social_icons_footer": true
             }
           }
         },
         "block_order": [
           "footer-0",
-          "footer-1",
           "1489125398203",
           "footer-2",
           "1489125420927"
