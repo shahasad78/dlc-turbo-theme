@@ -82,11 +82,64 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "16343555539c864b6c": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 20,
+        "divider_border": false,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1634356767225bc39f": {
+      "type": "text-columns-with-images",
+      "blocks": {
+        "1634356767225bc39f-0": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/dlc-about-us-our-vision-monochrome-trail-path-forward.jpg",
+            "title": "Our Vision",
+            "heading_size": "regular_text",
+            "text": "<p>To inspire transformation through positivity, encouragement, and community.  <\/p><p>Let's be a better person today than we were yesterday.<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "align_text": "center",
+            "border_style": "none"
+          }
+        },
+        "1634356767225bc39f-1": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/dlc-about-us-our-values-monterey-cliffside.jpg",
+            "title": "Our Values",
+            "heading_size": "regular_text",
+            "text": "<p><strong>Respect and love •<\/strong> <em>Let’s be good to each other<\/em><br\/><strong>Integrity •<\/strong> <em>When we’re honest and true to ourselves we can grow<\/em><br\/><strong>Humility •<\/strong> <em>Ego clouds wisdom<\/em><br\/><strong>Perseverance •<\/strong> <em>Failure is the greatest teacher<\/em><br\/><strong>Passion •<\/strong> <em>Commit to your goals and give it 110%<\/em><br\/><strong>Hard Work •<\/strong> <em>The harder the effort, the greater the gain<\/em><br\/><strong>Make a Difference •<\/strong> <em>Impart these values with compassion<\/em><\/p>",
+            "button_label": "",
+            "button_link": "",
+            "align_text": "center",
+            "border_style": "none"
+          }
+        }
+      },
+      "block_order": [
+        "1634356767225bc39f-0",
+        "1634356767225bc39f-1"
+      ],
+      "settings": {
+        "title": "Mission",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
     "main",
     "1634344432e1a0a3c9",
-    "163435553433f780d0"
+    "163435553433f780d0",
+    "16343555539c864b6c",
+    "1634356767225bc39f"
   ]
 }
