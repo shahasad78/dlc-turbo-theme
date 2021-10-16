@@ -1637,11 +1637,11 @@
           "1497044240407": {
             "type": "column",
             "settings": {
-              "richtext_top": "",
+              "richtext_top": "<p>Men's<\/p>",
               "image_caption_top": "Time to get excited about our new collection for Men!",
               "image_link_top": "shopify:\/\/collections\/mens-apparel",
-              "menu_1": "",
-              "menu_1_link": "",
+              "menu_1": "main-menu",
+              "menu_1_link": "shopify:\/\/collections\/dlc-essentials-2-0",
               "menu_2": "",
               "menu_2_link": "",
               "menu_3": "",
