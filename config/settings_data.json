@@ -781,7 +781,7 @@
           "footer-2": {
             "type": "link_list",
             "settings": {
-              "menu": "",
+              "menu": "terms-and-policies",
               "social_icons_footer": false
             }
           },
