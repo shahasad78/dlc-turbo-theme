@@ -4,20 +4,51 @@
       "type": "page-team-template",
       "blocks": {
         "block-1": {
-          "type": "employee"
+          "type": "employee",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brandon-on-rocks-hat-_800x800_789c7b06-9ee1-41a8-8dc8-75b4650b784c.jpg",
+            "title": "Brandon Cruz",
+            "job_title": "Founder",
+            "description": "<p>Powered by cats and coffee.<\/p>",
+            "twitter": "Shopify"
+          }
         },
         "block-2": {
-          "type": "employee"
+          "type": "employee",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shah-big-sur-portrait.jpg",
+            "title": "Shah Martinez",
+            "job_title": "Co-Founder | COO | CTO",
+            "description": "<p>Business Strategy, Graphics Design, Web Development.  Executor of all things technical.<\/p><p><\/p><p>- Powered by Coffee and dad jokes<\/p>",
+            "twitter": "shahtieshackent"
+          }
         },
         "block-3": {
-          "type": "employee"
+          "type": "employee",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/annabelle-dlc-about-us.jpg",
+            "title": "Annabelle Cruz",
+            "job_title": "Project Manager",
+            "description": "<p>Powered by cats and coffee.<\/p>",
+            "twitter": "Shopify"
+          }
         }
       },
       "block_order": [
         "block-1",
         "block-2",
         "block-3"
-      ]
+      ],
+      "settings": {
+        "image_position": "left",
+        "title": "Our Team",
+        "text": "<p>De La Cross was conceived in 2017 by <strong>Brandon Cruz <\/strong>from Queens, New York.  His original family name was De La Cruz, which literally translates to “Of the Cross”.  As an artist and the son of a fashion designer, Brandon was always fastidious when it came to his attire. As an avid fitness buff and a man of strong faith, he noticed that when he wanted to purchase fitness apparel, most of the offerings featured overly aggressive slogans that did not reflect the values and culture he wished to embody.  He realized that the fitness landscape needed something fresh, new, and spiritual.  De La Cross was born.<\/p><p>In 2019, Brandon partnered with his brother <strong>Shah Martinez<\/strong> to help his vision come to life. From day one the two of them were in total alignment on De La Cross' values and mission. As a software engineer with previous entrepreneurial experience, Shah immediately got to work crafting a plan that would help DLC achieve its goal of being a brand that would embody strength, hope, perseverance, and community.<\/p><p>Ever-present throughout De La Cross' entire journey has been Brandon's wife, <strong>Annabelle Cruz<\/strong>. She put the <em>\"Cross\"<\/em> in the name and has since been making sure the team \"crosses\" the t's and dots the i’s. Annabelle has been an instrumental part of keeping the team's momentum, managing various aspects of DLC’s growth and is now working on upcoming clothing lines. (Stay tuned…)<\/p>",
+        "text_position": "center",
+        "employee_per_row": 3,
+        "member_color": "#fff",
+        "member_accent_color": "#b7972d",
+        "member_overlay_color": "#000"
+      }
     }
   },
   "order": [
