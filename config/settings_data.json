@@ -774,7 +774,7 @@
           "1489125398203": {
             "type": "link_list",
             "settings": {
-              "menu": "",
+              "menu": "main-menu",
               "social_icons_footer": false
             }
           },
