@@ -793,8 +793,8 @@
           "1489125420927"
         ],
         "settings": {
-          "copyright_text": "",
-          "display_designed_by": true,
+          "copyright_text": "a registered trademark.",
+          "display_designed_by": false,
           "display_payment_methods": true,
           "show_locale_selector": true,
           "show_currency_selector": false
