@@ -17145,8 +17145,8 @@ footer .social_icons a:hover {
 ================================================== */
   
   @font-face {
-      font-family: 'BrandonGrotesque';
-      src: url('Brandon_Grotesque_Regular.woff') format('woff')
+      font-family: 'Brandon Grotesque';
+      src: url('Brandon_Grotesque_Regular.otf') format('otf')
       font-weight: normal;
       font-style: normal; 
   }
