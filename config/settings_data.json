@@ -87,7 +87,7 @@
     "top_bar_font_size": 12,
     "top_bar_letter_spacing": 1,
     "nav__font": "open_sans_n4",
-    "nav_font_style": "uppercase",
+    "nav_font_style": "none",
     "nav_font_size": 16,
     "nav_letter_spacing": 1,
     "nav_shadow": false,
@@ -106,7 +106,7 @@
     "slideshow_headline_letter_spacing": 1,
     "slideshow_headline_shadow": true,
     "slideshow_subtitle__font": "open_sans_condensed_n3",
-    "slideshow_subtitle_font_style": "uppercase",
+    "slideshow_subtitle_font_style": "none",
     "slideshow_subtitle_size": 16,
     "slideshow_subtitle_letter_spacing": 1,
     "slideshow_shadow": false,
@@ -793,7 +793,7 @@
           "1489125420927"
         ],
         "settings": {
-          "copyright_text": "a registered trademark.",
+          "copyright_text": "a registered trademark",
           "display_designed_by": false,
           "display_payment_methods": true,
           "show_locale_selector": true,
