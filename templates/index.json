@@ -220,7 +220,7 @@
         "frontpage_text_align": "left",
         "frontpage_image_position": "row",
         "css_class": "",
-        "custom_css": ""
+        "custom_css": ".featured-link--half .collection_title {\n    font-family: \"Brandon Grotesque\";\n}"
       }
     },
     "image-with-text-overlay-2": {
@@ -301,7 +301,7 @@
         "collection_height": 200,
         "frontpage_collections_per_row": 3,
         "css_class": "",
-        "custom_css": ".list-collections  {\n    font-family: \"Brandon Grotesque\";\n}"
+        "custom_css": ".list-collections-wrapper .thumbnail-overlay .title {\n    font-family: \"Brandon Grotesque\";\nfont-size: 1.2rem;\n}"
       }
     },
     "testimonials-1": {
