@@ -301,7 +301,7 @@
         "collection_height": 200,
         "frontpage_collections_per_row": 3,
         "css_class": "",
-        "custom_css": ".list-collections-wrapper .thumbnail-overlay .title {\n    font-family: \"Brandon Grotesque\";\nfont-size: 1.2rem;\n}"
+        "custom_css": ".list-collections-wrapper .thumbnail-overlay .title {\n    font-family: \"Brandon Grotesque\", “Open Sans”,  sans-serif;\nfont-size: 1.2rem;\n}"
       }
     },
     "testimonials-1": {
