@@ -4503,7 +4503,7 @@ select.currencies,
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
-  text-transform: uppercase;
+  text-transform: none;
   color: #d9d9d9;
   padding-top: 12px;
   padding-bottom: 12px;
@@ -5751,7 +5751,7 @@ ul.toggle_list li ul.active {
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
-  text-transform: uppercase;
+  text-transform: none;
   width: auto;
   margin-bottom: 0;
   max-width: 80%;
@@ -9147,7 +9147,7 @@ div.is-absolute {
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
-  text-transform: uppercase;
+  text-transform: none;
 }
 .search__results li a:hover, .search__results li a:focus,
 .search__results li .no-results:hover,
@@ -9224,7 +9224,7 @@ div.is-absolute {
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
-  text-transform: uppercase;
+  text-transform: none;
   padding-left: 40px;
   padding-right: 20px;
   border: 0;
@@ -9469,7 +9469,7 @@ header.secondary_logo--true:not(.feature_image) img.primary_logo {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
-  text-transform: uppercase;
+  text-transform: none;
   border: 1px solid #cccccc;
   background-color: transparent;
   margin-right: 20px;
@@ -9534,7 +9534,7 @@ button.disclosure__button {
   letter-spacing: 1px;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 1px;
   text-align: left;
   transition: color 0.1s linear;
@@ -9885,7 +9885,7 @@ input.secondary_button {
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 1px;
   color: #d4af37;
   -webkit-appearance: none;
@@ -15806,7 +15806,7 @@ footer .social_icons a:hover {
   color: #ffffff;
   font-family: "Open Sans Condensed", sans-serif;
   font-weight: 300;
-  text-transform: uppercase;
+  text-transform: none;
   font-size: 16px;
   letter-spacing: 1px;
   margin-bottom: 10px;
@@ -15866,8 +15866,8 @@ footer .social_icons a:hover {
   color: #ffffff;
   font-family: "Open Sans Condensed", sans-serif;
   font-weight: 300;
-  text-transform: uppercase;
-  font-style: uppercase;
+  text-transform: none;
+  font-style: none;
   font-size: 16px;
   letter-spacing: 1px;
   position: relative;
@@ -16962,7 +16962,7 @@ footer .social_icons a:hover {
   font-weight: 400;
   font-size: 16px;
   font-style: normal;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 1px;
   padding: 8px 12px;
   text-align: center;
@@ -17143,3 +17143,10 @@ footer .social_icons a:hover {
 */
 /* #Custom Styles
 ================================================== */
+  
+  @font-face {
+      font-family: 'BrandonGrotesque';
+      src: url('Brandon Grotesque Regular.woff') format('woff')
+      font-weight: normal;
+      font-style: normal; 
+  }
