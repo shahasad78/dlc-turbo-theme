@@ -220,7 +220,7 @@
         "frontpage_text_align": "left",
         "frontpage_image_position": "row",
         "css_class": "",
-        "custom_css": ".featured-link--half .collection_title {\n    font-family: \"Brandon Grotesque\";\n}"
+        "custom_css": ".featured-link--half .collection_title {\n    font-family: \"Brandon Grotesque\", “Open Sans”,  sans-serif;\n}"
       }
     },
     "image-with-text-overlay-2": {
