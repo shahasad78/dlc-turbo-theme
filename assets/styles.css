@@ -17145,8 +17145,9 @@ footer .social_icons a:hover {
 ================================================== */
   @font-face {
       font-family: 'Brandon Grotesque';
-      src: url('Brandon_Grotesque_Regular.eot');
+      src: url('Brandon_Grotesque_Regular.eot') format('embedded-opentype'),
            url('Brandon_Grotesque_Regular.woff') format('woff'),
+           url('Brandon_Grotesque_Regular.woff2') format('woff2'),
            url('Brandon_Grotesque_Regular.otf') format('opentype'),
 		   url('Brandon_Grotesque_Regular.ttf') format('truetype'),
            url('Brandon_Grotesque_Regular.svg') format('svg');
@@ -17156,8 +17157,9 @@ footer .social_icons a:hover {
   
   @font-face {
       font-family: 'Brandon Grotesque';
-      src: url('Brandon_Grotesque_Black.eot');
+      src: url('Brandon_Grotesque_Black.eot') format('embedded-opentype'),
            url('Brandon_Grotesque_Black.woff') format('woff'),
+           url('Brandon_Grotesque_Black.woff2') format('woff2'),
            url('Brandon_Grotesque_Black.otf') format('opentype'),
 		   url('Brandon_Grotesque_Black.ttf') format('truetype'),
            url('Brandon_Grotesque_Black.svg') format('svg');
@@ -17167,8 +17169,9 @@ footer .social_icons a:hover {
   
   @font-face {
       font-family: 'Brandon Grotesque';
-      src: url('Brandon_Grotesque_Black_Italic.eot');
+      src: url('Brandon_Grotesque_Black_Italic.eot') format('embedded-opentype'),
            url('Brandon_Grotesque_Black_Italic.woff') format('woff'),
+           url('Brandon_Grotesque_Black_Italic.woff2') format('woff2'),
            url('Brandon_Grotesque_Black_Italic.otf') format('opentype'),
 		   url('Brandon_Grotesque_Black_Italic.ttf') format('truetype'),
            url('Brandon_Grotesque_Black_Italic.svg') format('svg');
@@ -17178,8 +17181,9 @@ footer .social_icons a:hover {
   
   @font-face {
       font-family: 'Brandon Grotesque';
-      src: url('Brandon_Grotesque_Bold_Italic.eot');
+      src: url('Brandon_Grotesque_Bold_Italic.eot') format('embedded-opentype'),
            url('Brandon_Grotesque_Bold_Italic.woff') format('woff'),
+           url('Brandon_Grotesque_Bold_Italic.woff2') format('woff2'),
            url('Brandon_Grotesque_Bold_Italic.otf') format('opentype'),
 		   url('Brandon_Grotesque_Bold_Italic.ttf') format('truetype'),
            url('Brandon_Grotesque_Bold_Italic.svg') format('svg');
@@ -17189,8 +17193,9 @@ footer .social_icons a:hover {
   
   @font-face {
       font-family: 'Brandon Grotesque';
-      src: url('Brandon_Grotesque_Bold.eot');
+      src: url('Brandon_Grotesque_Bold.eot') format('embedded-opentype'),
            url('Brandon_Grotesque_Bold.woff') format('woff'),
+           url('Brandon_Grotesque_Bold.woff2') format('woff2'),
            url('Brandon_Grotesque_Bold.otf') format('opentype'),
 		   url('Brandon_Grotesque_Bold.ttf') format('truetype'),
            url('Brandon_Grotesque_Bold.svg') format('svg');
@@ -17200,8 +17205,9 @@ footer .social_icons a:hover {
   
   @font-face {
       font-family: 'Brandon Grotesque';
-      src: url('Brandon_Grotesque_Light.eot');
+      src: url('Brandon_Grotesque_Light.eot') format('embedded-opentype'),
            url('Brandon_Grotesque_Light.woff') format('woff'),
+           url('Brandon_Grotesque_Light.woff2') format('woff2'),
            url('Brandon_Grotesque_Light.otf') format('opentype'),
 		   url('Brandon_Grotesque_Light.ttf') format('truetype'),
            url('Brandon_Grotesque_Light.svg') format('svg');
@@ -17211,8 +17217,9 @@ footer .social_icons a:hover {
   
   @font-face {
       font-family: 'Brandon Grotesque';
-      src: url('Brandon_Grotesque_Light_Italic.eot');
+      src: url('Brandon_Grotesque_Light_Italic.eot') format('embedded-opentype'),
            url('Brandon_Grotesque_Light_Italic.woff') format('woff'),
+           url('Brandon_Grotesque_Light_Italic.woff2') format('woff2'),
            url('Brandon_Grotesque_Light_Italic.otf') format('opentype'),
 		   url('Brandon_Grotesque_Light_Italic.ttf') format('truetype'),
            url('Brandon_Grotesque_Light_Italic.svg') format('svg');
@@ -17222,8 +17229,9 @@ footer .social_icons a:hover {
   
   @font-face {
       font-family: 'Brandon Grotesque';
-      src: url('Brandon_Grotesque_Medium.eot');
+      src: url('Brandon_Grotesque_Medium.eot') format('embedded-opentype'),
            url('Brandon_Grotesque_Medium.woff') format('woff'),
+           url('Brandon_Grotesque_Medium.woff2') format('woff2'),
            url('Brandon_Grotesque_Medium.otf') format('opentype'),
 		   url('Brandon_Grotesque_Medium.ttf') format('truetype'),
            url('Brandon_Grotesque_Medium.svg') format('svg');
@@ -17233,8 +17241,9 @@ footer .social_icons a:hover {
   
   @font-face {
       font-family: 'Brandon Grotesque';
-      src: url('Brandon_Grotesque_Medium_Italic.eot');
+      src: url('Brandon_Grotesque_Medium_Italic.eot') format('embedded-opentype'),
            url('Brandon_Grotesque_Medium_Italic.woff') format('woff'),
+    url('Brandon_Grotesque_Medium_Italic.woff2') format('woff2'),
            url('Brandon_Grotesque_Medium_Italic.otf') format('opentype'),
 		   url('Brandon_Grotesque_Medium_Italic.ttf') format('truetype'),
            url('Brandon_Grotesque_Medium_Italic.svg') format('svg');
@@ -17245,8 +17254,9 @@ footer .social_icons a:hover {
   
   @font-face {
       font-family: 'Brandon Grotesque';
-      src: url('Brandon_Grotesque_Thin.eot');
+      src: url('Brandon_Grotesque_Thin.eot') format('embedded-opentype'),
            url('Brandon_Grotesque_Thin.woff') format('woff'),
+           url('Brandon_Grotesque_Thin.woff2') format('woff2'),
            url('Brandon_Grotesque_Thin.otf') format('opentype'),
 		   url('Brandon_Grotesque_Thin.ttf') format('truetype'),
            url('Brandon_Grotesque_Thin.svg') format('svg');
@@ -17256,8 +17266,9 @@ footer .social_icons a:hover {
   
   @font-face {
       font-family: 'Brandon Grotesque';
-      src: url('Brandon_Grotesque_Thin_Italic.eot');
+      src: url('Brandon_Grotesque_Thin_Italic.eot') format('embedded-opentype'),
            url('Brandon_Grotesque_Thin_Italic.woff') format('woff'),
+           url('Brandon_Grotesque_Thin_Italic.woff2') format('woff2'),	
            url('Brandon_Grotesque_Thin_Italic.otf') format('opentype'),
 		   url('Brandon_Grotesque_Thin_Italic.ttf') format('truetype'),
            url('Brandon_Grotesque_Thin_Italic.svg') format('svg');
