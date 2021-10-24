@@ -145,7 +145,7 @@
     "sold_out_text": "Sold Out",
     "free_price_text": "Free",
     "collection_secondary_image": false,
-    "align_height": false,
+    "align_height": true,
     "collection_height": 250,
     "quick_shop_enabled": true,
     "quick_shop_style": "popup",

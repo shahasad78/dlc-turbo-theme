@@ -2,6 +2,45 @@
   "sections": {
     "main": {
       "type": "collection-template",
+      "blocks": {
+        "fff1532a-af1d-48ec-9c5f-fe400ca55676": {
+          "type": "filter_by_collection",
+          "settings": {
+          }
+        },
+        "16fe7ee1-9a6d-472d-9fb6-be5213e3c9ff": {
+          "type": "filter",
+          "settings": {
+            "filter_name": "",
+            "filter_tags": "",
+            "enable_filter_swatches": false
+          }
+        },
+        "afc8b5e0-25fb-4f8c-b1b0-e734a708255e": {
+          "type": "filter_by_type",
+          "settings": {
+          }
+        },
+        "a7387338-4dce-42f9-8d09-0c1ce23f202f": {
+          "type": "faceted_filtering",
+          "settings": {
+          }
+        },
+        "0e7dc0db-1755-4ae0-8f1e-46ebe509963c": {
+          "type": "recently_viewed",
+          "settings": {
+            "sidebar_rv_title": "Recently Viewed",
+            "sidebar_rv_per": 3
+          }
+        }
+      },
+      "block_order": [
+        "fff1532a-af1d-48ec-9c5f-fe400ca55676",
+        "16fe7ee1-9a6d-472d-9fb6-be5213e3c9ff",
+        "afc8b5e0-25fb-4f8c-b1b0-e734a708255e",
+        "a7387338-4dce-42f9-8d09-0c1ce23f202f",
+        "0e7dc0db-1755-4ae0-8f1e-46ebe509963c"
+      ],
       "settings": {
         "featured_collection_image": true,
         "wide_display": true,
@@ -13,7 +52,7 @@
         "collection_sort": true,
         "products_per_row": 3,
         "pagination_limit": 48,
-        "toggle": false
+        "toggle": true
       }
     }
   },
