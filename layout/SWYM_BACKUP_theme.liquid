@@ -314,10 +314,7 @@
       {% render 'cart-shipping-scripts' %}
     {% endif %}
 
-  
-{% include 'swymSnippet' %}
-
-</body>
+  </body>
 </html>
 {% endcapture %}
 {% assign content = content | replace_first: '<!DOCTYPE', '!DOCTYPE' | split: ' <' %}
