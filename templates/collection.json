@@ -32,6 +32,11 @@
             "sidebar_rv_title": "Recently Viewed",
             "sidebar_rv_per": 3
           }
+        },
+        "44ef5111-56c6-41ba-a149-e24128e3cf8b": {
+          "type": "filter_by_tag",
+          "settings": {
+          }
         }
       },
       "block_order": [
@@ -39,7 +44,8 @@
         "16fe7ee1-9a6d-472d-9fb6-be5213e3c9ff",
         "afc8b5e0-25fb-4f8c-b1b0-e734a708255e",
         "a7387338-4dce-42f9-8d09-0c1ce23f202f",
-        "0e7dc0db-1755-4ae0-8f1e-46ebe509963c"
+        "0e7dc0db-1755-4ae0-8f1e-46ebe509963c",
+        "44ef5111-56c6-41ba-a149-e24128e3cf8b"
       ],
       "settings": {
         "featured_collection_image": true,
