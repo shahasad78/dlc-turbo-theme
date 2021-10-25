@@ -778,11 +778,11 @@
               "social_icons_footer": false
             }
           },
-          "1489125420927": {
-            "type": "page",
+          "78537e32-47a2-4c44-91ce-1486b1ce6754": {
+            "type": "link_list",
             "settings": {
-              "page": "contact",
-              "social_icons_footer": true
+              "menu": "",
+              "social_icons_footer": false
             }
           }
         },
@@ -790,7 +790,7 @@
           "footer-0",
           "1489125398203",
           "footer-2",
-          "1489125420927"
+          "78537e32-47a2-4c44-91ce-1486b1ce6754"
         ],
         "settings": {
           "copyright_text": "a registered trademark",
