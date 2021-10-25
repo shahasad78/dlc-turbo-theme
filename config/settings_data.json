@@ -781,8 +781,14 @@
           "78537e32-47a2-4c44-91ce-1486b1ce6754": {
             "type": "link_list",
             "settings": {
-              "menu": "",
+              "menu": "support",
               "social_icons_footer": false
+            }
+          },
+          "9bf6f291-ad67-4083-980b-17d65b66e933": {
+            "type": "empty",
+            "settings": {
+              "social_icons_footer": true
             }
           }
         },
@@ -790,7 +796,8 @@
           "footer-0",
           "1489125398203",
           "footer-2",
-          "78537e32-47a2-4c44-91ce-1486b1ce6754"
+          "78537e32-47a2-4c44-91ce-1486b1ce6754",
+          "9bf6f291-ad67-4083-980b-17d65b66e933"
         ],
         "settings": {
           "copyright_text": "a registered trademark",
