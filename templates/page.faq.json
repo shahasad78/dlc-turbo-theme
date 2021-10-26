@@ -19,8 +19,8 @@
         "block-3": {
           "type": "Content",
           "settings": {
-            "title": "Title",
-            "subtitle": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>"
+            "title": "How do I get free shipping on my order?",
+            "subtitle": "<p>We offer free shipping on orders of $100 or more.<\/p>"
           }
         },
         "block-4": {
