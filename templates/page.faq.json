@@ -64,6 +64,13 @@
             "subtitle": "<p>There are a few ways to receive discounts.  If you sign up to receive our newsletter and promotions, you will get 10% off of your first order.  <\/p><p>Additionally, we occasionally offer discount promo codes for sales, events, and holidays.  <\/p><p>You can qualify for free shipping on any order above $100.<\/p><p><\/p><p>Finally, as we are a small family business with big dreams, if you wish to become a partner social media marketer, you can get some discounted and\/or free swag!  Contact us a <a href=\"mailto:about.th@delacross.life\" title=\"mailto:about.th@delacross.life\">about.th@delacross.life<\/a> for more info.<\/p>"
           }
         },
+        "9dfe04eb-9285-465c-9c3c-2d3e6ba32504": {
+          "type": "Content",
+          "settings": {
+            "title": "I received a wrong\/damaged product, what should I do?",
+            "subtitle": "<p>We’re so sorry if the product you ordered arrived damaged. To help us resolve this for you quickly, please email us at <a href=\"mailto:support@delacross.life\" title=\"mailto:support@delacross.life\">support@delacross.life<\/a> within a weeks' time with photos of the damaged product, your order number, and any other details you may have about your order. We’ll get back to you with a resolution as soon as possible! <\/p>"
+          }
+        },
         "3cc7b2ea-604f-4d2c-9420-5f0420fa4bca": {
           "type": "heading",
           "settings": {
@@ -95,6 +102,7 @@
         "block-6",
         "block-7",
         "block-4",
+        "9dfe04eb-9285-465c-9c3c-2d3e6ba32504",
         "3cc7b2ea-604f-4d2c-9420-5f0420fa4bca",
         "block-8",
         "b6ae948d-5576-4bac-ab2f-e4cbed681d5c"
