@@ -67,7 +67,7 @@
         "9dfe04eb-9285-465c-9c3c-2d3e6ba32504": {
           "type": "Content",
           "settings": {
-            "title": "I received a wrong\/damaged product, what should I do?",
+            "title": "I received an incorrect\/damaged product, what should I do?",
             "subtitle": "<p>We absolutely would not want you to wear damaged goods!  <\/p><p>We’re so sorry if the product you ordered arrived damaged. To help us resolve this for you quickly, please email us at <a href=\"mailto:support@delacross.life\" title=\"mailto:support@delacross.life\">support@delacross.life<\/a> within a weeks' time with photos of the damaged product, your order number, and any other details you may have about your order. We’ll get back to you with a resolution as soon as possible! <\/p>"
           }
         },
@@ -83,6 +83,13 @@
             "title": "What is the return policy at De La Cross?",
             "subtitle": "<p>If your item was defective, damaged, or incorrect, you have 30 days after receiving your item to request a return. <\/p><p><\/p><p>If any of the above conditions apply, please contact us at support@delacross.life and attach photos of the items in question along with a brief description of what is wrong with the item and we'll sort everything out for you. <\/p><p><\/p><p>See more details about returns and refunds in our <a href=\"\/policies\/refund-policy\" target=\"_blank\" title=\"Refund Policy\">Return Policy<\/a>.<\/p>"
           }
+        },
+        "18617b42-af9a-4e05-a08c-35b44f1aaf5b": {
+          "type": "Content",
+          "settings": {
+            "title": "How are your products made?",
+            "subtitle": "<p>We work with a print-on-demand drop shipper. They have locations worldwide, so depending on where you are, your orders are printed and shipped from the facility that can do it most efficiently!<\/p>"
+          }
         }
       },
       "block_order": [
@@ -97,7 +104,8 @@
         "block-4",
         "9dfe04eb-9285-465c-9c3c-2d3e6ba32504",
         "3cc7b2ea-604f-4d2c-9420-5f0420fa4bca",
-        "block-8"
+        "block-8",
+        "18617b42-af9a-4e05-a08c-35b44f1aaf5b"
       ],
       "settings": {
         "wide_display": true,
