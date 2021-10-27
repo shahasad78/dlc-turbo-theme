@@ -16,11 +16,25 @@
             "subtitle": "<p>Usually, it takes 3–7 days to fulfill an order, after which it’s shipped out. The shipping time depends on your location, but can be estimated as follows:<\/p><p>\t\t\t\t\t\t<\/p><p>\t\t\t\t\t\t\t \t\t\t\t\t\t\t\t<br\/>●  USA: 3–4 business days\t\t\t\t\t\t \t\t\t\t\t\t\t\t<br\/>●  Europe: 6–8 business days\t\t\t\t\t\t \t\t\t\t\t\t\t\t<br\/>●  Australia: 2–14 business days\t\t\t\t\t\t\t\t<br\/>●  Japan: 4–8 business days\t \t\t\t\t\t\t\t\t<br\/>●  International: 10–20 business days<\/p>"
           }
         },
+        "42988c1c-3f17-439a-80b3-a6b9565525bc": {
+          "type": "Content",
+          "settings": {
+            "title": "[Covid-19]​ When will I get my order?",
+            "subtitle": "<p>Our fulfillment times [for all products\/t-shirts\/phone cases\/etc.] may be longer than usual and may continue to increase until things get back to normal. We're seeing delays in our supply chain, including distributors and shipping carriers as the entire industry is grappling with challenges.<\/p>"
+          }
+        },
         "block-2": {
           "type": "Content",
           "settings": {
             "title": "What are the Shipping Options at De La Cross?",
             "subtitle": "<p>Full, detailed shipping details can be found on our <a href=\"\/policies\/shipping-policy\" target=\"_blank\" title=\"Shipping Policy\">Shipping Policy page<\/a>.<\/p>"
+          }
+        },
+        "35edd2a0-aa8a-4c03-92fe-c11c2b73ffe8": {
+          "type": "Content",
+          "settings": {
+            "title": "Will I be charged customs for my order?",
+            "subtitle": "<p>An additional customs and tax fee can occur on international orders. This fee is not in our control and is assessed by your local customs office. Customs policies vary widely for every country so please check with your local customs office directly to see if they apply duties and taxes to your purchases.<\/p>"
           }
         },
         "block-3": {
@@ -102,7 +116,9 @@
       "block_order": [
         "block-1",
         "098b5440-80ce-4bc0-912e-6213c5887208",
+        "42988c1c-3f17-439a-80b3-a6b9565525bc",
         "block-2",
+        "35edd2a0-aa8a-4c03-92fe-c11c2b73ffe8",
         "block-3",
         "af14ea3e-bcab-491d-94cd-e3f451285caa",
         "6c3d85a3-62e0-429f-bcd4-10aa5b9ea194",
