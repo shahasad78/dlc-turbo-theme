@@ -68,7 +68,7 @@
           "type": "Content",
           "settings": {
             "title": "I received a wrong\/damaged product, what should I do?",
-            "subtitle": "<p>We’re so sorry if the product you ordered arrived damaged. To help us resolve this for you quickly, please email us at <a href=\"mailto:support@delacross.life\" title=\"mailto:support@delacross.life\">support@delacross.life<\/a> within a weeks' time with photos of the damaged product, your order number, and any other details you may have about your order. We’ll get back to you with a resolution as soon as possible! <\/p>"
+            "subtitle": "<p>We absolutely would not want you to wear damaged goods!  <\/p><p>We’re so sorry if the product you ordered arrived damaged. To help us resolve this for you quickly, please email us at <a href=\"mailto:support@delacross.life\" title=\"mailto:support@delacross.life\">support@delacross.life<\/a> within a weeks' time with photos of the damaged product, your order number, and any other details you may have about your order. We’ll get back to you with a resolution as soon as possible! <\/p>"
           }
         },
         "3cc7b2ea-604f-4d2c-9420-5f0420fa4bca": {
@@ -82,13 +82,6 @@
           "settings": {
             "title": "What is the return policy at De La Cross?",
             "subtitle": "<p>If your item was defective, damaged, or incorrect, you have 30 days after receiving your item to request a return. <\/p><p><\/p><p>If any of the above conditions apply, please contact us at support@delacross.life and attach photos of the items in question along with a brief description of what is wrong with the item and we'll sort everything out for you. <\/p><p><\/p><p>See more details about returns and refunds in our <a href=\"\/policies\/refund-policy\" target=\"_blank\" title=\"Refund Policy\">Return Policy<\/a>.<\/p>"
-          }
-        },
-        "b6ae948d-5576-4bac-ab2f-e4cbed681d5c": {
-          "type": "Content",
-          "settings": {
-            "title": "What if my item(s) is damaged in the mail?",
-            "subtitle": "<p>We absolutely would not want you to wear damaged goods!  <\/p><p>If something arrives damaged, immediately send a photo of the damaged goods to support@delacross.life and we'll gladly send a replacement out to you at no cost. <\/p>"
           }
         }
       },
@@ -104,8 +97,7 @@
         "block-4",
         "9dfe04eb-9285-465c-9c3c-2d3e6ba32504",
         "3cc7b2ea-604f-4d2c-9420-5f0420fa4bca",
-        "block-8",
-        "b6ae948d-5576-4bac-ab2f-e4cbed681d5c"
+        "block-8"
       ],
       "settings": {
         "wide_display": true,
