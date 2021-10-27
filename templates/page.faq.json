@@ -23,13 +23,6 @@
             "subtitle": "<p>We offer free shipping on orders of $100 or more.<\/p>"
           }
         },
-        "block-4": {
-          "type": "Content",
-          "settings": {
-            "title": "Does De La Cross offer any shipping discounts?",
-            "subtitle": "<p>De La Cross will occasionally run promotions where shipping will be  discounted.  But you can qualify for free shipping on any order above $100.<\/p>"
-          }
-        },
         "block-5": {
           "type": "heading",
           "settings": {
@@ -50,6 +43,13 @@
             "subtitle": "<p>If your item was defective, damaged, or incorrect, you have 30 days after receiving your item to request a return. <\/p><p><\/p><p>If any of the above conditions apply, please contact us at support@delacross.life and attach photos of the items in question along with a brief description of what is wrong with the item and we'll sort everything out for you. <\/p><p><\/p><p>See more details about returns and refunds in our <a href=\"\/policies\/refund-policy\" target=\"_blank\" title=\"Refund Policy\">Return Policy<\/a>.<\/p>"
           }
         },
+        "block-4": {
+          "type": "Content",
+          "settings": {
+            "title": "Does De La Cross offer any discounts?",
+            "subtitle": "<p>There are a few ways to receive discounts.  If you sign up to receive our newsletter and promotions, you will get 10% off of your first order.  <\/p><p>Additionally, we occasionally offer discount promo codes for sales, events, and holidays.  <\/p><p>You can qualify for free shipping on any order above $100.<\/p><p><\/p><p>Finally, as we are a small family business with big dreams, if you wish to become a partner social media marketer, you can get some discounted and\/or free swag!  Contact us a <a href=\"mailto:about.th@delacross.life\" title=\"mailto:about.th@delacross.life\">about.th@delacross.life<\/a> for more info.<\/p>"
+          }
+        },
         "block-8": {
           "type": "Content",
           "settings": {
@@ -62,10 +62,10 @@
         "block-1",
         "block-2",
         "block-3",
-        "block-4",
         "block-5",
         "block-6",
         "block-7",
+        "block-4",
         "block-8"
       ],
       "settings": {
