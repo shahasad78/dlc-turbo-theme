@@ -40,7 +40,7 @@
           "type": "Content",
           "settings": {
             "title": "Can I cancel or change my De La Cross order?",
-            "subtitle": "<p>If your item was defective, damaged, or incorrect, you have 30 days after receiving your item to request a return. <\/p><p><\/p><p>If any of the above conditions apply, please contact us at support@delacross.life and attach photos of the items in question along with a brief description of what is wrong with the item and we'll sort everything out for you. <\/p><p><\/p><p>See more details about returns and refunds in our <a href=\"\/policies\/refund-policy\" target=\"_blank\" title=\"Refund Policy\">Return Policy<\/a>.<\/p>"
+            "subtitle": "<p>We do not offer exchanges at this time. With that in mind, if you are purchasing clothing, please be sure to look at our size charts to ensure you are getting the right fit and as always, double-check your order before submitting payment.<\/p><p><\/p><p>See more details about returns and refunds in our <a href=\"\/policies\/refund-policy\" target=\"_blank\" title=\"Refund Policy\">Return Policy<\/a>.<\/p>"
           }
         },
         "block-4": {
@@ -50,11 +50,31 @@
             "subtitle": "<p>There are a few ways to receive discounts.  If you sign up to receive our newsletter and promotions, you will get 10% off of your first order.  <\/p><p>Additionally, we occasionally offer discount promo codes for sales, events, and holidays.  <\/p><p>You can qualify for free shipping on any order above $100.<\/p><p><\/p><p>Finally, as we are a small family business with big dreams, if you wish to become a partner social media marketer, you can get some discounted and\/or free swag!  Contact us a <a href=\"mailto:about.th@delacross.life\" title=\"mailto:about.th@delacross.life\">about.th@delacross.life<\/a> for more info.<\/p>"
           }
         },
+        "af14ea3e-bcab-491d-94cd-e3f451285caa": {
+          "type": "Content",
+          "settings": {
+            "title": "What happens if I entered the wrong address in my order?",
+            "subtitle": "<p>If you enter the wrong address, your item(s) will be sent back to us and you will be asked to provide us  with your correct address either by phone or email.  Your items will remain with us until we receive that information.<\/p><p><\/p>"
+          }
+        },
+        "3cc7b2ea-604f-4d2c-9420-5f0420fa4bca": {
+          "type": "heading",
+          "settings": {
+            "heading": "Returns"
+          }
+        },
         "block-8": {
           "type": "Content",
           "settings": {
-            "title": "Title",
-            "subtitle": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>"
+            "title": "What is De La Cross’ return policy?",
+            "subtitle": "<p>If your item was defective, damaged, or incorrect, you have 30 days after receiving your item to request a return. <\/p><p><\/p><p>If any of the above conditions apply, please contact us at support@delacross.life and attach photos of the items in question along with a brief description of what is wrong with the item and we'll sort everything out for you. <\/p><p><\/p><p>See more details about returns and refunds in our <a href=\"\/policies\/refund-policy\" target=\"_blank\" title=\"Refund Policy\">Return Policy<\/a>.<\/p>"
+          }
+        },
+        "b6ae948d-5576-4bac-ab2f-e4cbed681d5c": {
+          "type": "Content",
+          "settings": {
+            "title": "What if the product is damaged in the mail?",
+            "subtitle": "<p>We absolutely would not want you to wear damaged goods!  <\/p><p>If something arrives damaged, immediately send a photo of the damaged goods to support@delacross.life and we'll gladly send a replacement out to you at no cost. <\/p>"
           }
         }
       },
@@ -66,7 +86,10 @@
         "block-6",
         "block-7",
         "block-4",
-        "block-8"
+        "af14ea3e-bcab-491d-94cd-e3f451285caa",
+        "3cc7b2ea-604f-4d2c-9420-5f0420fa4bca",
+        "block-8",
+        "b6ae948d-5576-4bac-ab2f-e4cbed681d5c"
       ],
       "settings": {
         "wide_display": true,
