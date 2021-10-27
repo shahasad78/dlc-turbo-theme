@@ -9,6 +9,13 @@
             "heading": "Shipping and Delivery"
           }
         },
+        "098b5440-80ce-4bc0-912e-6213c5887208": {
+          "type": "Content",
+          "settings": {
+            "title": "When will I get my order?",
+            "subtitle": "<p>Usually, it takes 3–7 days to fulfill an order, after which it’s shipped out. The shipping time depends on your location, but can be estimated as follows:<\/p><p>\t\t\t\t\t\t<\/p><p>\t\t\t\t\t\t\t \t\t\t\t\t\t\t\t<br\/>●  USA: 3–4 business days\t\t\t\t\t\t \t\t\t\t\t\t\t\t<br\/>●  Europe: 6–8 business days\t\t\t\t\t\t \t\t\t\t\t\t\t\t<br\/>●  Australia: 2–14 business days\t\t\t\t\t\t\t\t<br\/>●  Japan: 4–8 business days\t \t\t\t\t\t\t\t\t<br\/>●  International: 10–20 business days<\/p>"
+          }
+        },
         "block-2": {
           "type": "Content",
           "settings": {
@@ -94,6 +101,7 @@
       },
       "block_order": [
         "block-1",
+        "098b5440-80ce-4bc0-912e-6213c5887208",
         "block-2",
         "block-3",
         "af14ea3e-bcab-491d-94cd-e3f451285caa",
