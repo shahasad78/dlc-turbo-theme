@@ -23,6 +23,20 @@
             "subtitle": "<p>We offer free shipping on orders of $100 or more.<\/p>"
           }
         },
+        "af14ea3e-bcab-491d-94cd-e3f451285caa": {
+          "type": "Content",
+          "settings": {
+            "title": "What happens if I entered the wrong address in my order?",
+            "subtitle": "<p>If you enter the wrong address, your item(s) will be sent back to us and you will be asked to provide us  with your correct address either by phone or email.  Your items will remain with us until we receive that information.<\/p><p><\/p>"
+          }
+        },
+        "6c3d85a3-62e0-429f-bcd4-10aa5b9ea194": {
+          "type": "Content",
+          "settings": {
+            "title": "What happens if a package wasn't delivered to me, but the tracking info states that it was?",
+            "subtitle": "<p>If the package was marked as delivered by your carrier, it may be cases where the delivery was made, but the package was left in an unexpected location at your address. <\/p><p><\/p><p>Unfortunately this is out of our hands and you should reach out to your carrier and inquire if any additional details were left by the delivery person. For example: “Left under the table on the back porch.\"<\/p><p>If you are unable to locate the package, you will need to place a new manual order to have it reshipped. We're not yet able to assist with filing claims with shipping carriers but hope to do so in the future!<\/p>"
+          }
+        },
         "block-5": {
           "type": "heading",
           "settings": {
@@ -50,13 +64,6 @@
             "subtitle": "<p>There are a few ways to receive discounts.  If you sign up to receive our newsletter and promotions, you will get 10% off of your first order.  <\/p><p>Additionally, we occasionally offer discount promo codes for sales, events, and holidays.  <\/p><p>You can qualify for free shipping on any order above $100.<\/p><p><\/p><p>Finally, as we are a small family business with big dreams, if you wish to become a partner social media marketer, you can get some discounted and\/or free swag!  Contact us a <a href=\"mailto:about.th@delacross.life\" title=\"mailto:about.th@delacross.life\">about.th@delacross.life<\/a> for more info.<\/p>"
           }
         },
-        "af14ea3e-bcab-491d-94cd-e3f451285caa": {
-          "type": "Content",
-          "settings": {
-            "title": "What happens if I entered the wrong address in my order?",
-            "subtitle": "<p>If you enter the wrong address, your item(s) will be sent back to us and you will be asked to provide us  with your correct address either by phone or email.  Your items will remain with us until we receive that information.<\/p><p><\/p>"
-          }
-        },
         "3cc7b2ea-604f-4d2c-9420-5f0420fa4bca": {
           "type": "heading",
           "settings": {
@@ -82,11 +89,12 @@
         "block-1",
         "block-2",
         "block-3",
+        "af14ea3e-bcab-491d-94cd-e3f451285caa",
+        "6c3d85a3-62e0-429f-bcd4-10aa5b9ea194",
         "block-5",
         "block-6",
         "block-7",
         "block-4",
-        "af14ea3e-bcab-491d-94cd-e3f451285caa",
         "3cc7b2ea-604f-4d2c-9420-5f0420fa4bca",
         "block-8",
         "b6ae948d-5576-4bac-ab2f-e4cbed681d5c"
