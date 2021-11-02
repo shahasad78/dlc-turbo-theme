@@ -7815,7 +7815,9 @@ a.continue:hover {
   .newsletter__lightbox .fancybox-close-small svg path {
     fill: white;
   }
-}.newsletter__lightbox .fancybox-toolbar {
+}.newsletter__lightbox .fancybox-close-small {
+    display: none;
+  }.newsletter__lightbox .fancybox-toolbar {
   display: none;
 }
 
