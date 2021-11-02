@@ -176,7 +176,7 @@
     "image_crop": "right",
     "newsletter_popup_image_align": "right",
     "newsletter_popup_title": "Enjoy 10% OFF of your next purchase",
-    "newsletter_popup_text": "<p><strong>GREETINGS WARRIOR<\/strong><\/p><p>Enjoy 10% Off of your next order when you subscribe to the Cross-Wire newsletter. <\/p><p>PLUS, you'll stay up-to-date on sales, new releases, workout tips, and more!<\/p><p><br\/><\/p><p><\/p>",
+    "newsletter_popup_text": "<p><strong>GREETINGS WARRIOR<\/strong><\/p><p>Enjoy 10% Off of your next order when you subscribe to the Cross-Wire newsletter. *<\/p><p>PLUS, you'll stay up-to-date on sales, new releases, workout tips, and more!<\/p><p><br\/><em>**We guarantee that we will not sell this information to 3rd parties. This is solely for internal use<\/em><\/p><p><\/p>",
     "newsletter_popup_text_align": "left",
     "popup_button1": "No Thanks, I Don't Like Discounts",
     "popup_button1_link": "",
