@@ -7806,7 +7806,9 @@ a.continue:hover {
   width: 100%;
   max-width: 740px;
   padding: 0;
-}@media only screen and (max-width: 480px) {
+}.newsletter__lightbox .fancybox-close-small {
+    left: 0;
+  }@media only screen and (max-width: 480px) {
   .newsletter__lightbox .fancybox-close-small {
     display: block;
   }
@@ -7826,7 +7828,9 @@ a.continue:hover {
   background-color: #ffffff;
   padding: 0;
   width: 100%;
-}@media only screen and (max-width: 798px) {
+}.newsletter-popup {
+    flex-direction: row-reverse;
+  }@media only screen and (max-width: 798px) {
   .newsletter-popup {
     line-height: 0;
     flex-direction: column;
