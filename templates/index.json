@@ -60,31 +60,6 @@
         "custom_css": ""
       }
     },
-    "image-with-text-overlay-1": {
-      "type": "image-with-text-overlay",
-      "disabled": true,
-      "settings": {
-        "wide_display": true,
-        "image": "shopify:\/\/shop_images\/Lifting_-_Working_Face_w-LUT_a_2x_956e13b5-54d3-4918-b115-79beb04d70a8.png",
-        "pretext": "",
-        "title": "DLC Essentials",
-        "subtitle": "<p>Brand new apparel to <\/p><p>celebrate DLC 2.0<\/p>",
-        "button1": "See What's New",
-        "button1_link": "",
-        "button1_style": "global-button--banner-highlighted",
-        "button2": "",
-        "button2_link": "",
-        "button2_style": "global-button--banner",
-        "text_position": "left",
-        "text_align": "center",
-        "caption_content_background": "translucent_text_box",
-        "mobile_image_crop": "none",
-        "mobile_text_below_image": true,
-        "mobile_text_color": "",
-        "css_class": "",
-        "custom_css": ""
-      }
-    },
     "featured-text-1": {
       "type": "featured-text",
       "settings": {
@@ -103,79 +78,6 @@
       "settings": {
         "divider_spacing": 20,
         "divider_border": false,
-        "css_class": "",
-        "custom_css": ""
-      }
-    },
-    "featured-promotions-1": {
-      "type": "featured-promotions",
-      "disabled": true,
-      "blocks": {
-        "block-1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/maura-fall-hoodie-and-sweatpants-backside-v2-_800x800_7c456779-8746-40fe-aee3-c1ccfff8fe30.jpg",
-            "link": "",
-            "title": "Fall",
-            "text": "<p>Promotion description details.<\/p>",
-            "button_label": ""
-          }
-        },
-        "block-2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/hat-promo-_800x800_680308a0-5101-41ea-9500-1c8dd6272710.jpg",
-            "link": "",
-            "title": "Hats",
-            "text": "<p>From dad hats to classic baseball caps, we've got your head covered.<\/p>",
-            "button_label": ""
-          }
-        },
-        "block-3": {
-          "type": "image",
-          "settings": {
-            "link": "",
-            "title": "Accessories",
-            "text": "<p>Promotion description details.<\/p>",
-            "button_label": ""
-          }
-        },
-        "block-4": {
-          "type": "image",
-          "settings": {
-            "link": "",
-            "title": "Athlesiure",
-            "text": "<p>Promotion description details.<\/p>",
-            "button_label": ""
-          }
-        }
-      },
-      "block_order": [
-        "block-1",
-        "block-2",
-        "block-3",
-        "block-4"
-      ],
-      "settings": {
-        "wide_display": true,
-        "promo_text_on_image_enabled": true,
-        "featured_promos_per_row": 4,
-        "featured_links_animation": "fadeInDown",
-        "feature_style": "square",
-        "css_class": "",
-        "custom_css": ""
-      }
-    },
-    "featured-collection-1": {
-      "type": "featured-collection",
-      "disabled": true,
-      "settings": {
-        "title": "Hispanic Heritage",
-        "collection_description": true,
-        "collection": "hispanic-heritage",
-        "collection_style": "slider",
-        "products_per": 4,
-        "products_limit": 24,
         "css_class": "",
         "custom_css": ""
       }
@@ -501,11 +403,8 @@
   },
   "order": [
     "slideshow-1",
-    "image-with-text-overlay-1",
     "featured-text-1",
     "16339079467d7c47d4",
-    "featured-promotions-1",
-    "featured-collection-1",
     "image-text-1",
     "image-with-text-overlay-2",
     "collection-list-1",
