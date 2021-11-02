@@ -173,7 +173,7 @@
     "display_last_name": false,
     "use_newsletter_border": false,
     "newsletter_bg": "shopify:\/\/shop_images\/DLC_-_Circle_logo_-_Black.png",
-    "image_crop": "none",
+    "image_crop": "center",
     "newsletter_popup_image_align": "left",
     "newsletter_popup_title": "Sign up for the Cross-Wire",
     "newsletter_popup_text": "<p><\/p><p><strong>Greetings WARRIOR<\/strong><\/p><p>Welcome to our new site DLC 2.0!<\/p><p>Enjoy<\/p><p>10% OFF of your next purchase<\/p><p>When you subscribe to the Cross-Wire newsletter.<\/p><p><br\/><\/p><p><\/p>",
