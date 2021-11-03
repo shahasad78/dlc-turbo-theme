@@ -1636,10 +1636,10 @@
           "1497044240407": {
             "type": "column",
             "settings": {
-              "richtext_top": "<p>Men's<\/p>",
-              "image_caption_top": "Time to get excited about our new collection for Men!",
-              "image_link_top": "shopify:\/\/collections\/mens-apparel",
-              "menu_1": "main-menu",
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "mens-apparel",
               "menu_1_link": "shopify:\/\/collections\/dlc-essentials-2-0",
               "menu_2": "",
               "menu_2_link": "",
@@ -1673,6 +1673,7 @@
           },
           "1497042650195": {
             "type": "column",
+            "disabled": true,
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
@@ -1692,6 +1693,7 @@
           },
           "1497042688872": {
             "type": "column",
+            "disabled": true,
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
@@ -1711,6 +1713,7 @@
           },
           "1497042736913": {
             "type": "column",
+            "disabled": true,
             "settings": {
               "richtext_top": "",
               "image_caption_top": "Meet our lovely team!",
@@ -1737,7 +1740,7 @@
           "1497042736913"
         ],
         "settings": {
-          "parent": "Shop"
+          "parent": "Shop DLC"
         }
       },
       "1497536613905": {
