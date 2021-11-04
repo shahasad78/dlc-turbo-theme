@@ -1673,7 +1673,6 @@
           },
           "1497042650195": {
             "type": "column",
-            "disabled": true,
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
@@ -1682,7 +1681,7 @@
               "menu_1_link": "shopify:\/\/collections\/yoga-bags",
               "menu_2": "",
               "menu_2_link": "shopify:\/\/collections\/yoga-mats-towels",
-              "menu_3": "",
+              "menu_3": "coats-jackets",
               "menu_3_link": "",
               "menu_4": "",
               "menu_4_link": "",
