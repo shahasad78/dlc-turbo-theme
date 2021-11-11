@@ -7,9 +7,9 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/featured-banner-brandon-lifting-_1800x1000_128f97c0-1f54-46fa-851a-cf70028f9a0f.jpg",
-            "pretext": "<p>DLC 2.0 is here! Check out<\/p>",
+            "pretext": "<p>De La Cross 2.0 is here! Check out<\/p>",
             "title": "DLC Essentials",
-            "subtitle": "<p>Brand new site, Brand new apparel!<\/p>",
+            "subtitle": "<p>New Site | New Apparel<\/p>",
             "button1": "See What's New",
             "button1_link": "shopify:\/\/collections\/dlc-essentials-2-0",
             "button1_style": "global-button--banner",
