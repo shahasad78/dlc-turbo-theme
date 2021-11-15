@@ -127,6 +127,7 @@
     },
     "image-with-text-overlay-2": {
       "type": "image-with-text-overlay",
+      "disabled": true,
       "settings": {
         "wide_display": true,
         "image": "shopify:\/\/shop_images\/de-la-cross-faith-alternative-hoodie.jpg",
