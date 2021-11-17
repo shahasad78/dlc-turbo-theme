@@ -731,7 +731,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "promo_text": "<p><a href=\"\/collections\" title=\"All collections\">New Site, New Products!  Let's celebrate with 20% OFF select items!<\/a><\/p>",
+          "promo_text": "<p><a href=\"\/collections\/dlc-essentials-2-0\" title=\"DLC Essentials 2.0\">New Site, New Products!  Check out DLC Essentials Collection!<\/a><\/p>",
           "social_icons_header": true,
           "phone_number": "",
           "top_bar_menu": "",
