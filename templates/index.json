@@ -87,6 +87,7 @@
       "blocks": {
         "block-1": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Hispanic_Heritage.png",
             "image_crop": "none",
@@ -110,11 +111,25 @@
             "bg_color": "#d4af37",
             "text_color": "rgba(0,0,0,0)"
           }
+        },
+        "8eafaf40-2b38-4907-9b9c-1194b9dfc497": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/de-la-crossmass-christmas-collection.png",
+            "image_crop": "none",
+            "title": "De La Crossmas Collection",
+            "text": "<p>Celebrate the Holidays with our festive De La Crossmas gear!  <\/p><p>Our super cozy sweaters will make you feel like you are by the fireplace and sipping hot cocoa. Grab a T-shirt to ring in the festivities just about anywhere.<\/p><p>You can also purchase a gift card to share the De La Crossmas spirit with your loved ones.<\/p><p><\/p><p><\/p><p>Merry De La Crossmas from our family to yours!<\/p>",
+            "button_label": "Bless Me",
+            "link": "",
+            "bg_color": "",
+            "text_color": ""
+          }
         }
       },
       "block_order": [
         "block-1",
-        "block-2"
+        "block-2",
+        "8eafaf40-2b38-4907-9b9c-1194b9dfc497"
       ],
       "settings": {
         "wide_display": false,
