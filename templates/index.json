@@ -82,209 +82,6 @@
         "custom_css": ""
       }
     },
-    "image-text-1": {
-      "type": "image-text",
-      "blocks": {
-        "block-1": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Hispanic_Heritage.png",
-            "image_crop": "none",
-            "title": "Hispanic Heritage",
-            "text": "<p>The Hispanic Heritage month collection is here!  Celebrate your Latinx Heritage in style with these incredible flag-inspired, textured De La Cross clothes.<\/p>",
-            "button_label": "View by Flag",
-            "link": "shopify:\/\/pages\/hispanic-heritage-collections-by-flag",
-            "bg_color": "#d4af37",
-            "text_color": "rgba(0,0,0,0)"
-          }
-        },
-        "8eafaf40-2b38-4907-9b9c-1194b9dfc497": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/de-la-crossmass-christmas-collection.png",
-            "image_crop": "none",
-            "title": "De La Crossmas Collection",
-            "text": "<p>Celebrate the Holidays with our festive De La Crossmas gear!  <\/p><p>Our super cozy sweaters will make you feel like you are by the fireplace and sipping hot cocoa. Grab a T-shirt to ring in the festivities just about anywhere.<\/p><p>You can also purchase a gift card to share the De La Crossmas spirit with your loved ones.<\/p><p><\/p><p><\/p><p>Merry De La Crossmas from our family to yours!<\/p>",
-            "button_label": "Take Me There",
-            "link": "shopify:\/\/collections\/de-la-crossmas",
-            "bg_color": "#d4af37",
-            "text_color": ""
-          }
-        },
-        "block-2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/maura-fall-hoodie-and-sweatpants-backside-v2-_800x800_7c456779-8746-40fe-aee3-c1ccfff8fe30.jpg",
-            "image_crop": "none",
-            "title": "Fall into comfort",
-            "text": "<p>All new fall athlesiure wear.  Hoodies, sweatpants, jackets, and more!<\/p>",
-            "button_label": "Bless Me",
-            "link": "shopify:\/\/collections\/fall",
-            "bg_color": "#d4af37",
-            "text_color": "rgba(0,0,0,0)"
-          }
-        }
-      },
-      "block_order": [
-        "block-1",
-        "8eafaf40-2b38-4907-9b9c-1194b9dfc497",
-        "block-2"
-      ],
-      "settings": {
-        "wide_display": false,
-        "featured_links_per_row": "1",
-        "frontpage_text_align": "left",
-        "frontpage_image_position": "row",
-        "css_class": "",
-        "custom_css": ".featured-link--half .collection_title {\n    font-family: \"Brandon Grotesque Black\", “Open Sans”,  sans-serif;\n}"
-      }
-    },
-    "image-with-text-overlay-2": {
-      "type": "image-with-text-overlay",
-      "disabled": true,
-      "settings": {
-        "wide_display": true,
-        "image": "shopify:\/\/shop_images\/de-la-cross-faith-alternative-hoodie.jpg",
-        "pretext": "",
-        "title": "FAITH",
-        "subtitle": "",
-        "button1": "",
-        "button1_link": "",
-        "button1_style": "global-button--banner",
-        "button2": "",
-        "button2_link": "",
-        "button2_style": "global-button--banner",
-        "text_position": "left",
-        "text_align": "left",
-        "caption_content_background": "original",
-        "mobile_image_crop": "none",
-        "mobile_text_below_image": true,
-        "mobile_text_color": "",
-        "css_class": "",
-        "custom_css": ""
-      }
-    },
-    "collection-list-1": {
-      "type": "collection-list",
-      "blocks": {
-        "block-6": {
-          "type": "collection",
-          "settings": {
-            "feature_collection": "dlc-essentials-2-0"
-          }
-        },
-        "block-1": {
-          "type": "collection",
-          "settings": {
-            "feature_collection": "dlc-classics-mens"
-          }
-        },
-        "block-2": {
-          "type": "collection",
-          "settings": {
-            "feature_collection": "dlc-classic-womens"
-          }
-        },
-        "block-3": {
-          "type": "collection",
-          "settings": {
-            "feature_collection": "hats"
-          }
-        },
-        "block-4": {
-          "type": "collection",
-          "settings": {
-            "feature_collection": "active-accessories"
-          }
-        },
-        "block-5": {
-          "type": "collection",
-          "settings": {
-            "feature_collection": "fall"
-          }
-        }
-      },
-      "block_order": [
-        "block-6",
-        "block-1",
-        "block-2",
-        "block-3",
-        "block-4",
-        "block-5"
-      ],
-      "settings": {
-        "title": "Collection list",
-        "align_height": false,
-        "collection_height": 200,
-        "frontpage_collections_per_row": 3,
-        "css_class": "",
-        "custom_css": ".list-collections-wrapper .thumbnail-overlay .title {\n    font-family: \"Brandon Grotesque Black\", “Open Sans”,  sans-serif;\nfont-size: 1.2rem;\n}"
-      }
-    },
-    "testimonials-1": {
-      "type": "testimonial",
-      "disabled": true,
-      "blocks": {
-        "block-1": {
-          "type": "image",
-          "settings": {
-            "title": "Customer Testimonial",
-            "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
-            "name": "",
-            "store_name": "",
-            "link": "",
-            "text_position": "center",
-            "text_align": "center",
-            "mobile_image_crop": "none",
-            "caption_content_background": "original"
-          }
-        },
-        "block-2": {
-          "type": "image",
-          "settings": {
-            "title": "Customer Testimonial",
-            "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
-            "name": "",
-            "store_name": "",
-            "link": "",
-            "text_position": "center",
-            "text_align": "center",
-            "mobile_image_crop": "none",
-            "caption_content_background": "original"
-          }
-        },
-        "block-3": {
-          "type": "image",
-          "settings": {
-            "title": "Customer Testimonial",
-            "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
-            "name": "",
-            "store_name": "",
-            "link": "",
-            "text_position": "center",
-            "text_align": "center",
-            "mobile_image_crop": "none",
-            "caption_content_background": "original"
-          }
-        }
-      },
-      "block_order": [
-        "block-1",
-        "block-2",
-        "block-3"
-      ],
-      "settings": {
-        "wide_display": true,
-        "testimonial_text_animation": "fadeInDown",
-        "testimonial_speed": 6,
-        "activate_adaptiveHeight": false,
-        "mobile_text_below_image": true,
-        "mobile_text_color": "",
-        "css_class": "",
-        "custom_css": ""
-      }
-    },
     "featured-product-1": {
       "type": "featured-product",
       "blocks": {
@@ -385,6 +182,209 @@
         "custom_css": ""
       }
     },
+    "collection-list-1": {
+      "type": "collection-list",
+      "blocks": {
+        "block-6": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "dlc-essentials-2-0"
+          }
+        },
+        "block-1": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "dlc-classics-mens"
+          }
+        },
+        "block-2": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "dlc-classic-womens"
+          }
+        },
+        "block-3": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "hats"
+          }
+        },
+        "block-4": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "active-accessories"
+          }
+        },
+        "block-5": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "fall"
+          }
+        }
+      },
+      "block_order": [
+        "block-6",
+        "block-1",
+        "block-2",
+        "block-3",
+        "block-4",
+        "block-5"
+      ],
+      "settings": {
+        "title": "Collection list",
+        "align_height": false,
+        "collection_height": 200,
+        "frontpage_collections_per_row": 3,
+        "css_class": "",
+        "custom_css": ".list-collections-wrapper .thumbnail-overlay .title {\n    font-family: \"Brandon Grotesque Black\", “Open Sans”,  sans-serif;\nfont-size: 1.2rem;\n}"
+      }
+    },
+    "image-text-1": {
+      "type": "image-text",
+      "blocks": {
+        "block-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Hispanic_Heritage.png",
+            "image_crop": "none",
+            "title": "Hispanic Heritage",
+            "text": "<p>The Hispanic Heritage month collection is here!  Celebrate your Latinx Heritage in style with these incredible flag-inspired, textured De La Cross clothes.<\/p>",
+            "button_label": "View by Flag",
+            "link": "shopify:\/\/pages\/hispanic-heritage-collections-by-flag",
+            "bg_color": "#d4af37",
+            "text_color": "rgba(0,0,0,0)"
+          }
+        },
+        "8eafaf40-2b38-4907-9b9c-1194b9dfc497": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/de-la-crossmass-christmas-collection.png",
+            "image_crop": "none",
+            "title": "De La Crossmas Collection",
+            "text": "<p>Celebrate the Holidays with our festive De La Crossmas gear!  <\/p><p>Our super cozy sweaters will make you feel like you are by the fireplace and sipping hot cocoa. Grab a T-shirt to ring in the festivities just about anywhere.<\/p><p>You can also purchase a gift card to share the De La Crossmas spirit with your loved ones.<\/p><p><\/p><p><\/p><p>Merry De La Crossmas from our family to yours!<\/p>",
+            "button_label": "Take Me There",
+            "link": "shopify:\/\/collections\/de-la-crossmas",
+            "bg_color": "#d4af37",
+            "text_color": ""
+          }
+        },
+        "block-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/maura-fall-hoodie-and-sweatpants-backside-v2-_800x800_7c456779-8746-40fe-aee3-c1ccfff8fe30.jpg",
+            "image_crop": "none",
+            "title": "Fall into comfort",
+            "text": "<p>All new fall athlesiure wear.  Hoodies, sweatpants, jackets, and more!<\/p>",
+            "button_label": "Bless Me",
+            "link": "shopify:\/\/collections\/fall",
+            "bg_color": "#d4af37",
+            "text_color": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "8eafaf40-2b38-4907-9b9c-1194b9dfc497",
+        "block-2"
+      ],
+      "settings": {
+        "wide_display": false,
+        "featured_links_per_row": "1",
+        "frontpage_text_align": "left",
+        "frontpage_image_position": "row",
+        "css_class": "",
+        "custom_css": ".featured-link--half .collection_title {\n    font-family: \"Brandon Grotesque Black\", “Open Sans”,  sans-serif;\n}"
+      }
+    },
+    "image-with-text-overlay-2": {
+      "type": "image-with-text-overlay",
+      "disabled": true,
+      "settings": {
+        "wide_display": true,
+        "image": "shopify:\/\/shop_images\/de-la-cross-faith-alternative-hoodie.jpg",
+        "pretext": "",
+        "title": "FAITH",
+        "subtitle": "",
+        "button1": "",
+        "button1_link": "",
+        "button1_style": "global-button--banner",
+        "button2": "",
+        "button2_link": "",
+        "button2_style": "global-button--banner",
+        "text_position": "left",
+        "text_align": "left",
+        "caption_content_background": "original",
+        "mobile_image_crop": "none",
+        "mobile_text_below_image": true,
+        "mobile_text_color": "",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "testimonials-1": {
+      "type": "testimonial",
+      "disabled": true,
+      "blocks": {
+        "block-1": {
+          "type": "image",
+          "settings": {
+            "title": "Customer Testimonial",
+            "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+            "name": "",
+            "store_name": "",
+            "link": "",
+            "text_position": "center",
+            "text_align": "center",
+            "mobile_image_crop": "none",
+            "caption_content_background": "original"
+          }
+        },
+        "block-2": {
+          "type": "image",
+          "settings": {
+            "title": "Customer Testimonial",
+            "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+            "name": "",
+            "store_name": "",
+            "link": "",
+            "text_position": "center",
+            "text_align": "center",
+            "mobile_image_crop": "none",
+            "caption_content_background": "original"
+          }
+        },
+        "block-3": {
+          "type": "image",
+          "settings": {
+            "title": "Customer Testimonial",
+            "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+            "name": "",
+            "store_name": "",
+            "link": "",
+            "text_position": "center",
+            "text_align": "center",
+            "mobile_image_crop": "none",
+            "caption_content_background": "original"
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2",
+        "block-3"
+      ],
+      "settings": {
+        "wide_display": true,
+        "testimonial_text_animation": "fadeInDown",
+        "testimonial_speed": 6,
+        "activate_adaptiveHeight": false,
+        "mobile_text_below_image": true,
+        "mobile_text_color": "",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
     "newsletter-1": {
       "type": "newsletter",
       "settings": {
@@ -421,12 +421,12 @@
     "slideshow-1",
     "featured-text-1",
     "16339079467d7c47d4",
-    "image-text-1",
-    "image-with-text-overlay-2",
-    "collection-list-1",
-    "testimonials-1",
     "featured-product-1",
     "featured-product-2",
+    "collection-list-1",
+    "image-text-1",
+    "image-with-text-overlay-2",
+    "testimonials-1",
     "newsletter-1",
     "blog-posts-1"
   ]
