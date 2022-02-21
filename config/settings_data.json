@@ -69,7 +69,7 @@
     "top_bar_cart_bg_color": "#d4714c",
     "minicart_bg_color": "#ffffff",
     "header_bg_color": "#1b1f23",
-    "header_background": false,
+    "header_background": true,
     "transparent_header": true,
     "promo_bg_color": "#e4e4e4",
     "shop_home_page_content_bg_color": "#f6f7f9",
