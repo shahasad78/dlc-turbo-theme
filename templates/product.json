@@ -2,34 +2,54 @@
   "wrapper": "div.shopify-section-wrapper.section",
   "sections": {
     "sidebar": {
-      "type": "product-sidebar"
+      "type": "product-sidebar",
+      "settings": {
+      }
     },
     "main": {
       "type": "product-template",
       "blocks": {
         "title": {
-          "type": "title"
+          "type": "title",
+          "settings": {
+          }
         },
         "price": {
-          "type": "price"
+          "type": "price",
+          "settings": {
+          }
         },
         "description": {
-          "type": "description"
+          "type": "description",
+          "settings": {
+          }
         },
         "form": {
-          "type": "form"
+          "type": "form",
+          "settings": {
+          }
         },
         "share": {
-          "type": "share"
+          "type": "share",
+          "settings": {
+          }
+        },
+        "d6256b27-0506-4a10-84e8-1e8b7df5eec0": {
+          "type": "shopify:\/\/apps\/growave-loyalty-wishlist-3\/blocks\/block.product.reviewAvgProfile\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+          "settings": {
+          }
         }
       },
       "block_order": [
         "title",
+        "d6256b27-0506-4a10-84e8-1e8b7df5eec0",
         "price",
         "description",
         "form",
         "share"
-      ]
+      ],
+      "settings": {
+      }
     },
     "recently-viewed": {
       "type": "recently-viewed",
@@ -41,11 +61,27 @@
       "settings": {
         "show_product_recommendations": true
       }
+    },
+    "5690622ea028be198": {
+      "type": "apps",
+      "blocks": {
+        "1610a288-29e5-4a74-8054-e0c4a1477a80": {
+          "type": "shopify:\/\/apps\/growave-loyalty-wishlist-3\/blocks\/block.product.reviewWidget\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "1610a288-29e5-4a74-8054-e0c4a1477a80"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "sidebar",
     "main",
+    "5690622ea028be198",
     "recently-viewed",
     "recommendations"
   ]
