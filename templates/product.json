@@ -38,6 +38,11 @@
           "type": "shopify:\/\/apps\/growave-loyalty-wishlist-3\/blocks\/block.product.reviewAvgProfile\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
           "settings": {
           }
+        },
+        "0db1c638-a44d-4cc6-8dba-8d5485760c0a": {
+          "type": "shopify:\/\/apps\/growave-loyalty-wishlist-3\/blocks\/block.product.faveButton\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+          "settings": {
+          }
         }
       },
       "block_order": [
@@ -46,6 +51,7 @@
         "price",
         "description",
         "form",
+        "0db1c638-a44d-4cc6-8dba-8d5485760c0a",
         "share"
       ],
       "settings": {
