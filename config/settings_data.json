@@ -1960,6 +1960,14 @@
       "1489167092570",
       "1489167172377",
       "1497536613905"
-    ]
+    ],
+    "blocks": {
+      "11361622e9d96a7999": {
+        "type": "shopify:\/\/apps\/growave-loyalty-wishlist-3\/blocks\/block.embed.socialshopwave-helper\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   }
 }
