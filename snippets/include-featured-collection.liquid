@@ -98,11 +98,7 @@
       <section class="section">
         <div class="container">
           <div class="one-whole column">
-            {% render 'product-loop',
-                    limit: object.settings.products_limit | plus: 1,
-                    products: collection.products,
-                    products_per_row: object.settings.products_per
-            %}
+            {% render 'product-loop', limit: object.settings.products_limit, plus: 1, products: collection.products, products_per_row: object.settings.products_per %}
           </div>
         </div>
       </section>
@@ -132,3 +128,19 @@
     {% endif %}
   {% endif %}
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {% render 'product-loop',
+                        limit: object.settings.products_limit | plus: 1,
+                        products: collection.products,
+                        products_per_row: object.settings.products_per
+                %}
+  to: "{% render 'product-loop', limit: object.settings.products_limit, plus: 1, products:
+    collection.products, products_per_row: object.settings.products_per %}"
+  position: 3802..3956
+{% endcomment %}

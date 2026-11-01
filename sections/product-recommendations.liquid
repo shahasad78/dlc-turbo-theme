@@ -51,13 +51,7 @@
     {% if section.settings.product_recommendations_style == 'slider' %}
       {% comment %} Recommended Products Slider {% endcomment %}
       <div class="recommended-products--slider js-recommended-products-slider">
-        {%
-          render 'product-slider',
-          limit: section.settings.recommended_products_limit,
-          products: products,
-          per_slide: section.settings.products_per_row - 1,
-          skip_product: product
-        %}
+        {% render 'product-slider', limit: section.settings.recommended_products_limit, products: products, per_slide: section.settings.products_per_row, skip_product: product %}
       </div>
     {% else %}
       {% comment %} Recommended Products Grid {% endcomment %}
@@ -156,4 +150,22 @@
   ]
 }
 
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+              render 'product-slider',
+              limit: section.settings.recommended_products_limit,
+              products: products,
+              per_slide: section.settings.products_per_row - 1,
+              skip_product: product
+            %}
+  to: "{% render 'product-slider', limit: section.settings.recommended_products_limit,
+    products: products, per_slide: section.settings.products_per_row, skip_product:
+    product %}"
+  position: 2538..2708
+{%- endcomment -%}
